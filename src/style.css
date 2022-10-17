@@ -1,0 +1,65 @@
+a {
+  text-decoration: none;
+}
+
+h1.title {
+  margin-bottom: 1em;
+  margin-top: 1em;
+
+  line-height: 1.25;
+}
+
+.author-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 14em;
+}
+
+.author {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.author a:not(:hover) {
+  text-decoration: none;
+  color: black;
+}
+
+.affilation {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.affilation a:not(:hover) {
+  color: black;
+}
+
+h2 {
+  line-height: 1.25;
+}
+
+h2 a:not(:hover) {
+  color: black;
+}
+
+.csl-entry {
+  margin-bottom: .6em;
+  text-indent: -1.5em;
+  padding-left: 1.5em;
+}
+
+.github-button {
+  background-color: #757575;
+  font-size: .7em;
+}
+
+.pdf-button {
+  background-color: #429786;
+  font-size: .7em;
+  opacity: .7;
+}
+
+span.citation {
+  font-weight: normal;
+}

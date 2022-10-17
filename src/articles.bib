@@ -1,0 +1,77 @@
+
+@article{daiNeSTNeuralNetwork2018,
+  title = {{{NeST}}: {{A Neural Network Synthesis Tool Based}} on a {{Grow-and-Prune Paradigm}}},
+  shorttitle = {{{NeST}}},
+  author = {Dai, Xiaoliang and Yin, Hongxu and Jha, Niraj K.},
+  year = {2018},
+  month = jun,
+  number = {arXiv:1711.02017},
+  eprint = {1711.02017},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  doi = {10.48550/arXiv.1711.02017},
+  url = {http://arxiv.org/abs/1711.02017},
+  urldate = {2022-10-17},
+  abstract = {Deep neural networks (DNNs) have begun to have a pervasive impact on various applications of machine learning. However, the problem of finding an optimal DNN architecture for large applications is challenging. Common approaches go for deeper and larger DNN architectures but may incur substantial redundancy. To address these problems, we introduce a network growth algorithm that complements network pruning to learn both weights and compact DNN architectures during training. We propose a DNN synthesis tool (NeST) that combines both methods to automate the generation of compact and accurate DNNs. NeST starts with a randomly initialized sparse network called the seed architecture. It iteratively tunes the architecture with gradient-based growth and magnitude-based pruning of neurons and connections. Our experimental results show that NeST yields accurate, yet very compact DNNs, with a wide range of seed architecture selection. For the LeNet-300-100 (LeNet-5) architecture, we reduce network parameters by 70.2x (74.3x) and floating-point operations (FLOPs) by 79.4x (43.7x). For the AlexNet and VGG-16 architectures, we reduce network parameters (FLOPs) by 15.7x (4.6x) and 30.2x (8.6x), respectively. NeST's grow-and-prune paradigm delivers significant additional parameter and FLOPs reduction relative to pruning-only methods.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Neural and Evolutionary Computing,Reading List}
+}
+
+@misc{evciGradMaxGrowingNeural2022a,
+  title = {{{GradMax}}: {{Growing Neural Networks}} Using {{Gradient Information}}},
+  shorttitle = {{{GradMax}}},
+  author = {Evci, Utku and {van Merri{\"e}nboer}, Bart and Unterthiner, Thomas and Vladymyrov, Max and Pedregosa, Fabian},
+  year = {2022},
+  month = jun,
+  number = {arXiv:2201.05125},
+  eprint = {2201.05125},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2201.05125},
+  urldate = {2022-10-17},
+  abstract = {The architecture and the parameters of neural networks are often optimized independently, which requires costly retraining of the parameters whenever the architecture is modified. In this work we instead focus on growing the architecture without requiring costly retraining. We present a method that adds new neurons during training without impacting what is already learned, while improving the training dynamics. We achieve the latter by maximizing the gradients of the new weights and efficiently find the optimal initialization by means of the singular value decomposition (SVD). We call this technique Gradient Maximizing Growth (GradMax) and demonstrate its effectiveness in variety of vision tasks and architectures1.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
+}
+
+@misc{luCompNetNeuralNetworks2018a,
+  title = {{{CompNet}}: {{Neural}} Networks Growing via the Compact Network Morphism},
+  shorttitle = {{{CompNet}}},
+  author = {Lu, Jun and Ma, Wei and Faltings, Boi},
+  year = {2018},
+  month = apr,
+  number = {arXiv:1804.10316},
+  eprint = {1804.10316},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1804.10316},
+  url = {http://arxiv.org/abs/1804.10316},
+  urldate = {2022-10-17},
+  abstract = {It is often the case that the performance of a neural network can be improved by adding layers. In real-world practices, we always train dozens of neural network architectures in parallel which is a wasteful process. We explored \$CompNet\$, in which case we morph a well-trained neural network to a deeper one where network function can be preserved and the added layer is compact. The work of the paper makes two contributions: a). The modified network can converge fast and keep the same functionality so that we do not need to train from scratch again; b). The layer size of the added layer in the neural network is controlled by removing the redundant parameters with sparse optimization. This differs from previous network morphism approaches which tend to add more neurons or channels beyond the actual requirements and result in redundance of the model. The method is illustrated using several neural network structures on different data sets including MNIST and CIFAR10.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Neural and Evolutionary Computing}
+}
+
+@misc{wenAutoGrowAutomaticLayer2020a,
+  title = {{{AutoGrow}}: {{Automatic Layer Growing}} in {{Deep Convolutional Networks}}},
+  shorttitle = {{{AutoGrow}}},
+  author = {Wen, Wei and Yan, Feng and Chen, Yiran and Li, Hai},
+  year = {2020},
+  month = jun,
+  number = {arXiv:1906.02909},
+  eprint = {1906.02909},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1906.02909},
+  url = {http://arxiv.org/abs/1906.02909},
+  urldate = {2022-10-17},
+  abstract = {Depth is a key component of Deep Neural Networks (DNNs), however, designing depth is heuristic and requires many human efforts. We propose AutoGrow to automate depth discovery in DNNs: starting from a shallow seed architecture, AutoGrow grows new layers if the growth improves the accuracy; otherwise, stops growing and thus discovers the depth. We propose robust growing and stopping policies to generalize to different network architectures and datasets. Our experiments show that by applying the same policy to different network architectures, AutoGrow can always discover near-optimal depth on various datasets of MNIST, FashionMNIST, SVHN, CIFAR10, CIFAR100 and ImageNet. For example, in terms of accuracy-computation trade-off, AutoGrow discovers a better depth combination in ResNets than human experts. Our AutoGrow is efficient. It discovers depth within similar time of training a single DNN. Our code is available at https://github.com/wenwei202/autogrow.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,I.2.6,Statistics - Machine Learning}
+}
+
+

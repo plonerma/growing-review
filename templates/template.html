@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+$if(quotes)$
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$endif$
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+
+<script src="https://kit.fontawesome.com/81529ac3d0.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+<header class="section">
+
+<div class="container" style="float: right;">
+<a href="growing_review.pdf">
+  <button class="pdf-button"><i class="far fa-file-pdf"></i> View as PDF</button>
+</a>
+
+<a href="\#">
+  <button class="github-button"><i class="fab fa-github"></i> Edit on Github</button>
+</a>
+</div>
+<div class="container">
+
+$if(date)$
+<h3 class="date">$date$</h3>
+$endif$
+
+<h1 class="title">$title$</h1>
+
+
+<div>
+
+$for(author)$
+<div class="author-container">
+$if(author.name)$
+$if(author.url)$
+<p class="author"><a href="$author.url$">$author.name$</a></p>
+$else$
+<p class="author">$author.name$</p>
+$endif$
+$for(author.affiliation)$
+$if(author.affiliation.name)$
+<p class="affilation"><a href="$author.affiliation.url$">$author.affiliation.name$</a></p>
+$else$
+<p class="affilation">$author.affiliation$</p>
+$endif$
+$endfor$
+$else$
+<p class="author">$author$</p>
+$endif$
+</div>
+$endfor$
+</div>
+
+</div>
+</header>
+$endif$
+$if(toc)$
+<nav id="$idprefix$TOC">
+$toc$
+</nav>
+$endif$
+
+$if(abstract)$
+
+<p class="small"><strong>Abstract: </strong><em>$abstract$</em></p>
+
+$endif$
+
+
+$body$
+</body>
+</html>
