@@ -32,6 +32,8 @@ Locally, distribution files can be generated using the Makefile.
 A python3 installation with the packages listed in `requirements.txt`
 is required to build article summaries into one file.
 
+Additionally, pandoc as well as latex installation is required.
+
 `make pdf`: Produces the PDF document (which can the be found in the dist
 directory).
 
