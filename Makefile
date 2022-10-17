@@ -18,14 +18,17 @@ build/compiled_linked.md: $(SUMMARIES) $(BILDIOGRAPHY)
 build/compiled.md: $(SUMMARIES) $(BILDIOGRAPHY)
 	python3 scripts/compile_articles.py build/compiled.md
 
-dist/style.css: src/style.css
+dist:
+	mkdir -p dist
+
+dist/style.css: src/style.css dist
 	cp src/style.css dist/style.css
 
-dist/references.bib:
+dist/references.bib: dist
 	cp $(BILDIOGRAPHY) dist/references.bib
 
 
-dist/index.html: $(CONTENT_LINKED) templates/template.html dist/style.css dist/references.bib
+dist/index.html: $(CONTENT_LINKED) templates/template.html dist/style.css dist/references.bib dist
 	pandoc $(CONTENT_LINKED) -o build/index.html \
 		--template=templates/template.html \
 		--bibliography=$(BILDIOGRAPHY)\
@@ -33,13 +36,13 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/style.css dist/r
 		--citeproc
 	mv build/index.html dist/index.html
 
-build/main.tex: $(CONTENT) templates/template.tex
+build/main.tex: $(CONTENT) templates/template.tex dist
 	pandoc $(CONTENT) -o build/main.tex \
 		--template=templates/template.tex \
 		--bibliography=$(BILDIOGRAPHY) \
 		--biblatex
 
-dist/growing_review.pdf: build/main.tex
+dist/growing_review.pdf: build/main.tex dist
 	pdflatex -output-directory=build -halt-on-error build/main.tex
 	biber build/main
 	pdflatex -output-directory=build -halt-on-error build/main.tex
@@ -51,5 +54,5 @@ clean:
 	rm -rf build
 
 .PHONY: serve
-serve: html
+serve: html dist
 	python3 -m http.server -d dist
