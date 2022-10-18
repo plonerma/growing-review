@@ -55,13 +55,16 @@ artificial neural networks. For each paper it will list the most significant
 contribution.
 The following four questions will guide the summary of each paper:
 
-1. Why are models grown? What is the goal or metric the approach is evaluated on?
-2. When are the models grown?
-3. Where are the models grown?
-4. How are the the new parts initialized?
+1. **Why** are models grown? What is the goal or metric the approach is evaluated on?
+2. **When** are the models grown?
+3. **Where** are the models grown?
+4. **How** are the the new parts initialized?
 
 Each paper tries to make progress in answering at least one of the questions.
 Hence, they can be used to categorize these papers.
 
 
-# Existing Literature
+# Reviewed Literature
+
+The following sections give short summaries of each of the papers which were
+deemed relevant.

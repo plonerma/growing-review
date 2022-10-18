@@ -11,7 +11,7 @@ import argparse
 
 
 def latex_to_markdown(s):
-    p = subprocess.run("pandoc -f latex -t markdown".split(),
+    p = subprocess.run("pandoc -f latex -t markdown --wrap none".split(),
                        input=s, text=True, capture_output=True)
     assert p.returncode == 0
     return p.stdout.strip()

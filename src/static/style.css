@@ -26,8 +26,15 @@ h1.title {
   margin-bottom: 0;
 }
 
-h2 {
+h1, h2, h3 {
   line-height: 1.25;
+  margin-bottom: 1em;
+
+}
+
+}
+h1, h2, h3, h4, h5, h6 {
+  padding-top: 1em;
 }
 
 .author a:not(:hover),
@@ -61,4 +68,14 @@ h6 a:not(:hover) {
 
 span.citation {
   font-weight: normal;
+}
+
+figure img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+figcaption {
+  font-size: .85em;
 }

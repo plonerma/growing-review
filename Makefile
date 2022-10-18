@@ -21,8 +21,10 @@ build/compiled.md: $(SUMMARIES) $(BILDIOGRAPHY)
 dist:
 	mkdir -p dist
 
-dist/style.css: src/style.css dist
-	cp src/style.css dist/style.css
+.PHONY: static
+static: src/static/* dist
+	cp -r src/static/* dist/
+	cp -r src/static/* build/
 
 dist/references.bib: dist
 	cp $(BILDIOGRAPHY) dist/references.bib
@@ -33,20 +35,22 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/style.css dist/r
 		--template=templates/template.html \
 		--bibliography=$(BILDIOGRAPHY)\
 		--shift-heading-level-by=1 \
-		--citeproc
+		--citeproc \
+		--default-image-extension=svg
 	mv build/index.html dist/index.html
 
 build/main.tex: $(CONTENT) templates/template.tex dist
 	pandoc $(CONTENT) -o build/main.tex \
 		--template=templates/template.tex \
 		--bibliography=$(BILDIOGRAPHY) \
-		--biblatex
+		--biblatex \
+		--default-image-extension=pdf
 
-dist/growing_review.pdf: build/main.tex dist
-	pdflatex -output-directory=build -halt-on-error build/main.tex
+dist/growing_review.pdf: build/main.tex dist static
+	cd build && pdflatex -output-directory=. -halt-on-error ./main.tex
 	biber build/main
-	pdflatex -output-directory=build -halt-on-error build/main.tex
-	pdflatex -output-directory=build -halt-on-error build/main.tex
+	cd build && pdflatex -output-directory=. -halt-on-error ./main.tex
+	cd build && pdflatex -output-directory=. -halt-on-error ./main.tex
 	cp build/main.pdf dist/growing_review.pdf
 
 .PHONY: clean

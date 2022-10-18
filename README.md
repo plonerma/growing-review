@@ -1,5 +1,9 @@
 # Work in Progress: Review of Literature on Growing Neural Networks
 
+This repository serves as a place for keeping personal notes on relevant
+literature around growing artificial neural network.
+
+
 The article aims to summarize the existing literature concerned with growing
 artificial neural networks. For each paper it will list the most significant
 contribution.
@@ -22,6 +26,22 @@ General comments, as well as the list of contributors, can be found in
 Please verify, the build is handled correctly before pushing/merging to main
 (this includes the html as well as the pdf file).
 
+
+### Images
+
+The best way to include images currently seems to be to place the image as an
+svg as well as an pdf in the src/static/img directory and then  use the usual
+markdown syntax, leaving out the fle extension. The Makefile is configured
+such that for a PDF output the PDF image is used, for the html file, svgs are
+used.
+
+`![Description](img/<image file name>)`
+
+Alternatively, one can use PNG images (include the extension in the file name).
+
+Width or height can be adjusted using curly braces:
+
+`![Description](img/<image file name>){ widht=10cm }`
 
 ### Local Building and Testing
 
