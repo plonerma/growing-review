@@ -40,7 +40,7 @@ directory).
 `make html`: Produces the html file, copies the stylesheet and references file,
 and also produces the PDF (as it can be accessed via the web page).
 
-`make serve`: Runs a local http server in the `dist` folde (after creating the
+`make dev`: Runs a local http server in the `dist` folde (after creating the
 required files, see `make html`). The build webpage can then be accessed via
 `localhost:8000`.
 

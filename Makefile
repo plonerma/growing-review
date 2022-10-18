@@ -53,6 +53,6 @@ dist/growing_review.pdf: build/main.tex dist
 clean:
 	rm -rf build
 
-.PHONY: serve
-serve: html dist
+.PHONY: dev
+dev: html dist
 	python3 -m http.server -d dist
