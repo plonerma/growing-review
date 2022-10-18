@@ -30,7 +30,7 @@ dist/references.bib: dist
 	cp $(BILDIOGRAPHY) dist/references.bib
 
 
-dist/index.html: $(CONTENT_LINKED) templates/template.html dist/style.css dist/references.bib dist
+dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib dist static
 	pandoc $(CONTENT_LINKED) -o build/index.html \
 		--template=templates/template.html \
 		--bibliography=$(BILDIOGRAPHY)\
