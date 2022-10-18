@@ -25,7 +25,7 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
     parser = bibtex.Parser()
     bib_data = parser.parse_file(bib_path)
 
-    article_paths = {}
+    articles = list()
 
     for article_path in Path(summary_dir).glob("*.md"):
         key = article_path.stem
@@ -34,23 +34,12 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
             raise KeyError(
                 f"Bib-Key '{key}' not found in references file ({bib_path}).")
 
-        article_paths[key] = article_path
-
-    articles = list()
-
-    for key, entry in bib_data.entries.items():
         entry = bib_data.entries[key]
 
         title = latex_to_markdown(entry.fields["title"])
 
-        if key in article_paths:
-            print(f"Summary found: '{title}'")
-
-            with open(article_paths[key]) as f:
-                summary = f.read()
-        else:
-            print(f"Summary missing!: '{title}'")
-            summary = "*coming soon*"
+        with open(article_path) as f:
+            summary = f.read()
 
         articles.append((
             entry.fields["year"],

@@ -8,10 +8,9 @@ contribution.
 
 ### Structure of the Content
 
-All articles in `src/articles.bib` are included in the article (ordered by
-year and title). If a summary file with file name matching the bibkey
-exists (`src/summaries/{bibkey}.md`), it is added beneath the respective
-heading.
+All articles in `src/articles.bib` which have a matching summary file
+(`src/summaries/{bibkey}.md`) are included in the list of articles (ordered
+by year and title).
 
 To add a new article, simply add it to the bib file and add a new summary file
 using the same key. The rest is handled by the github actions.
