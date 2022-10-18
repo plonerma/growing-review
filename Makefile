@@ -1,7 +1,7 @@
 CONTENT = src/intro.md build/compiled.md src/outro.md
 CONTENT_LINKED = src/intro.md build/compiled_linked.md src/outro.md
 BILDIOGRAPHY = src/articles.bib
-SUMMARIES = src/summaries
+SUMMARIES = src/summaries/*
 
 .PHONY: all
 all: html
@@ -47,7 +47,7 @@ dist/growing_review.pdf: build/main.tex dist
 	biber build/main
 	pdflatex -output-directory=build -halt-on-error build/main.tex
 	pdflatex -output-directory=build -halt-on-error build/main.tex
-	mv build/main.pdf dist/growing_review.pdf
+	cp build/main.pdf dist/growing_review.pdf
 
 .PHONY: clean
 clean:
