@@ -4,18 +4,24 @@ are maximized while maintaining the models function.
 By enforcing large gradient norms of the new weights, the objective function
 is guaranteed to decrease in the next step of gradient descent.
 
-When using a step size of $\frac{1}{\beta}$, the loss is upperbounded by:
+When using a step size of $\frac{1}{\beta}$ on a function with a
+$\beta$-Lipschitz gradient, the loss is upperbounded by:
 
 $$
 L(W_{new}) \le L(W) - \frac{\beta}{2} \| \nabla L (W) \|^2
 $$
 
-The maximum gradient norms are approximated using singular value decomposition
-(SVD).
+While a constant Lipschitz constant generally does not necessarily exist in
+neural networks the authors use this as a motivation to assume that large
+gradient norms will lead to large decreases in the loss function after the next
 
 
-![Figure from @evciGradMaxGrowingNeural2022, showing the described upper bound.](img/gradmax_upper_bound){ width=10cm }
-
+In GradMax, the maximum gradient norms (with some constraint) are approximated
+using singular value decomposition (SVD).
+The authors additionally provide experiments using optimization to produce large
+gradient norms instead of using the closed-form solution of SVD. While they find
+that SVD usually produces better results, it can only be used, if the activation
+function returns 0 given an input of 0.
 
 The authors note that this idea could also be utilized to select **where**
 new neurons should be grown. The decision where to add new neurons could be
