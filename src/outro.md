@@ -1,2 +1,1 @@
-\addcontentsline{toc}{chapter}{References}
-\printbibliography[title=References]
+# References

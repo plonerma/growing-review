@@ -28,7 +28,6 @@ classoption:
   - BCOR=5mm
 documentclass: article
 biblio-style: authoryear
-reference-section-title: References
 slide-level: 2
 biblatexoptions:
   - "backend=biber"
@@ -63,3 +62,6 @@ The following four questions will guide the summary of each paper:
 
 Each paper tries to make progress in answering at least one of the questions.
 Hence, they can be used to categorize these papers.
+
+
+# Existing Literature

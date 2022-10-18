@@ -18,7 +18,8 @@ def latex_to_markdown(s):
 
 
 def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
-            target_path="build/compiled.md", link_titles=True):
+            target_path="build/compiled.md", link_titles=True,
+            heading_level=2):
 
     print("Building article.")
     parser = bibtex.Parser()
@@ -68,7 +69,9 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
         for year, title, key, summary, url in articles:
             if url is not None and link_titles:
                 title = f"[{title}]({url})"
-            f.write(f"# {title} [@{key}]\n\n{summary}\n\n\n")
+
+            heading_prefix = "#" * heading_level
+            f.write(f"{heading_prefix} {title} [@{key}]\n\n{summary}\n\n\n")
 
 
 if __name__ == "__main__":

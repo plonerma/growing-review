@@ -428,12 +428,12 @@ $endif$
 $for(author)$
 $if(author.name)$
 $author.name$
-$if(author.affiliation)$\vspace{1.5ex}
+$if(author.affiliation)$
 $for(author.affiliation)$
 $if(author.affiliation.name)$
-\\\textit{$author.affiliation.name$}$else$
-\\\textit{$author.affiliation$}$endif$
-$endfor$$endif$$if(author.email)$\vspace{1.5ex}\\\texttt{$author.email$}$endif$$else$
+\\\textit{\small $author.affiliation.name$}$else$
+\\\textit{\small $author.affiliation$}$endif$
+$endfor$$endif$$if(author.email)$\\\texttt{\small $author.email$}$endif$$else$
 $author$
 $endif$$endfor$}
 \date{$date$}
@@ -511,6 +511,9 @@ $body$
 $if(has-frontmatter)$
 \backmatter
 $endif$
+
+\printbibliography[]
+
 
 $for(include-after)$
 $include-after$
