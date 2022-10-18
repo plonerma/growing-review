@@ -1,0 +1,8 @@
+# action.yml
+name: 'Build Articles'
+description: 'Produce html and pdf files.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "make"
