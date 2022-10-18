@@ -21,27 +21,33 @@ h1.title {
     margin-bottom: 0;
 }
 
-.author a:not(:hover) {
-  text-decoration: none;
-  color: black;
-}
-
 .affilation {
   font-style: italic;
   margin-bottom: 0;
 }
 
-.affilation a:not(:hover) {
-  color: black;
-}
-
-h2 {
+h1, h2, h3 {
   line-height: 1.25;
+  margin-bottom: 1em;
+
 }
 
-h2 a:not(:hover) {
+}
+h1, h2, h3, h4, h5, h6 {
+  padding-top: 1em;
+}
+
+.author a:not(:hover),
+.affilation a:not(:hover),
+h1 a:not(:hover),
+h2 a:not(:hover),
+h3 a:not(:hover),
+h4 a:not(:hover),
+h5 a:not(:hover),
+h6 a:not(:hover) {
   color: black;
 }
+
 
 .csl-entry {
   margin-bottom: .6em;
@@ -62,4 +68,14 @@ h2 a:not(:hover) {
 
 span.citation {
   font-weight: normal;
+}
+
+figure img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+figcaption {
+  font-size: .85em;
 }

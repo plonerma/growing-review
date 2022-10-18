@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
   <link rel="stylesheet" href="style.css">
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="https://kit.fontawesome.com/81529ac3d0.js" crossorigin="anonymous"></script>
 
 </head>
@@ -55,47 +68,73 @@ growing artificial neural networks. For each paper it will list the most
 significant contribution. The following four questions will guide the
 summary of each paper:</p>
 <ol type="1">
-<li>Why are models grown? What is the goal or metric the approach is
-evaluated on?</li>
-<li>When are the models grown?</li>
-<li>Where are the models grown?</li>
-<li>How are the the new parts initialized?</li>
+<li><strong>Why</strong> are models grown? What is the goal or metric
+the approach is evaluated on?</li>
+<li><strong>When</strong> are the models grown?</li>
+<li><strong>Where</strong> are the models grown?</li>
+<li><strong>How</strong> are the the new parts initialized?</li>
 </ol>
 <p>Each paper tries to make progress in answering at least one of the
 questions. Hence, they can be used to categorize these papers.</p>
-<h2
-id="compnet-neural-networks-growing-via-the-compact-network-morphism-lucompnetneuralnetworks2018a"><a
-href="http://arxiv.org/abs/1804.10316">CompNet: Neural Networks Growing
-via the Compact Network Morphism</a> <span class="citation"
-data-cites="luCompNetNeuralNetworks2018a">(<a
-href="#ref-luCompNetNeuralNetworks2018a" role="doc-biblioref">Lu, Ma,
-and Faltings 2018</a>)</span></h2>
-<p><em>coming soon</em></p>
-<h2
+<h2 id="reviewed-literature">Reviewed Literature</h2>
+<p>The following sections give short summaries of each of the papers
+which were deemed relevant.</p>
+<h3
 id="nest-a-neural-network-synthesis-tool-based-on-a-grow-and-prune-paradigm-dainestneuralnetwork2018"><a
 href="http://arxiv.org/abs/1711.02017">NeST: A Neural Network Synthesis
 Tool Based on a Grow-and-Prune Paradigm</a> <span class="citation"
 data-cites="daiNeSTNeuralNetwork2018">(<a
 href="#ref-daiNeSTNeuralNetwork2018" role="doc-biblioref">Dai, Yin, and
-Jha 2018</a>)</span></h2>
+Jha 2018</a>)</span></h3>
 <p><em>coming soon</em></p>
-<h2
-id="autogrow-automatic-layer-growing-in-deep-convolutional-networks-wenautogrowautomaticlayer2020a"><a
-href="http://arxiv.org/abs/1906.02909">AutoGrow: Automatic Layer Growing
-in Deep Convolutional Networks</a> <span class="citation"
-data-cites="wenAutoGrowAutomaticLayer2020a">(<a
-href="#ref-wenAutoGrowAutomaticLayer2020a" role="doc-biblioref">Wen et
-al. 2020</a>)</span></h2>
+<h3
+id="firefly-neural-architecture-descent-a-general-approach-for-growing-neural-networks-wufirefly2021"><a
+href="https://proceedings.neurips.cc/paper/2020/file/fdbe012e2e11314b96402b32c0df26b7-Paper.pdf">Firefly
+Neural Architecture Descent: A General Approach for Growing Neural
+Networks</a> <span class="citation" data-cites="wuFirefly2021">(<a
+href="#ref-wuFirefly2021" role="doc-biblioref">Wu et al.
+2020</a>)</span></h3>
 <p><em>coming soon</em></p>
-<h2
-id="gradmax-growing-neural-networks-using-gradient-information-evcigradmaxgrowingneural2022a"><a
+<h3
+id="gradmax-growing-neural-networks-using-gradient-information-evcigradmaxgrowingneural2022"><a
 href="http://arxiv.org/abs/2201.05125">GradMax: Growing Neural Networks
 Using Gradient Information</a> <span class="citation"
-data-cites="evciGradMaxGrowingNeural2022a">(<a
-href="#ref-evciGradMaxGrowingNeural2022a" role="doc-biblioref">Evci et
-al. 2022</a>)</span></h2>
-<p><em>coming soon</em></p>
-<h1 class="unnumbered" id="bibliography">References</h1>
+data-cites="evciGradMaxGrowingNeural2022">(<a
+href="#ref-evciGradMaxGrowingNeural2022" role="doc-biblioref">Evci et
+al. 2022</a>)</span></h3>
+<p>GradMax focuses on the question <strong>how</strong> new neurons are
+initialized. They propose initializing new neurons such that the
+gradient norm of new weights are maximized while maintaining the models
+function. By enforcing large gradient norms of the new weights, the
+objective function is guaranteed to decrease in the next step of
+gradient descent.</p>
+<p>When using a step size of <span
+class="math inline">$\frac{1}{\beta}$</span>, the loss is upperbounded
+by:</p>
+<p><span class="math display">$$
+L(W_{new}) \le L(W) - \frac{\beta}{2} \| \nabla L (W) \|^2
+$$</span></p>
+<p>The maximum gradient norms are approximated using singular value
+decomposition (SVD).</p>
+<figure>
+<img src="img/gradmax_upper_bound.svg" style="width:10cm"
+alt="Figure from Evci et al. (2022), showing the described upper bound." />
+<figcaption aria-hidden="true">Figure from <span class="citation"
+data-cites="evciGradMaxGrowingNeural2022">Evci et al. (<a
+href="#ref-evciGradMaxGrowingNeural2022"
+role="doc-biblioref">2022</a>)</span>, showing the described upper
+bound.</figcaption>
+</figure>
+<p>The authors note that this idea could also be utilized to select
+<strong>where</strong> new neurons should be grown. The decision where
+to add new neurons could be made by looking at the singular values (e,g,
+selecting the largest or adding a neuron, once the singular value
+reaches a threshold). This idea is very similar to the strategy of <span
+class="citation" data-cites="wuFirefly2021">Wu et al. (<a
+href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span> which
+use a very similar technique to choose <strong>where</strong> to grow
+neurons (but use a different initialization strategy).</p>
+<h2 class="unnumbered" id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
 <div id="ref-daiNeSTNeuralNetwork2018" class="csl-entry"
@@ -106,27 +145,21 @@ Based</span> on a <span class="nocase">Grow-and-Prune
 Paradigm</span>,”</span> no. arXiv:1711.02017 (June). <a
 href="https://doi.org/10.48550/arXiv.1711.02017">https://doi.org/10.48550/arXiv.1711.02017</a>.
 </div>
-<div id="ref-evciGradMaxGrowingNeural2022a" class="csl-entry"
+<div id="ref-evciGradMaxGrowingNeural2022" class="csl-entry"
 role="listitem">
 Evci, Utku, Bart van Merriënboer, Thomas Unterthiner, Max Vladymyrov,
 and Fabian Pedregosa. 2022. <span>“<span>GradMax</span>: <span>Growing
 Neural Networks</span> Using <span>Gradient Information</span>.”</span>
 <span>arXiv</span>. <a
-href="http://arxiv.org/abs/2201.05125">http://arxiv.org/abs/2201.05125</a>.
+href="https://doi.org/10.48550/arXiv.2201.05125">https://doi.org/10.48550/arXiv.2201.05125</a>.
 </div>
-<div id="ref-luCompNetNeuralNetworks2018a" class="csl-entry"
-role="listitem">
-Lu, Jun, Wei Ma, and Boi Faltings. 2018. <span>“<span>CompNet</span>:
-<span>Neural</span> Networks Growing via the Compact Network
-Morphism.”</span> <span>arXiv</span>. <a
-href="https://doi.org/10.48550/arXiv.1804.10316">https://doi.org/10.48550/arXiv.1804.10316</a>.
-</div>
-<div id="ref-wenAutoGrowAutomaticLayer2020a" class="csl-entry"
-role="listitem">
-Wen, Wei, Feng Yan, Yiran Chen, and Hai Li. 2020.
-<span>“<span>AutoGrow</span>: <span>Automatic Layer Growing</span> in
-<span>Deep Convolutional Networks</span>.”</span> <span>arXiv</span>. <a
-href="https://doi.org/10.48550/arXiv.1906.02909">https://doi.org/10.48550/arXiv.1906.02909</a>.
+<div id="ref-wuFirefly2021" class="csl-entry" role="listitem">
+Wu, Lemeng, Bo Liu, Peter Stone, and Qiang Liu. 2020. <span>“Firefly
+Neural Architecture Descent: A General Approach for Growing Neural
+Networks.”</span> In <em>Advances in Neural Information Processing
+Systems</em>, edited by H. Larochelle, M. Ranzato, R. Hadsell, M. F.
+Balcan, and H. Lin, 33:22373–83. <span>Curran Associates, Inc.</span> <a
+href="https://proceedings.neurips.cc/paper/2020/file/fdbe012e2e11314b96402b32c0df26b7-Paper.pdf">https://proceedings.neurips.cc/paper/2020/file/fdbe012e2e11314b96402b32c0df26b7-Paper.pdf</a>.
 </div>
 </div>
 </body>
