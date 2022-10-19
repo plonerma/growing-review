@@ -36,7 +36,7 @@ MathJax = {
   <button class="pdf-button"><i class="far fa-file-pdf"></i> View as PDF</button>
 </a>
 
-<a href="\#">
+<a href="https://github.com/plonerma/growing-review">
   <button class="github-button"><i class="fab fa-github"></i> Edit on Github</button>
 </a>
 </div>
@@ -77,8 +77,112 @@ the approach is evaluated on?</li>
 <p>Each paper tries to make progress in answering at least one of the
 questions. Hence, they can be used to categorize these papers.</p>
 <h2 id="reviewed-literature">Reviewed Literature</h2>
-<p>The following sections give short summaries of each of the papers
-which were deemed relevant.</p>
+<p>The following sections give short summaries of each of the
+publications which we deemed relevant.</p>
+<h3
+id="net2net-accelerating-learning-via-knowledge-transfer-chennet2netacceleratinglearning2016"><a
+href="http://arxiv.org/abs/1511.05641">Net2Net: Accelerating Learning
+via Knowledge Transfer</a> <span class="citation"
+data-cites="chenNet2NetAcceleratingLearning2016">(<a
+href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">Chen, Goodfellow, and Shlens 2016</a>)</span></h3>
+<p><span class="citation"
+data-cites="chenNet2NetAcceleratingLearning2016">Chen, Goodfellow, and
+Shlens (<a href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">2016</a>)</span> introduce the idea of training a
+larger student network from an existing smaller teacher network by using
+<em>function-preserving transformations</em>. These transformations
+(<em>Net2Net</em> operations) allow the rapid transfer of learned
+knowledge and omits the need to retrain the larger network from
+scratch.</p>
+<p>The authors propose two operations two increase the student network’s
+size:</p>
+<ol type="1">
+<li>Growing in width: adding more units in each hidden layer and</li>
+<li>growing in depth: adding more hidden layers.</li>
+</ol>
+<p>Growth along the <strong>width</strong> dimension is achieved by
+randomly splitting the original neurons (<em>Net2WiderNet</em>
+operation). Input weights of new neurons are copied from existing and
+the output weight of existing neurons is equally distributed among all
+copies (the old neuron and all new copies).</p>
+<p>If no dropout is used, <span class="citation"
+data-cites="chenNet2NetAcceleratingLearning2016">Chen, Goodfellow, and
+Shlens (<a href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">2016</a>)</span> propose to add a small noise to
+the input weights to break the symmetry.</p>
+<figure>
+<img src="img/splitting_neuron.svg" style="width:10cm"
+alt="Net2WiderNet: Here a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts" />
+<figcaption aria-hidden="true"><em>Net2WiderNet</em>: Here a single
+neuron is split in two parts. However, multiple neurons can be split in
+one operation and each neuron may be split in multiple
+parts</figcaption>
+</figure>
+<p>Growth along the depth dimension is achieved by adding new layers
+which are initialized with the identity function. This requires
+idempotent activation functions: the activation function <span
+class="math inline"><em>ϕ</em></span> needs to chosen such that <span
+class="math inline"><em>ϕ</em>(<strong>I</strong><em>ϕ</em>(<strong>v</strong>))</span>
+for any vector <span class="math inline"><strong>v</strong></span>. For
+rectified linear units (ReLU) this is the case, for some the identity
+matrix may be replace with a different matrix, in some cases it may not
+be as easy to construct an identity layer.</p>
+<p>The experiments are conducted on an Inception network architecture
+<span class="citation"
+data-cites="szegedyGoingDeeperConvolutions2014">(<a
+href="#ref-szegedyGoingDeeperConvolutions2014"
+role="doc-biblioref">Szegedy et al. 2014</a>)</span>, a convolutional
+neural network (CNN). They show that rapid transfer of knowledge through
+the two types of network transformations is possible, allowing the
+faster exploration of model families contained in this architecture
+space.</p>
+<h3 id="network-morphism-weinetworkmorphism2016"><a
+href="http://arxiv.org/abs/1603.01670">Network Morphism</a> <span
+class="citation" data-cites="weiNetworkMorphism2016">(<a
+href="#ref-weiNetworkMorphism2016" role="doc-biblioref">Wei et al.
+2016</a>)</span></h3>
+<p><span class="citation" data-cites="weiNetworkMorphism2016">Wei et al.
+(<a href="#ref-weiNetworkMorphism2016"
+role="doc-biblioref">2016</a>)</span> follow a very similar path to
+<span class="citation"
+data-cites="chenNet2NetAcceleratingLearning2016">Chen, Goodfellow, and
+Shlens (<a href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">2016</a>)</span>: <em>function-preserving
+transformations</em> are used to grow a parent (or “teacher”) network to
+a child (or “student”) network while maintaining the same function.</p>
+<p><span class="citation" data-cites="weiNetworkMorphism2016">Wei et al.
+(<a href="#ref-weiNetworkMorphism2016"
+role="doc-biblioref">2016</a>)</span> point out that using an identity
+layer for growing in depth (which they refer to as “IdMorp”) may be
+sub-optimal as it is extremely sparse. Additionally, they reiterate the
+requirement of idempotent activation functions, which they deem
+insufficient.</p>
+<h3
+id="progressive-neural-networks-rusuprogressiveneuralnetworks2016"><a
+href="http://arxiv.org/abs/1606.04671">Progressive Neural Networks</a>
+<span class="citation"
+data-cites="rusuProgressiveNeuralNetworks2016">(<a
+href="#ref-rusuProgressiveNeuralNetworks2016" role="doc-biblioref">Rusu
+et al. 2016</a>)</span></h3>
+<p><span class="citation"
+data-cites="rusuProgressiveNeuralNetworks2016">Rusu et al. (<a
+href="#ref-rusuProgressiveNeuralNetworks2016"
+role="doc-biblioref">2016</a>)</span> develop <em>Progressive
+Networks</em> for tackling catastrophic forgetting. The idea is to grow
+networks when learning new tasks. The older parts of the networks are
+frozen and their function incoporated using adapters to allow for
+knowledge transfer from earlier tasks. Each time a new tasks is learned,
+the network is further extended (a new column is added).</p>
+<figure>
+<img src="img/progressive_nn_columns.svg" style="width:10cm"
+alt="Figure from Rusu et al. (2016) illustrating the use of columns and adapters." />
+<figcaption aria-hidden="true">Figure from <span class="citation"
+data-cites="rusuProgressiveNeuralNetworks2016">Rusu et al. (<a
+href="#ref-rusuProgressiveNeuralNetworks2016"
+role="doc-biblioref">2016</a>)</span> illustrating the use of columns
+and adapters.</figcaption>
+</figure>
 <h3
 id="nest-a-neural-network-synthesis-tool-based-on-a-grow-and-prune-paradigm-dainestneuralnetwork2018"><a
 href="http://arxiv.org/abs/1711.02017">NeST: A Neural Network Synthesis
@@ -88,6 +192,15 @@ href="#ref-daiNeSTNeuralNetwork2018" role="doc-biblioref">Dai, Yin, and
 Jha 2018</a>)</span></h3>
 <p><em>coming soon</em></p>
 <h3
+id="compacting-picking-and-growing-for-unforgetting-continual-learning-hungcompactingpickinggrowing2019"><a
+href="http://arxiv.org/abs/1910.06562">Compacting, Picking and Growing
+for Unforgetting Continual Learning</a> <span class="citation"
+data-cites="hungCompactingPickingGrowing2019">(<a
+href="#ref-hungCompactingPickingGrowing2019" role="doc-biblioref">Hung
+et al. 2019</a>)</span></h3>
+<p><img src="img/compacting_picking_growing.svg"
+style="width:100.0%" /></p>
+<h3
 id="firefly-neural-architecture-descent-a-general-approach-for-growing-neural-networks-wufirefly2021"><a
 href="https://proceedings.neurips.cc/paper/2020/file/fdbe012e2e11314b96402b32c0df26b7-Paper.pdf">Firefly
 Neural Architecture Descent: A General Approach for Growing Neural
@@ -95,6 +208,14 @@ Networks</a> <span class="citation" data-cites="wuFirefly2021">(<a
 href="#ref-wuFirefly2021" role="doc-biblioref">Wu et al.
 2020</a>)</span></h3>
 <p><em>coming soon</em></p>
+<figure>
+<img src="img/firefly_new_neurons.svg" style="width:100.0%"
+alt="Figure from Wu et al. (2020) illustrating how new neurons can be added." />
+<figcaption aria-hidden="true">Figure from <span class="citation"
+data-cites="wuFirefly2021">Wu et al. (<a href="#ref-wuFirefly2021"
+role="doc-biblioref">2020</a>)</span> illustrating how new neurons can
+be added.</figcaption>
+</figure>
 <h3
 id="gradmax-growing-neural-networks-using-gradient-information-evcigradmaxgrowingneural2022"><a
 href="http://arxiv.org/abs/2201.05125">GradMax: Growing Neural Networks
@@ -109,22 +230,22 @@ function. By enforcing large gradient norms of the new weights, the
 objective function is guaranteed to decrease in the next step of
 gradient descent.</p>
 <p>When using a step size of <span
-class="math inline">$\frac{1}{\beta}$</span>, the loss is upperbounded
-by:</p>
+class="math inline">$\frac{1}{\beta}$</span> on a function with a <span
+class="math inline"><em>β</em></span>-Lipschitz gradient, the loss is
+upperbounded by:</p>
 <p><span class="math display">$$
 L(W_{new}) \le L(W) - \frac{\beta}{2} \| \nabla L (W) \|^2
 $$</span></p>
-<p>The maximum gradient norms are approximated using singular value
-decomposition (SVD).</p>
-<figure>
-<img src="img/gradmax_upper_bound.svg" style="width:10cm"
-alt="Figure from Evci et al. (2022), showing the described upper bound." />
-<figcaption aria-hidden="true">Figure from <span class="citation"
-data-cites="evciGradMaxGrowingNeural2022">Evci et al. (<a
-href="#ref-evciGradMaxGrowingNeural2022"
-role="doc-biblioref">2022</a>)</span>, showing the described upper
-bound.</figcaption>
-</figure>
+<p>While a constant Lipschitz constant generally does not necessarily
+exist in neural networks the authors use this as a motivation to assume
+that large gradient norms will lead to large decreases in the loss
+function after the next</p>
+<p>In GradMax, the maximum gradient norms (with some constraint) are
+approximated using singular value decomposition (SVD). The authors
+additionally provide experiments using optimization to produce large
+gradient norms instead of using the closed-form solution of SVD. While
+they find that SVD usually produces better results, it can only be used,
+if the activation function returns 0 given an input of 0.</p>
 <p>The authors note that this idea could also be utilized to select
 <strong>where</strong> new neurons should be grown. The decision where
 to add new neurons could be made by looking at the singular values (e,g,
@@ -137,6 +258,14 @@ neurons (but use a different initialization strategy).</p>
 <h2 class="unnumbered" id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
+<div id="ref-chenNet2NetAcceleratingLearning2016" class="csl-entry"
+role="listitem">
+Chen, Tianqi, Ian Goodfellow, and Jonathon Shlens. 2016.
+<span>“<span>Net2Net</span>: <span>Accelerating Learning</span> via
+<span>Knowledge Transfer</span>.”</span> <em>arXiv:1511.05641 [Cs]</em>,
+April. <a
+href="http://arxiv.org/abs/1511.05641">http://arxiv.org/abs/1511.05641</a>.
+</div>
 <div id="ref-daiNeSTNeuralNetwork2018" class="csl-entry"
 role="listitem">
 Dai, Xiaoliang, Hongxu Yin, and Niraj K. Jha. 2018.
@@ -152,6 +281,37 @@ and Fabian Pedregosa. 2022. <span>“<span>GradMax</span>: <span>Growing
 Neural Networks</span> Using <span>Gradient Information</span>.”</span>
 <span>arXiv</span>. <a
 href="https://doi.org/10.48550/arXiv.2201.05125">https://doi.org/10.48550/arXiv.2201.05125</a>.
+</div>
+<div id="ref-hungCompactingPickingGrowing2019" class="csl-entry"
+role="listitem">
+Hung, Steven C. Y., Cheng-Hao Tu, Cheng-En Wu, Chien-Hung Chen, Yi-Ming
+Chan, and Chu-Song Chen. 2019. <span>“Compacting, <span>Picking</span>
+and <span>Growing</span> for <span>Unforgetting Continual
+Learning</span>.”</span> <em>arXiv:1910.06562 [Cs, Stat]</em>, October.
+<a
+href="http://arxiv.org/abs/1910.06562">http://arxiv.org/abs/1910.06562</a>.
+</div>
+<div id="ref-rusuProgressiveNeuralNetworks2016" class="csl-entry"
+role="listitem">
+Rusu, Andrei A., Neil C. Rabinowitz, Guillaume Desjardins, Hubert Soyer,
+James Kirkpatrick, Koray Kavukcuoglu, Razvan Pascanu, and Raia Hadsell.
+2016. <span>“Progressive <span>Neural Networks</span>.”</span>
+<em>arXiv:1606.04671 [Cs]</em>, September. <a
+href="http://arxiv.org/abs/1606.04671">http://arxiv.org/abs/1606.04671</a>.
+</div>
+<div id="ref-szegedyGoingDeeperConvolutions2014" class="csl-entry"
+role="listitem">
+Szegedy, Christian, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed,
+Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew
+Rabinovich. 2014. <span>“Going <span>Deeper</span> with
+<span>Convolutions</span>.”</span> <span>arXiv</span>. <a
+href="https://doi.org/10.48550/arXiv.1409.4842">https://doi.org/10.48550/arXiv.1409.4842</a>.
+</div>
+<div id="ref-weiNetworkMorphism2016" class="csl-entry" role="listitem">
+Wei, Tao, Changhu Wang, Yong Rui, and Chang Wen Chen. 2016.
+<span>“Network <span>Morphism</span>.”</span> <em>arXiv:1603.01670
+[Cs]</em>, March. <a
+href="http://arxiv.org/abs/1603.01670">http://arxiv.org/abs/1603.01670</a>.
 </div>
 <div id="ref-wuFirefly2021" class="csl-entry" role="listitem">
 Wu, Lemeng, Bo Liu, Peter Stone, and Qiang Liu. 2020. <span>“Firefly
