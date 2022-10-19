@@ -66,5 +66,5 @@ Hence, they can be used to categorize these papers.
 
 # Reviewed Literature
 
-The following sections give short summaries of each of the papers which were
+The following sections give short summaries of each of the publications which we
 deemed relevant.

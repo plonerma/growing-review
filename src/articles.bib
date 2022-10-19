@@ -123,6 +123,19 @@
   abstract = {An incremental network model is introduced which is able to learn the important topological relations in a given set of input vectors by means of a simple Hebb-like learning rule. An incremental network model is introduced which is able to learn the important topological relations in a given set of input vectors by means of a simple Hebb-like learning rule. In contrast to previous approaches like the "neural gas" method of Martinetz and Schulten (1991, 1994), this model has no parameters which change over time and is able to continue learning, adding units and connections, until a performance criterion has been met. Applications of the model include vector quantization, clustering, and interpolation.}
 }
 
+@inproceedings{gongStacking2019,
+  title = {Efficient {{Training}} of {{BERT}} by {{Progressively Stacking}}},
+  booktitle = {Proceedings of the 36th {{International Conference}} on {{Machine Learning}}},
+  author = {Gong, Linyuan and He, Di and Li, Zhuohan and Qin, Tao and Wang, Liwei and Liu, Tieyan},
+  year = {2019},
+  pages = {2337--2346},
+  publisher = {{PMLR}},
+  issn = {2640-3498},
+  url = {https://proceedings.mlr.press/v97/gong19a.html},
+  abstract = {Unsupervised pre-training is popularly used in natural language processing. By designing proper unsupervised prediction tasks, a deep neural network can be trained and shown to be effective in many downstream tasks. As the data is usually adequate, the model for pre-training is generally huge and contains millions of parameters. Therefore, the training efficiency becomes a critical issue even when using high-performance hardware. In this paper, we explore an efficient training method for the state-of-the-art bidirectional Transformer (BERT) model. By visualizing the self-attention distribution of different layers at different positions in a well-trained BERT model, we find that in most layers, the self-attention distribution will concentrate locally around its position and the start-of-sentence token. Motivating from this, we propose the stacking algorithm to transfer knowledge from a shallow model to a deep model; then we apply stacking progressively to accelerate BERT training. The experimental results showed that the models trained by our training strategy achieve similar performance to models trained from scratch, but our algorithm is much faster.},
+  langid = {english}
+}
+
 @article{guTransformerGrowthProgressive2021,
   title = {On the {{Transformer Growth}} for {{Progressive BERT Training}}},
   author = {Gu, Xiaotao and Liu, Liyuan and Yu, Hongkun and Li, Jing and Chen, Chen and Han, Jiawei},
@@ -346,6 +359,40 @@
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing,Nonlinear Sciences - Adaptation and Self-Organizing Systems,Quantitative Biology - Neurons and Cognition}
 }
 
+@article{rosenfeldIncrementalLearningDeep2018,
+  title = {Incremental {{Learning Through Deep Adaptation}}},
+  author = {Rosenfeld, Amir and Tsotsos, John K.},
+  year = {2018},
+  month = feb,
+  journal = {arXiv:1705.04228 [cs]},
+  eprint = {1705.04228},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/1705.04228},
+  urldate = {2021-11-15},
+  abstract = {Given an existing trained neural network, it is often desirable to be able to add new capabilities without hindering performance of already learned tasks. Existing approaches either learn sub-optimal solutions, require joint training, or incur a substantial increment in the number of parameters for each added task, typically as many as the original network. We propose a method which fully preserves performance on the original task, with only a small increase (around 20\%) in the number of required parameters while performing on par with more costly finetuning procedures, which typically double the number of parameters. The learned architecture can be controlled to switch between various learned representations, enabling a single network to solve a task from multiple different domains. We conduct extensive experiments showing the effectiveness of our method and explore different aspects of its behavior.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
+}
+
+@article{rusuProgressiveNeuralNetworks2016,
+  title = {Progressive {{Neural Networks}}},
+  author = {Rusu, Andrei A. and Rabinowitz, Neil C. and Desjardins, Guillaume and Soyer, Hubert and Kirkpatrick, James and Kavukcuoglu, Koray and Pascanu, Razvan and Hadsell, Raia},
+  year = {2016},
+  month = sep,
+  journal = {arXiv:1606.04671 [cs]},
+  eprint = {1606.04671},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/1606.04671},
+  urldate = {2021-10-14},
+  abstract = {Learning to solve complex sequences of tasks\textemdash while both leveraging transfer and avoiding catastrophic forgetting\textemdash remains a key obstacle to achieving human-level intelligence. The progressive networks approach represents a step forward in this direction: they are immune to forgetting and can leverage prior knowledge via lateral connections to previously learned features. We evaluate this architecture extensively on a wide variety of reinforcement learning tasks (Atari and 3D maze games), and show that it outperforms common baselines based on pretraining and finetuning. Using a novel sensitivity measure, we demonstrate that transfer occurs at both low-level sensory and high-level control layers of the learned policy.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning}
+}
+
 @article{shaikhLearnBindGrow2020,
   title = {Learn to {{Bind}} and {{Grow Neural Structures}}},
   author = {Shaikh, Azhar and Sinha, Nishant},
@@ -360,6 +407,24 @@
   abstract = {Task-incremental learning involves the challenging problem of learning new tasks continually, without forgetting past knowledge. Many approaches address the problem by expanding the structure of a shared neural network as tasks arrive, but struggle to grow optimally, without losing past knowledge. We present a new framework, Learn to Bind and Grow, which learns a neural architecture for a new task incrementally, either by binding with layers of a similar task or by expanding layers which are more likely to conflict between tasks. Central to our approach is a novel, interpretable, parameterization of the shared, multi-task architecture space, which then enables computing globally optimal architectures using Bayesian optimization. Experiments on continual learning benchmarks show that our framework performs comparably with earlier expansion based approaches and is able to flexibly compute multiple optimal solutions with performance-size trade-offs.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@misc{szegedyGoingDeeperConvolutions2014,
+  title = {Going {{Deeper}} with {{Convolutions}}},
+  author = {Szegedy, Christian and Liu, Wei and Jia, Yangqing and Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+  year = {2014},
+  month = sep,
+  number = {arXiv:1409.4842},
+  eprint = {1409.4842},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1409.4842},
+  url = {http://arxiv.org/abs/1409.4842},
+  urldate = {2022-10-19},
+  abstract = {We propose a deep convolutional neural network architecture codenamed "Inception", which was responsible for setting the new state of the art for classification and detection in the ImageNet Large-Scale Visual Recognition Challenge 2014 (ILSVRC 2014). The main hallmark of this architecture is the improved utilization of the computing resources inside the network. This was achieved by a carefully crafted design that allows for increasing the depth and width of the network while keeping the computational budget constant. To optimize quality, the architectural decisions were based on the Hebbian principle and the intuition of multi-scale processing. One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
 }
 
 @article{wangEnergyAwareNeuralArchitecture2020,
