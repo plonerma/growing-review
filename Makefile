@@ -10,7 +10,7 @@ all: html
 pdf: dist/growing_review.pdf
 
 .PHONY: html
-html: dist/index.html pdf
+html: dist/index.html
 
 build/compiled_linked.md: $(SUMMARIES) $(BILDIOGRAPHY)
 	python3 scripts/compile_articles.py build/compiled_linked.md --link_titles
@@ -56,6 +56,7 @@ dist/growing_review.pdf: build/main.tex dist static
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -rf dist
 
 .PHONY: dev
 dev: html dist
