@@ -158,6 +158,29 @@ layer for growing in depth (which they refer to as “IdMorp”) may be
 sub-optimal as it is extremely sparse. Additionally, they reiterate the
 requirement of idempotent activation functions, which they deem
 insufficient.</p>
+<p>Instead of relying on idempotent activation functions, <span
+class="citation" data-cites="weiNetworkMorphism2016">Wei et al. (<a
+href="#ref-weiNetworkMorphism2016" role="doc-biblioref">2016</a>)</span>
+introduce parametric activation functions for new layers: A parameter
+<span class="math inline"><em>a</em></span> interpolates between the
+identity function and the non-linear activation function. <span
+class="math inline"><em>a</em></span> is initialized with one such that
+there is essentially no activation function. Over the course of future
+training, the parameter can be learned to make the activation function
+non-linear <span class="citation"
+data-cites="heDelvingDeepRectifiers2015">(for an example see the
+parametric rectified activation units (PReLU), <a
+href="#ref-heDelvingDeepRectifiers2015" role="doc-biblioref">He et al.
+2015</a>)</span>.</p>
+<figure>
+<img src="img/parametric_tanh.svg"
+alt="Illustration of an parametric tanh function: with a=1 the function is equal to the identity function, with a=0 it is equal to tanh." />
+<figcaption aria-hidden="true">Illustration of an parametric tanh
+function: with <span class="math inline"><em>a</em> = 1</span> the
+function is equal to the identity function, with <span
+class="math inline"><em>a</em> = 0</span> it is equal to
+tanh.</figcaption>
+</figure>
 <h3
 id="progressive-neural-networks-rusuprogressiveneuralnetworks2016"><a
 href="http://arxiv.org/abs/1606.04671">Progressive Neural Networks</a>
@@ -281,6 +304,17 @@ and Fabian Pedregosa. 2022. <span>“<span>GradMax</span>: <span>Growing
 Neural Networks</span> Using <span>Gradient Information</span>.”</span>
 <span>arXiv</span>. <a
 href="https://doi.org/10.48550/arXiv.2201.05125">https://doi.org/10.48550/arXiv.2201.05125</a>.
+</div>
+<div id="ref-heDelvingDeepRectifiers2015" class="csl-entry"
+role="listitem">
+He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2015.
+<span>“Delving <span>Deep</span> into <span>Rectifiers</span>:
+<span>Surpassing Human-Level Performance</span> on <span>ImageNet
+Classification</span>.”</span> In <em>2015 <span>IEEE International
+Conference</span> on <span>Computer Vision</span>
+(<span>ICCV</span>)</em>, 1026–34. <span>Santiago, Chile</span>:
+<span>IEEE</span>. <a
+href="https://doi.org/10.1109/ICCV.2015.123">https://doi.org/10.1109/ICCV.2015.123</a>.
 </div>
 <div id="ref-hungCompactingPickingGrowing2019" class="csl-entry"
 role="listitem">
