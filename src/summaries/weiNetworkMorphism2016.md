@@ -7,3 +7,16 @@ the same function.
 depth (which they refer to as "IdMorp") may be sub-optimal as it is extremely
 sparse. Additionally, they reiterate the requirement of idempotent activation
 functions, which they deem insufficient.
+
+
+
+
+Instead of relying on idempotent activation functions, @weiNetworkMorphism2016
+introduce parametric activation functions for new layers:
+A parameter $a$ interpolates between the identity function and the non-linear
+activation function. $a$ is initialized with one such that there is essentially
+no activation function. Over the course of future training, the parameter
+can be learned to make the activation function non-linear [for an example see
+the parametric rectified activation units (PReLU), @heDelvingDeepRectifiers2015].
+
+![Illustration of an parametric tanh function: with $a=1$ the function is equal to the identity function, with $a=0$ it is equal to tanh.](img/parametric_tanh)
