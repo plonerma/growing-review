@@ -17,7 +17,7 @@ copies (the old neuron and all new copies).
 If no dropout is used, @chenNet2NetAcceleratingLearning2016 propose to add a small
 noise to the input weights to break the symmetry.
 
-![Illustration of *Net2WiderNet*. Here, a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts](img/splitting_neuron){#fig:splitting_neuron width=10cm}
+![Illustration of *Net2WiderNet*. Here, a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts](img/splitting_neuron){#fig:splitting_neuron width=8cm}
 
 Growth along the depth dimension is achieved by adding new layers which are
 initialized with the identity function.

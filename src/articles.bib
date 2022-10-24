@@ -13,6 +13,22 @@
   keywords = {Astrophysics,Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing,I.5.1,I.5.3}
 }
 
+@article{caiEfficientArchitectureSearch2017,
+  title = {Efficient {{Architecture Search}} by {{Network Transformation}}},
+  author = {Cai, Han and Chen, Tianyao and Zhang, Weinan and Yu, Yong and Wang, Jun},
+  year = {2017},
+  month = nov,
+  journal = {arXiv:1707.04873 [cs]},
+  eprint = {1707.04873},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/1707.04873},
+  urldate = {2021-05-06},
+  abstract = {Techniques for automatically designing deep neural network architectures such as reinforcement learning based approaches have recently shown promising results. However, their success is based on vast computational resources (e.g. hundreds of GPUs), making them difficult to be widely used. A noticeable limitation is that they still design and train each network from scratch during the exploration of the architecture space, which is highly inefficient. In this paper, we propose a new framework toward efficient architecture search by exploring the architecture space based on the current network and reusing its weights. We employ a reinforcement learning agent as the meta-controller, whose action is to grow the network depth or layer width with function-preserving transformations. As such, the previously validated networks can be reused for further exploration, thus saves a large amount of computational cost. We apply our method to explore the architecture space of the plain convolutional neural networks (no skip-connections, branching etc.) on image benchmark datasets (CIFAR-10, SVHN) with restricted computational resources (5 GPUs). Our method can design highly competitive networks that outperform existing networks using the same design scheme. On CIFAR-10, our model without skip-connections achieves 4.23\textbackslash\% test error rate, exceeding a vast majority of modern architectures and approaching DenseNet. Furthermore, by applying our method to explore the DenseNet architecture space, we are able to achieve more accurate networks with fewer parameters.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning}
+}
+
 @incollection{caillonGrowingNeuralNetworks2021,
   title = {Growing {{Neural Networks Achieve Flatter Minima}}},
   booktitle = {Artificial {{Neural Networks}} and {{Machine Learning}} \textendash{} {{ICANN}} 2021},
@@ -94,6 +110,24 @@
   abstract = {Deep neural networks (DNNs) have begun to have a pervasive impact on various applications of machine learning. However, the problem of finding an optimal DNN architecture for large applications is challenging. Common approaches go for deeper and larger DNN architectures but may incur substantial redundancy. To address these problems, we introduce a network growth algorithm that complements network pruning to learn both weights and compact DNN architectures during training. We propose a DNN synthesis tool (NeST) that combines both methods to automate the generation of compact and accurate DNNs. NeST starts with a randomly initialized sparse network called the seed architecture. It iteratively tunes the architecture with gradient-based growth and magnitude-based pruning of neurons and connections. Our experimental results show that NeST yields accurate, yet very compact DNNs, with a wide range of seed architecture selection. For the LeNet-300-100 (LeNet-5) architecture, we reduce network parameters by 70.2x (74.3x) and floating-point operations (FLOPs) by 79.4x (43.7x). For the AlexNet and VGG-16 architectures, we reduce network parameters (FLOPs) by 15.7x (4.6x) and 30.2x (8.6x), respectively. NeST's grow-and-prune paradigm delivers significant additional parameter and FLOPs reduction relative to pruning-only methods.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Neural and Evolutionary Computing,Reading List}
+}
+
+@misc{devriesImprovedRegularizationConvolutional2017,
+  title = {Improved {{Regularization}} of {{Convolutional Neural Networks}} with {{Cutout}}},
+  author = {DeVries, Terrance and Taylor, Graham W.},
+  year = {2017},
+  month = nov,
+  number = {arXiv:1708.04552},
+  eprint = {1708.04552},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1708.04552},
+  url = {http://arxiv.org/abs/1708.04552},
+  urldate = {2022-10-24},
+  abstract = {Convolutional neural networks are capable of learning powerful representational spaces, which are necessary for tackling complex learning tasks. However, due to the model capacity required to capture such representations, they are often susceptible to overfitting and therefore require proper regularization in order to generalize well. In this paper, we show that the simple regularization technique of randomly masking out square regions of input during training, which we call cutout, can be used to improve the robustness and overall performance of convolutional neural networks. Not only is this method extremely easy to implement, but we also demonstrate that it can be used in conjunction with existing forms of data augmentation and other regularizers to further improve model performance. We evaluate this method by applying it to current state-of-the-art architectures on the CIFAR-10, CIFAR-100, and SVHN datasets, yielding new state-of-the-art results of 2.56\%, 15.20\%, and 1.30\% test error respectively. Code is available at https://github.com/uoguelph-mlrg/Cutout},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
 }
 
 @misc{evciGradMaxGrowingNeural2022,
@@ -565,5 +599,23 @@
   abstract = {Developing efficient and principled neural architecture optimization methods is a critical challenge of modern deep learning. Recently, Liu et al.[19] proposed a splitting steepest descent (S2D) method that jointly optimizes the neural parameters and architectures based on progressively growing network structures by splitting neurons into multiple copies in a steepest descent fashion. However, S2D suffers from a local optimality issue when all the neurons become "splitting stable", a concept akin to local stability in parametric optimization. In this work, we develop a significant and surprising extension of the splitting descent framework that addresses the local optimality issue. The idea is to observe that the original S2D is unnecessarily restricted to splitting neurons into positive weighted copies. By simply allowing both positive and negative weights during splitting, we can eliminate the appearance of splitting stability in S2D and hence escape the local optima to obtain better performance. By incorporating signed splittings, we significantly extend the optimization power of splitting steepest descent both theoretically and empirically. We verify our method on various challenging benchmarks such as CIFAR-100, ImageNet and ModelNet40, on which we outperform S2D and other advanced methods on learning accurate and energy-efficient neural networks.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@misc{zophLearningTransferableArchitectures2018,
+  title = {Learning {{Transferable Architectures}} for {{Scalable Image Recognition}}},
+  author = {Zoph, Barret and Vasudevan, Vijay and Shlens, Jonathon and Le, Quoc V.},
+  year = {2018},
+  month = apr,
+  number = {arXiv:1707.07012},
+  eprint = {1707.07012},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1707.07012},
+  url = {http://arxiv.org/abs/1707.07012},
+  urldate = {2022-10-24},
+  abstract = {Developing neural network image classification models often requires significant architecture engineering. In this paper, we study a method to learn the model architectures directly on the dataset of interest. As this approach is expensive when the dataset is large, we propose to search for an architectural building block on a small dataset and then transfer the block to a larger dataset. The key contribution of this work is the design of a new search space (the "NASNet search space") which enables transferability. In our experiments, we search for the best convolutional layer (or "cell") on the CIFAR-10 dataset and then apply this cell to the ImageNet dataset by stacking together more copies of this cell, each with their own parameters to design a convolutional architecture, named "NASNet architecture". We also introduce a new regularization technique called ScheduledDropPath that significantly improves generalization in the NASNet models. On CIFAR-10 itself, NASNet achieves 2.4\% error rate, which is state-of-the-art. On ImageNet, NASNet achieves, among the published works, state-of-the-art accuracy of 82.7\% top-1 and 96.2\% top-5 on ImageNet. Our model is 1.2\% better in top-1 accuracy than the best human-invented architectures while having 9 billion fewer FLOPS - a reduction of 28\% in computational demand from the previous state-of-the-art model. When evaluated at different levels of computational cost, accuracies of NASNets exceed those of the state-of-the-art human-designed models. For instance, a small version of NASNet also achieves 74\% top-1 accuracy, which is 3.1\% better than equivalently-sized, state-of-the-art models for mobile platforms. Finally, the learned features by NASNet used with the Faster-RCNN framework surpass state-of-the-art by 4.0\% achieving 43.1\% mAP on the COCO dataset.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
