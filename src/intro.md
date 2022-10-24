@@ -48,7 +48,7 @@ indent: true
 ---
 
 
-# Introduction
+# Introduction {#sec:introduction}
 
 This article aims to summarize the existing literature concerned with growing
 artificial neural networks. For each paper it will list the most significant
@@ -64,7 +64,7 @@ Each paper tries to make progress in answering at least one of the questions.
 Hence, they can be used to categorize these papers.
 
 
-# Reviewed Literature
+# Reviewed Literature {#sec:literature}
 
 The following sections give short summaries of each of the publications which we
 deemed relevant.

@@ -81,7 +81,6 @@ figcaption {
 
 #TOC {
   border: 1px solid var(--nc-bg-3);
-  border-radius: 3px;
 }
 
 #TOC li {
@@ -104,13 +103,13 @@ figcaption {
 .toc-toggle-label {
   display: block;
 
-  padding: 1rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
 
   background: var(--nc-bg-2);
 
   cursor: pointer;
   transition: all 0.25s ease-out;
-  border-radius: 3px;
 }
 
 .toc-toggle-label:hover {
