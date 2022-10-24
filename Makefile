@@ -38,6 +38,7 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib d
 		--filter pandoc-xnos \
 		--citeproc \
 		--mathjax \
+		--toc \
 		--default-image-extension=svg
 	mv build/index.html dist/index.html
 

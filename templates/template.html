@@ -87,9 +87,18 @@ $endfor$
 </div>
 </header>
 $endif$
+
+
 $if(toc)$
 <nav id="$idprefix$TOC">
+  <input id="toc-collapsible" class="toc-toggle" type="checkbox">
+  <label for="toc-collapsible" class="toc-toggle-label">Contents</label>
+  <div class="toc-content">
+    <div class="toc-content-inner">
 $toc$
+    </div>
+  </div>
+</div>
 </nav>
 $endif$
 

@@ -78,3 +78,80 @@ figure img {
 figcaption {
   font-size: .85em;
 }
+
+#TOC {
+  border: 1px solid var(--nc-bg-3);
+  border-radius: 3px;
+}
+
+#TOC li {
+  list-style-type: none;
+}
+
+#TOC .toc-content-inner > ul > li {
+  font-weight: bold;
+}
+
+#TOC .toc-content-inner > ul > li ul {
+  font-weight: normal;
+}
+
+
+#toc-collapsible {
+  display: none;
+}
+
+.toc-toggle-label {
+  display: block;
+
+  padding: 1rem;
+
+  background: var(--nc-bg-2);
+
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  border-radius: 3px;
+}
+
+.toc-toggle-label:hover {
+  background-color: var(--nc-bg-3);
+}
+
+
+.toc-toggle-label::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+.toc-toggle:checked + .toc-toggle-label::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.toc-toggle:checked + .toc-toggle-label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.toc-content {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height .25s ease-in-out;
+
+  background-color: var(--nc-bg-2);
+}
+
+
+.toc-toggle:checked + .toc-toggle-label + .toc-content {
+  max-height: 100vh;
+}
