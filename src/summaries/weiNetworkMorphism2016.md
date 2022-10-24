@@ -8,7 +8,11 @@ depth (which they refer to as "IdMorp") may be sub-optimal as it is extremely
 sparse. Additionally, they reiterate the requirement of idempotent activation
 functions, which they deem insufficient.
 
+Through an iterative procedure, a convolutional layer is decomposed into
+two layers, retaining a large number of non-zero entries.
 
+@weiStableNetworkMorphism2019 furhter improve the decomposition method in order
+to minimize the performance drop after transforming (growing) the network.
 
 
 Instead of relying on idempotent activation functions, @weiNetworkMorphism2016

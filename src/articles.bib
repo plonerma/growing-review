@@ -461,6 +461,22 @@
   keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
+@article{weiModularizedMorphingDeep2021,
+  title = {Modularized {{Morphing}} of {{Deep Convolutional Neural Networks}}: {{A Graph Approach}}},
+  shorttitle = {Modularized {{Morphing}} of {{Deep Convolutional Neural Networks}}},
+  author = {Wei, Tao and Wang, Changhu and Chen, Chang Wen},
+  year = {2021},
+  month = feb,
+  journal = {IEEE Transactions on Computers},
+  volume = {70},
+  number = {2},
+  pages = {305--315},
+  issn = {1557-9956},
+  doi = {10.1109/TC.2020.2988006},
+  abstract = {Network morphism is an effective learning scheme to morph a well-trained neural network to a new one with the network function completely preserved. However, existing network morphism scheme addresses only basic morphing types on the layer level. In this research, we address the central problem of network morphism at a higher level, i.e., how a convolutional layer can be morphed into an arbitrary module of a neural network. To simplify the representation of a network, we abstract a module as a graph with blobs as vertices and convolutional layers as edges. Based on this graph, the morphing process can be formulated as a graph transformation problem. Two atomic morphing operations are introduced to construct the graphs, based on which modules are classified into two families, i.e., simple morphable modules and complex modules. We present practical morphing solutions for both families, and prove that any module can be morphed from a single convolutional layer. Extensive experiments have been conducted based on the state-of-the-art ResNet on benchmarks to verify the effectiveness of the proposed solution.},
+  keywords = {Atomic layer deposition,Computer architecture,convolutional neural network,Convolutional neural networks,Deep learning,Kernel,Knowledge engineering,Mathematical model,modularized morphing,network morphism}
+}
+
 @article{weiNetworkMorphism2016,
   title = {Network {{Morphism}}},
   author = {Wei, Tao and Wang, Changhu and Rui, Yong and Chen, Chang Wen},
@@ -476,6 +492,19 @@
   archiveprefix = {arXiv},
   langid = {english},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@inproceedings{weiStableNetworkMorphism2019,
+  title = {Stable {{Network Morphism}}},
+  booktitle = {2019 {{International Joint Conference}} on {{Neural Networks}} ({{IJCNN}})},
+  author = {Wei, Tao and Wang, Changhu and Chen, Chang Wen},
+  year = {2019},
+  month = jul,
+  pages = {1--8},
+  issn = {2161-4407},
+  doi = {10.1109/IJCNN.2019.8851955},
+  abstract = {Deep neural networks perform better when they are deeper. Network morphism is one of the paradigms to construct deeper neural networks. It makes developing deeper neural networks building on existing ones possible by morphing a well-trained neural network into a new one with the network function completely preserved. The morphed network also has the potential to continue growing into a more powerful one as it has more parameters. Existing network morphism schemes include Net2Net and NetMorph. However, both of them suffer from significant initial performance drop when the morphed network is continually trained. Such unstability is very much undesired for a continual learning system. In this research, we first identify the reason for the unstability, which is due to the large amount of zeros padded into the parameters. Based on this observation, we propose an algorithm based on modified gradient descent to decompose the network morphism equation. As a result, the morphed parameters are all non-zeros and the continual training process become stable. Experimental results on benchmark datasets demonstrate the effectiveness of the proposed stable network morphism scheme.},
+  keywords = {Buildings,Deep Neural Networks,Learning systems,Mathematical model,Network Morphism,Recurrent neural networks,Shape,Stability,Training}
 }
 
 @article{wenAutoGrowAutomaticLayer2020,
