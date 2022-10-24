@@ -60,7 +60,7 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
                 title = f"[{title}]({url})"
 
             heading_prefix = "#" * heading_level
-            f.write(f"{heading_prefix} {title} [@{key}]\n\n{summary}\n\n\n")
+            f.write(f"{heading_prefix} {title} [@{key}] {{#sec:{key}}}\n\n{summary}\n\n\n")
 
 
 if __name__ == "__main__":
