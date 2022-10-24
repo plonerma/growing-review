@@ -7,3 +7,9 @@ is added).
 
 
 ![Figure from @rusuProgressiveNeuralNetworks2016 illustrating the use of columns and adapters.](img/progressive_nn_columns){width=10cm}
+
+During inference (as well as during training), a task identifier is needed
+to select the column which matches the current task.
+By freezing the older parts of the networks during training, the performance on
+tasks learned in early training is guaranteed to remain stable, as the respective
+weights (and therefore the models function) cannot change.
