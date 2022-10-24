@@ -35,6 +35,7 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib d
 		--template=templates/template.html \
 		--bibliography=$(BILDIOGRAPHY)\
 		--shift-heading-level-by=1 \
+		--filter pandoc-xnos \
 		--citeproc \
 		--mathjax \
 		--default-image-extension=svg
@@ -43,6 +44,7 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib d
 build/main.tex: $(CONTENT) templates/template.tex dist
 	pandoc $(CONTENT) -o build/main.tex \
 		--template=templates/template.tex \
+		--filter pandoc-xnos \
 		--bibliography=$(BILDIOGRAPHY) \
 		--biblatex \
 		--default-image-extension=pdf

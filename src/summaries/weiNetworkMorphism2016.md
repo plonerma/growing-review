@@ -20,7 +20,7 @@ introduce parametric activation functions for new layers:
 A parameter $a$ interpolates between the identity function and the non-linear
 activation function. $a$ is initialized with one such that there is essentially
 no activation function. Over the course of future training, the parameter
-can be learned to make the activation function non-linear [for an example see
+can be learned to make the activation function non-linear [for an example see *@fig:ptanh or
 the parametric rectified activation units (PReLU), @heDelvingDeepRectifiers2015].
 
-![Illustration of an parametric tanh function: with $a=1$ the function is equal to the identity function, with $a=0$ it is equal to tanh.](img/parametric_tanh)
+![Illustration of an parametric tanh function: with $a=1$ the function is equal to the identity function, with $a=0$ it is equal to tanh.](img/parametric_tanh){#fig:ptanh}

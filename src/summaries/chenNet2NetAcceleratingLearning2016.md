@@ -10,14 +10,14 @@ The authors propose two operations two increase the student network's size:
 2. growing in depth: adding more hidden layers.
 
 Growth along the **width** dimension is achieved by randomly splitting the original
-neurons (*Net2WiderNet* operation). Input weights of new neurons are copied from existing
+neurons (*Net2WiderNet* operation, see *@fig:splitting_neuron). Input weights of new neurons are copied from existing
 and the output weight of existing neurons is equally distributed among all
 copies (the old neuron and all new copies).
 
 If no dropout is used, @chenNet2NetAcceleratingLearning2016 propose to add a small
 noise to the input weights to break the symmetry.
 
-![*Net2WiderNet*: Here a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts](img/splitting_neuron){width=10cm}
+![Illustration of *Net2WiderNet*. Here, a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts](img/splitting_neuron){#fig:splitting_neuron width=10cm}
 
 Growth along the depth dimension is achieved by adding new layers which are
 initialized with the identity function.

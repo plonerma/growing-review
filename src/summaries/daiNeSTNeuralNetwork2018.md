@@ -5,7 +5,7 @@ parameters than required.
 To combat these issues, they propose NeST, which trains
 weights as well as the architecture.
 
-![Illustration of the steps for synthesizing an architecture using NeST [figure from @daiNeSTNeuralNetwork2018].](img/nest){width=100%}
+![Illustration of the steps for synthesizing an architecture using NeST [figure from @daiNeSTNeuralNetwork2018].](img/nest){#fig:nest width=100%}
 
 NeST starts with an initial small network (a *seed architecture*). In a first
 phase, the network is grown by adding new connections based on their gradient

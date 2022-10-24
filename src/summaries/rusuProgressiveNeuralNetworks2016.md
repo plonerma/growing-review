@@ -6,7 +6,7 @@ Each time a new tasks is learned, the network is further extended (a new column
 is added).
 
 
-![Figure from @rusuProgressiveNeuralNetworks2016 illustrating the use of columns and adapters.](img/progressive_nn_columns){width=10cm}
+![Figure from @rusuProgressiveNeuralNetworks2016 illustrating the use of columns and adapters.](img/progressive_nn_columns){#fig:progressive_nn_columns width=10cm}
 
 During inference (as well as during training), a task identifier is needed
 to select the column which matches the current task.
