@@ -36,6 +36,7 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib d
 		--bibliography=$(BILDIOGRAPHY)\
 		--shift-heading-level-by=1 \
 		--citeproc \
+		--mathjax \
 		--default-image-extension=svg
 	mv build/index.html dist/index.html
 
