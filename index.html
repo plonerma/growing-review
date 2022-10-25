@@ -11,19 +11,9 @@
   <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
   <link rel="stylesheet" href="style.css">
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 
 <script src="https://kit.fontawesome.com/81529ac3d0.js" crossorigin="anonymous"></script>
 
@@ -61,8 +51,72 @@ of Intelligence</a></p>
 </header>
 
 
+<nav id="TOC">
+  <input id="toc-collapsible" class="toc-toggle" type="checkbox">
+  <label for="toc-collapsible" class="toc-toggle-label">Contents</label>
+  <div class="toc-content">
+    <div class="toc-content-inner">
+<ul>
+<li><a href="#sec:introduction"
+id="toc-sec:introduction">Introduction</a></li>
+<li><a href="#sec:summaries" id="toc-sec:summaries">Summaries of the
+Reviewed Publications</a>
+<ul>
+<li><a href="#sec:chenNet2NetAcceleratingLearning2016"
+id="toc-sec:chenNet2NetAcceleratingLearning2016">Net2Net: Accelerating
+Learning via Knowledge Transfer <span class="citation"
+data-cites="chenNet2NetAcceleratingLearning2016">(Chen, Goodfellow, and
+Shlens 2016)</span></a></li>
+<li><a href="#sec:weiNetworkMorphism2016"
+id="toc-sec:weiNetworkMorphism2016">Network Morphism <span
+class="citation" data-cites="weiNetworkMorphism2016">(Wei et al.
+2016)</span></a></li>
+<li><a href="#sec:rusuProgressiveNeuralNetworks2016"
+id="toc-sec:rusuProgressiveNeuralNetworks2016">Progressive Neural
+Networks <span class="citation"
+data-cites="rusuProgressiveNeuralNetworks2016">(Rusu et al.
+2016)</span></a></li>
+<li><a href="#sec:caiEfficientArchitectureSearch2017"
+id="toc-sec:caiEfficientArchitectureSearch2017">Efficient Architecture
+Search by Network Transformation <span class="citation"
+data-cites="caiEfficientArchitectureSearch2017">(Cai et al.
+2017)</span></a></li>
+<li><a href="#sec:daiNeSTNeuralNetwork2018"
+id="toc-sec:daiNeSTNeuralNetwork2018">NeST: A Neural Network Synthesis
+Tool Based on a Grow-and-Prune Paradigm <span class="citation"
+data-cites="daiNeSTNeuralNetwork2018">(Dai, Yin, and Jha
+2018)</span></a></li>
+<li><a href="#sec:caiPathLevelNetworkTransformation2018"
+id="toc-sec:caiPathLevelNetworkTransformation2018">Path-Level Network
+Transformation for Efficient Architecture Search <span class="citation"
+data-cites="caiPathLevelNetworkTransformation2018">(Cai et al.
+2018)</span></a></li>
+<li><a href="#sec:hungCompactingPickingGrowing2019"
+id="toc-sec:hungCompactingPickingGrowing2019">Compacting, Picking and
+Growing for Unforgetting Continual Learning <span class="citation"
+data-cites="hungCompactingPickingGrowing2019">(Hung et al.
+2019)</span></a></li>
+<li><a href="#sec:wuFirefly2021" id="toc-sec:wuFirefly2021">Firefly
+Neural Architecture Descent: A General Approach for Growing Neural
+Networks <span class="citation" data-cites="wuFirefly2021">(Wu et al.
+2020)</span></a></li>
+<li><a href="#sec:evciGradMaxGrowingNeural2022"
+id="toc-sec:evciGradMaxGrowingNeural2022">GradMax: Growing Neural
+Networks Using Gradient Information <span class="citation"
+data-cites="evciGradMaxGrowingNeural2022">(Evci et al.
+2022)</span></a></li>
+</ul></li>
+<li><a href="#sec:references"
+id="toc-sec:references">References</a></li>
+</ul>
+    </div>
+  </div>
+</div>
+</nav>
 
-<h2 id="introduction">Introduction</h2>
+
+
+<h2 id="sec:introduction">Introduction</h2>
 <p>This article aims to summarize the existing literature concerned with
 growing artificial neural networks. For each paper it will list the most
 significant contribution. The following four questions will guide the
@@ -76,11 +130,10 @@ the approach is evaluated on?</li>
 </ol>
 <p>Each paper tries to make progress in answering at least one of the
 questions. Hence, they can be used to categorize these papers.</p>
-<h2 id="reviewed-literature">Reviewed Literature</h2>
+<h2 id="sec:summaries">Summaries of the Reviewed Publications</h2>
 <p>The following sections give short summaries of each of the
 publications which we deemed relevant.</p>
-<h3
-id="net2net-accelerating-learning-via-knowledge-transfer-chennet2netacceleratinglearning2016"><a
+<h3 id="sec:chenNet2NetAcceleratingLearning2016"><a
 href="http://arxiv.org/abs/1511.05641">Net2Net: Accelerating Learning
 via Knowledge Transfer</a> <span class="citation"
 data-cites="chenNet2NetAcceleratingLearning2016">(<a
@@ -103,31 +156,34 @@ size:</p>
 </ol>
 <p>Growth along the <strong>width</strong> dimension is achieved by
 randomly splitting the original neurons (<em>Net2WiderNet</em>
-operation). Input weights of new neurons are copied from existing and
-the output weight of existing neurons is equally distributed among all
-copies (the old neuron and all new copies).</p>
+operation, see Figure <a href="#fig:splitting_neuron">1</a>). Input
+weights of new neurons are copied from existing and the output weight of
+existing neurons is equally distributed among all copies (the old neuron
+and all new copies).</p>
 <p>If no dropout is used, <span class="citation"
 data-cites="chenNet2NetAcceleratingLearning2016">Chen, Goodfellow, and
 Shlens (<a href="#ref-chenNet2NetAcceleratingLearning2016"
 role="doc-biblioref">2016</a>)</span> propose to add a small noise to
 the input weights to break the symmetry.</p>
+<div id="fig:splitting_neuron" class="fignos">
 <figure>
-<img src="img/splitting_neuron.svg" style="width:10cm"
-alt="Net2WiderNet: Here a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts" />
-<figcaption aria-hidden="true"><em>Net2WiderNet</em>: Here a single
-neuron is split in two parts. However, multiple neurons can be split in
-one operation and each neuron may be split in multiple
-parts</figcaption>
+<img src="img/splitting_neuron.svg" style="width:8cm"
+alt="Figure 1: Illustration of Net2WiderNet. Here, a single neuron is split in two parts. However, multiple neurons can be split in one operation and each neuron may be split in multiple parts" />
+<figcaption aria-hidden="true"><span>Figure 1:</span> Illustration of
+<em>Net2WiderNet</em>. Here, a single neuron is split in two parts.
+However, multiple neurons can be split in one operation and each neuron
+may be split in multiple parts</figcaption>
 </figure>
+</div>
 <p>Growth along the depth dimension is achieved by adding new layers
 which are initialized with the identity function. This requires
 idempotent activation functions: the activation function <span
-class="math inline"><em>ϕ</em></span> needs to chosen such that <span
-class="math inline"><em>ϕ</em>(<strong>I</strong><em>ϕ</em>(<strong>v</strong>))</span>
-for any vector <span class="math inline"><strong>v</strong></span>. For
-rectified linear units (ReLU) this is the case, for some the identity
-matrix may be replace with a different matrix, in some cases it may not
-be as easy to construct an identity layer.</p>
+class="math inline">\(\phi\)</span> needs to chosen such that <span
+class="math inline">\(\phi(\mathbf{I}\phi(\mathbf{v}))\)</span> for any
+vector <span class="math inline">\(\mathbf{v}\)</span>. For rectified
+linear units (ReLU) this is the case, for some the identity matrix may
+be replace with a different matrix, in some cases it may not be as easy
+to construct an identity layer.</p>
 <p>The experiments are conducted on an Inception network architecture
 <span class="citation"
 data-cites="szegedyGoingDeeperConvolutions2014">(<a
@@ -137,7 +193,7 @@ neural network (CNN). They show that rapid transfer of knowledge through
 the two types of network transformations is possible, allowing the
 faster exploration of model families contained in this architecture
 space.</p>
-<h3 id="network-morphism-weinetworkmorphism2016"><a
+<h3 id="sec:weiNetworkMorphism2016"><a
 href="http://arxiv.org/abs/1603.01670">Network Morphism</a> <span
 class="citation" data-cites="weiNetworkMorphism2016">(<a
 href="#ref-weiNetworkMorphism2016" role="doc-biblioref">Wei et al.
@@ -158,31 +214,38 @@ layer for growing in depth (which they refer to as “IdMorp”) may be
 sub-optimal as it is extremely sparse. Additionally, they reiterate the
 requirement of idempotent activation functions, which they deem
 insufficient.</p>
+<p>Through an iterative procedure, a convolutional layer is decomposed
+into two layers, retaining a large number of non-zero entries.</p>
+<p><span class="citation" data-cites="weiStableNetworkMorphism2019">Wei,
+Wang, and Chen (<a href="#ref-weiStableNetworkMorphism2019"
+role="doc-biblioref">2019</a>)</span> furhter improve the decomposition
+method in order to minimize the performance drop after transforming
+(growing) the network.</p>
 <p>Instead of relying on idempotent activation functions, <span
 class="citation" data-cites="weiNetworkMorphism2016">Wei et al. (<a
 href="#ref-weiNetworkMorphism2016" role="doc-biblioref">2016</a>)</span>
 introduce parametric activation functions for new layers: A parameter
-<span class="math inline"><em>a</em></span> interpolates between the
-identity function and the non-linear activation function. <span
-class="math inline"><em>a</em></span> is initialized with one such that
-there is essentially no activation function. Over the course of future
+<span class="math inline">\(a\)</span> interpolates between the identity
+function and the non-linear activation function. <span
+class="math inline">\(a\)</span> is initialized with one such that there
+is essentially no activation function. Over the course of future
 training, the parameter can be learned to make the activation function
-non-linear <span class="citation"
-data-cites="heDelvingDeepRectifiers2015">(for an example see the
-parametric rectified activation units (PReLU), <a
-href="#ref-heDelvingDeepRectifiers2015" role="doc-biblioref">He et al.
-2015</a>)</span>.</p>
+non-linear [for an example see Figure <a href="#fig:ptanh">2</a> or the
+parametric rectified activation units (PReLU), <span class="citation"
+data-cites="heDelvingDeepRectifiers2015">He et al. (<a
+href="#ref-heDelvingDeepRectifiers2015"
+role="doc-biblioref">2015</a>)</span>].</p>
+<div id="fig:ptanh" class="fignos">
 <figure>
 <img src="img/parametric_tanh.svg"
-alt="Illustration of an parametric tanh function: with a=1 the function is equal to the identity function, with a=0 it is equal to tanh." />
-<figcaption aria-hidden="true">Illustration of an parametric tanh
-function: with <span class="math inline"><em>a</em> = 1</span> the
-function is equal to the identity function, with <span
-class="math inline"><em>a</em> = 0</span> it is equal to
-tanh.</figcaption>
+alt="Figure 2: Illustration of an parametric tanh function: with a=1 the function is equal to the identity function, with a=0 it is equal to tanh." />
+<figcaption aria-hidden="true"><span>Figure 2:</span> Illustration of an
+parametric tanh function: with <span class="math inline">\(a=1\)</span>
+the function is equal to the identity function, with <span
+class="math inline">\(a=0\)</span> it is equal to tanh.</figcaption>
 </figure>
-<h3
-id="progressive-neural-networks-rusuprogressiveneuralnetworks2016"><a
+</div>
+<h3 id="sec:rusuProgressiveNeuralNetworks2016"><a
 href="http://arxiv.org/abs/1606.04671">Progressive Neural Networks</a>
 <span class="citation"
 data-cites="rusuProgressiveNeuralNetworks2016">(<a
@@ -197,50 +260,167 @@ networks when learning new tasks. The older parts of the networks are
 frozen and their function incoporated using adapters to allow for
 knowledge transfer from earlier tasks. Each time a new tasks is learned,
 the network is further extended (a new column is added).</p>
+<div id="fig:progressive_nn_columns" class="fignos">
 <figure>
 <img src="img/progressive_nn_columns.svg" style="width:10cm"
-alt="Figure from Rusu et al. (2016) illustrating the use of columns and adapters." />
-<figcaption aria-hidden="true">Figure from <span class="citation"
-data-cites="rusuProgressiveNeuralNetworks2016">Rusu et al. (<a
-href="#ref-rusuProgressiveNeuralNetworks2016"
+alt="Figure 3: Figure from Rusu et al. (2016) illustrating the use of columns and adapters." />
+<figcaption aria-hidden="true"><span>Figure 3:</span> Figure from <span
+class="citation" data-cites="rusuProgressiveNeuralNetworks2016">Rusu et
+al. (<a href="#ref-rusuProgressiveNeuralNetworks2016"
 role="doc-biblioref">2016</a>)</span> illustrating the use of columns
 and adapters.</figcaption>
 </figure>
-<h3
-id="nest-a-neural-network-synthesis-tool-based-on-a-grow-and-prune-paradigm-dainestneuralnetwork2018"><a
+</div>
+<p>During inference (as well as during training), a task identifier is
+needed to select the column which matches the current task. By freezing
+the older parts of the networks during training, the performance on
+tasks learned in early training is guaranteed to remain stable, as the
+respective weights (and therefore the models function) cannot
+change.</p>
+<h3 id="sec:caiEfficientArchitectureSearch2017"><a
+href="http://arxiv.org/abs/1707.04873">Efficient Architecture Search by
+Network Transformation</a> <span class="citation"
+data-cites="caiEfficientArchitectureSearch2017">(<a
+href="#ref-caiEfficientArchitectureSearch2017" role="doc-biblioref">Cai
+et al. 2017</a>)</span></h3>
+<h3 id="sec:daiNeSTNeuralNetwork2018"><a
 href="http://arxiv.org/abs/1711.02017">NeST: A Neural Network Synthesis
 Tool Based on a Grow-and-Prune Paradigm</a> <span class="citation"
 data-cites="daiNeSTNeuralNetwork2018">(<a
 href="#ref-daiNeSTNeuralNetwork2018" role="doc-biblioref">Dai, Yin, and
 Jha 2018</a>)</span></h3>
-<p><em>coming soon</em></p>
-<h3
-id="compacting-picking-and-growing-for-unforgetting-continual-learning-hungcompactingpickinggrowing2019"><a
+<p><span class="citation" data-cites="daiNeSTNeuralNetwork2018">Dai,
+Yin, and Jha (<a href="#ref-daiNeSTNeuralNetwork2018"
+role="doc-biblioref">2018</a>)</span> utilize growth with network
+architecture search (NAS) in mind. They note that trial-and-error
+approaches are inefficient as a process and can (as a product) lead to
+inefficient architectures which might far more parameters than required.
+To combat these issues, they propose NeST, which trains weights as well
+as the architecture.</p>
+<div id="fig:nest" class="fignos">
+<figure>
+<img src="img/nest.svg" style="width:100.0%"
+alt="Figure 4: Illustration of the steps for synthesizing an architecture using NeST (figure from Dai, Yin, and Jha 2018)." />
+<figcaption aria-hidden="true"><span>Figure 4:</span> Illustration of
+the steps for synthesizing an architecture using NeST <span
+class="citation" data-cites="daiNeSTNeuralNetwork2018">(figure from <a
+href="#ref-daiNeSTNeuralNetwork2018" role="doc-biblioref">Dai, Yin, and
+Jha 2018</a>)</span>.</figcaption>
+</figure>
+</div>
+<p>NeST starts with an initial small network (a <em>seed
+architecture</em>). In a first phase, the network is grown by adding new
+connections based on their gradient (assuming they already existed with
+an weight of 0), and growing new neurons in a layer <span
+class="math inline">\(l\)</span> in order to connect existing neurons
+<span class="math inline">\(n\)</span> and <span
+class="math inline">\(m\)</span> in layers <span
+class="math inline">\(l-1\)</span> and <span
+class="math inline">\(l+1\)</span> which if they were connected
+directly, exhibited a large gradient magnitude:</p>
+<p><span class="math display">\[
+G_{m,n} = \frac{\partial L}{\partial u_m^{l+1}} x_n^{l-1} \ge threshold
+\]</span></p>
+<p>Here, <span class="math inline">\(u_m^{l+1}\)</span> is the sum of
+incoming activiations of neuron <span class="math inline">\(m\)</span>
+in layer <span class="math inline">\(l+1\)</span> and <span
+class="math inline">\(x_n^{l-1}\)</span> is the activation of neuron
+<span class="math inline">\(n\)</span> in layer <span
+class="math inline">\(l+1\)</span>. The threshold is calculated using a
+growth proportion.</p>
+<p>In a second phase, weights are iteratively prruned. Between each
+pruning step, the network is retrained to recover its performance.</p>
+<h3 id="sec:caiPathLevelNetworkTransformation2018"><a
+href="https://proceedings.mlr.press/v80/cai18a.html">Path-Level Network
+Transformation for Efficient Architecture Search</a> <span
+class="citation" data-cites="caiPathLevelNetworkTransformation2018">(<a
+href="#ref-caiPathLevelNetworkTransformation2018"
+role="doc-biblioref">Cai et al. 2018</a>)</span></h3>
+<p>This publication offers an incremental extension to enable branched
+architectures using function-preserving transformations <span
+class="citation" data-cites="chenNet2NetAcceleratingLearning2016">(<a
+href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">Chen, Goodfellow, and Shlens 2016</a>)</span> and
+growing the model using a RL agent based meta-controller as in <span
+class="citation" data-cites="caiEfficientArchitectureSearch2017">Cai et
+al. (<a href="#ref-caiEfficientArchitectureSearch2017"
+role="doc-biblioref">2017</a>)</span>.</p>
+<p><span class="citation"
+data-cites="caiPathLevelNetworkTransformation2018">Cai et al. (<a
+href="#ref-caiPathLevelNetworkTransformation2018"
+role="doc-biblioref">2018</a>)</span> propose <em>path-level</em>
+transformations which allows the branching of neural networks (whereas
+<span class="citation"
+data-cites="chenNet2NetAcceleratingLearning2016">Chen, Goodfellow, and
+Shlens (<a href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">2016</a>)</span> initially proposed just growing
+deeper and wider). Instead of restricting the architecture space to
+sequences of layers, <span class="citation"
+data-cites="caiPathLevelNetworkTransformation2018">Cai et al. (<a
+href="#ref-caiPathLevelNetworkTransformation2018"
+role="doc-biblioref">2018</a>)</span> represent their network
+architecture as trees.</p>
+<div id="fig:path_level" class="fignos">
+<figure>
+<img src="img/path_level.svg" style="width:100.0%"
+alt="Figure 5: Illustration of a series of network transformations. The last part shows the tree-structure of the transformation. Figure from Cai et al. (2018). " />
+<figcaption aria-hidden="true"><span>Figure 5:</span> Illustration of a
+series of network transformations. The last part shows the
+tree-structure of the transformation. Figure from <span class="citation"
+data-cites="caiPathLevelNetworkTransformation2018">Cai et al. (<a
+href="#ref-caiPathLevelNetworkTransformation2018"
+role="doc-biblioref">2018</a>)</span>. </figcaption>
+</figure>
+</div>
+<p>Each <em>path-level</em> transformation follows either an
+<em>add</em> or a <em>concatenation</em> merge scheme. In the
+<em>add</em> scheme, a layer is replaced by two copies and each of their
+outputs is multiplied by 0.5. This is similar to splitting a neuron,
+except on a layer level. Transformation (a) in Figure <a
+href="#fig:path_level">5</a> shows such a transformation.</p>
+<p>In the <em>concatenation</em> scheme (step (b) in Figure <a
+href="#fig:path_level">5</a>), the outputs dimensions (in a fully
+connected layer: neuron outputs, in a convolutional layer: output
+channels, etc.) are split among the different branches and the output of
+each branch is later concatenated. This introduces branches while
+preserving the function and each branch is unique.</p>
+<p>These two schemes do not introduce a significant change to the
+network. However, in combination with the existing operations <span
+class="citation" data-cites="chenNet2NetAcceleratingLearning2016">(in <a
+href="#ref-chenNet2NetAcceleratingLearning2016"
+role="doc-biblioref">Chen, Goodfellow, and Shlens 2016</a>)</span>, this
+can lead to a variety of branched architectures.</p>
+<h3 id="sec:hungCompactingPickingGrowing2019"><a
 href="http://arxiv.org/abs/1910.06562">Compacting, Picking and Growing
 for Unforgetting Continual Learning</a> <span class="citation"
 data-cites="hungCompactingPickingGrowing2019">(<a
 href="#ref-hungCompactingPickingGrowing2019" role="doc-biblioref">Hung
 et al. 2019</a>)</span></h3>
-<p><img src="img/compacting_picking_growing.svg"
-style="width:100.0%" /></p>
-<h3
-id="firefly-neural-architecture-descent-a-general-approach-for-growing-neural-networks-wufirefly2021"><a
+<div id="fig:compacting_picking_growing" class="fignos">
+<figure>
+<img src="img/compacting_picking_growing.svg" style="width:100.0%"
+alt="Figure 6: " />
+<figcaption aria-hidden="true"><span>Figure 6:</span> </figcaption>
+</figure>
+</div>
+<h3 id="sec:wuFirefly2021"><a
 href="https://proceedings.neurips.cc/paper/2020/file/fdbe012e2e11314b96402b32c0df26b7-Paper.pdf">Firefly
 Neural Architecture Descent: A General Approach for Growing Neural
 Networks</a> <span class="citation" data-cites="wuFirefly2021">(<a
 href="#ref-wuFirefly2021" role="doc-biblioref">Wu et al.
 2020</a>)</span></h3>
 <p><em>coming soon</em></p>
+<div id="fig:firefly_new_neurons" class="fignos">
 <figure>
 <img src="img/firefly_new_neurons.svg" style="width:100.0%"
-alt="Figure from Wu et al. (2020) illustrating how new neurons can be added." />
-<figcaption aria-hidden="true">Figure from <span class="citation"
-data-cites="wuFirefly2021">Wu et al. (<a href="#ref-wuFirefly2021"
-role="doc-biblioref">2020</a>)</span> illustrating how new neurons can
-be added.</figcaption>
+alt="Figure 7: Figure from Wu et al. (2020) illustrating how new neurons can be added." />
+<figcaption aria-hidden="true"><span>Figure 7:</span> Figure from <span
+class="citation" data-cites="wuFirefly2021">Wu et al. (<a
+href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span>
+illustrating how new neurons can be added.</figcaption>
 </figure>
-<h3
-id="gradmax-growing-neural-networks-using-gradient-information-evcigradmaxgrowingneural2022"><a
+</div>
+<h3 id="sec:evciGradMaxGrowingNeural2022"><a
 href="http://arxiv.org/abs/2201.05125">GradMax: Growing Neural Networks
 Using Gradient Information</a> <span class="citation"
 data-cites="evciGradMaxGrowingNeural2022">(<a
@@ -253,12 +433,12 @@ function. By enforcing large gradient norms of the new weights, the
 objective function is guaranteed to decrease in the next step of
 gradient descent.</p>
 <p>When using a step size of <span
-class="math inline">$\frac{1}{\beta}$</span> on a function with a <span
-class="math inline"><em>β</em></span>-Lipschitz gradient, the loss is
-upperbounded by:</p>
-<p><span class="math display">$$
+class="math inline">\(\frac{1}{\beta}\)</span> on a function with a
+<span class="math inline">\(\beta\)</span>-Lipschitz gradient, the loss
+is upperbounded by:</p>
+<p><span class="math display">\[
 L(W_{new}) \le L(W) - \frac{\beta}{2} \| \nabla L (W) \|^2
-$$</span></p>
+\]</span></p>
 <p>While a constant Lipschitz constant generally does not necessarily
 exist in neural networks the authors use this as a motivation to assume
 that large gradient norms will lead to large decreases in the loss
@@ -278,11 +458,28 @@ class="citation" data-cites="wuFirefly2021">Wu et al. (<a
 href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span> which
 use a very similar technique to choose <strong>where</strong> to grow
 neurons (but use a different initialization strategy).</p>
-<h2 class="unnumbered" id="references">References</h2>
+<h2 class="unnumbered" id="sec:references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent"
-role="list">
+role="doc-bibliography">
+<div id="ref-caiEfficientArchitectureSearch2017" class="csl-entry"
+role="doc-biblioentry">
+Cai, Han, Tianyao Chen, Weinan Zhang, Yong Yu, and Jun Wang. 2017.
+<span>“Efficient <span>Architecture Search</span> by <span>Network
+Transformation</span>.”</span> <em>arXiv:1707.04873 [Cs]</em>, November.
+<a
+href="http://arxiv.org/abs/1707.04873">http://arxiv.org/abs/1707.04873</a>.
+</div>
+<div id="ref-caiPathLevelNetworkTransformation2018" class="csl-entry"
+role="doc-biblioentry">
+Cai, Han, Jiacheng Yang, Weinan Zhang, Song Han, and Yong Yu. 2018.
+<span>“Path-<span>Level Network Transformation</span> for
+<span>Efficient Architecture Search</span>.”</span> In <em>Proceedings
+of the 35th <span>International Conference</span> on <span>Machine
+Learning</span></em>, 678–87. <span>PMLR</span>. <a
+href="https://proceedings.mlr.press/v80/cai18a.html">https://proceedings.mlr.press/v80/cai18a.html</a>.
+</div>
 <div id="ref-chenNet2NetAcceleratingLearning2016" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 Chen, Tianqi, Ian Goodfellow, and Jonathon Shlens. 2016.
 <span>“<span>Net2Net</span>: <span>Accelerating Learning</span> via
 <span>Knowledge Transfer</span>.”</span> <em>arXiv:1511.05641 [Cs]</em>,
@@ -290,7 +487,7 @@ April. <a
 href="http://arxiv.org/abs/1511.05641">http://arxiv.org/abs/1511.05641</a>.
 </div>
 <div id="ref-daiNeSTNeuralNetwork2018" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 Dai, Xiaoliang, Hongxu Yin, and Niraj K. Jha. 2018.
 <span>“<span>NeST</span>: <span>A Neural Network Synthesis Tool
 Based</span> on a <span class="nocase">Grow-and-Prune
@@ -298,7 +495,7 @@ Paradigm</span>,”</span> no. arXiv:1711.02017 (June). <a
 href="https://doi.org/10.48550/arXiv.1711.02017">https://doi.org/10.48550/arXiv.1711.02017</a>.
 </div>
 <div id="ref-evciGradMaxGrowingNeural2022" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 Evci, Utku, Bart van Merriënboer, Thomas Unterthiner, Max Vladymyrov,
 and Fabian Pedregosa. 2022. <span>“<span>GradMax</span>: <span>Growing
 Neural Networks</span> Using <span>Gradient Information</span>.”</span>
@@ -306,7 +503,7 @@ Neural Networks</span> Using <span>Gradient Information</span>.”</span>
 href="https://doi.org/10.48550/arXiv.2201.05125">https://doi.org/10.48550/arXiv.2201.05125</a>.
 </div>
 <div id="ref-heDelvingDeepRectifiers2015" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2015.
 <span>“Delving <span>Deep</span> into <span>Rectifiers</span>:
 <span>Surpassing Human-Level Performance</span> on <span>ImageNet
@@ -317,7 +514,7 @@ Conference</span> on <span>Computer Vision</span>
 href="https://doi.org/10.1109/ICCV.2015.123">https://doi.org/10.1109/ICCV.2015.123</a>.
 </div>
 <div id="ref-hungCompactingPickingGrowing2019" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 Hung, Steven C. Y., Cheng-Hao Tu, Cheng-En Wu, Chien-Hung Chen, Yi-Ming
 Chan, and Chu-Song Chen. 2019. <span>“Compacting, <span>Picking</span>
 and <span>Growing</span> for <span>Unforgetting Continual
@@ -326,7 +523,7 @@ Learning</span>.”</span> <em>arXiv:1910.06562 [Cs, Stat]</em>, October.
 href="http://arxiv.org/abs/1910.06562">http://arxiv.org/abs/1910.06562</a>.
 </div>
 <div id="ref-rusuProgressiveNeuralNetworks2016" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 Rusu, Andrei A., Neil C. Rabinowitz, Guillaume Desjardins, Hubert Soyer,
 James Kirkpatrick, Koray Kavukcuoglu, Razvan Pascanu, and Raia Hadsell.
 2016. <span>“Progressive <span>Neural Networks</span>.”</span>
@@ -334,20 +531,29 @@ James Kirkpatrick, Koray Kavukcuoglu, Razvan Pascanu, and Raia Hadsell.
 href="http://arxiv.org/abs/1606.04671">http://arxiv.org/abs/1606.04671</a>.
 </div>
 <div id="ref-szegedyGoingDeeperConvolutions2014" class="csl-entry"
-role="listitem">
+role="doc-biblioentry">
 Szegedy, Christian, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed,
 Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew
 Rabinovich. 2014. <span>“Going <span>Deeper</span> with
 <span>Convolutions</span>.”</span> <span>arXiv</span>. <a
 href="https://doi.org/10.48550/arXiv.1409.4842">https://doi.org/10.48550/arXiv.1409.4842</a>.
 </div>
-<div id="ref-weiNetworkMorphism2016" class="csl-entry" role="listitem">
+<div id="ref-weiStableNetworkMorphism2019" class="csl-entry"
+role="doc-biblioentry">
+Wei, Tao, Changhu Wang, and Chang Wen Chen. 2019. <span>“Stable
+<span>Network Morphism</span>.”</span> In <em>2019 <span>International
+Joint Conference</span> on <span>Neural Networks</span>
+(<span>IJCNN</span>)</em>, 1–8. <a
+href="https://doi.org/10.1109/IJCNN.2019.8851955">https://doi.org/10.1109/IJCNN.2019.8851955</a>.
+</div>
+<div id="ref-weiNetworkMorphism2016" class="csl-entry"
+role="doc-biblioentry">
 Wei, Tao, Changhu Wang, Yong Rui, and Chang Wen Chen. 2016.
 <span>“Network <span>Morphism</span>.”</span> <em>arXiv:1603.01670
 [Cs]</em>, March. <a
 href="http://arxiv.org/abs/1603.01670">http://arxiv.org/abs/1603.01670</a>.
 </div>
-<div id="ref-wuFirefly2021" class="csl-entry" role="listitem">
+<div id="ref-wuFirefly2021" class="csl-entry" role="doc-biblioentry">
 Wu, Lemeng, Bo Liu, Peter Stone, and Qiang Liu. 2020. <span>“Firefly
 Neural Architecture Descent: A General Approach for Growing Neural
 Networks.”</span> In <em>Advances in Neural Information Processing
