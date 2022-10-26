@@ -62,9 +62,3 @@ The following four questions will guide the summary of each paper:
 
 Each paper tries to make progress in answering at least one of the questions.
 Hence, they can be used to categorize these papers.
-
-
-# Summaries of the Reviewed Publications {#sec:summaries}
-
-The following sections give short summaries of each of the publications which we
-deemed relevant.

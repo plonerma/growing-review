@@ -1,6 +1,6 @@
-CONTENT = src/intro.md build/compiled.md src/outro.md
-CONTENT_LINKED = src/intro.md build/compiled_linked.md src/outro.md
-BILDIOGRAPHY = src/articles.bib
+CONTENT = src/intro.md src/summaries_intro.md build/summaries.md src/outro.md
+CONTENT_LINKED = src/intro.md src/summaries_intro.md build/summaries_linked.md src/outro.md
+BILBIOGRAPHY = src/articles.bib
 SUMMARIES = src/summaries/*
 
 .PHONY: all
@@ -12,28 +12,24 @@ pdf: dist/growing_review.pdf
 .PHONY: html
 html: dist/index.html
 
-build/compiled_linked.md: $(SUMMARIES) $(BILDIOGRAPHY)
-	python3 scripts/compile_articles.py build/compiled_linked.md --link_titles
-
-build/compiled.md: $(SUMMARIES) $(BILDIOGRAPHY)
-	python3 scripts/compile_articles.py build/compiled.md
-
-dist:
+.PHONY: static_files
+static_files: src/static/*
 	mkdir -p dist
-
-.PHONY: static
-static: src/static/* dist
 	cp -r src/static/* dist/
 	cp -r src/static/* build/
+	cp $(BILBIOGRAPHY) dist/references.bib
 
-dist/references.bib: dist
-	cp $(BILDIOGRAPHY) dist/references.bib
+build/summaries.md: $(SUMMARIES) $(BILBIOGRAPHY)
+	python3 scripts/compile_summaries.py $@
 
+build/summaries_linked.md: $(SUMMARIES) $(BILBIOGRAPHY)
+	python3 scripts/compile_summaries.py $@ --link_titles
 
-dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib dist static
+dist/index.html: $(CONTENT_LINKED) templates/template.html static_files
+	mkdir -p dist
 	pandoc $(CONTENT_LINKED) -o build/index.html \
 		--template=templates/template.html \
-		--bibliography=$(BILDIOGRAPHY)\
+		--bibliography=$(BILBIOGRAPHY)\
 		--shift-heading-level-by=1 \
 		--filter pandoc-xnos \
 		--citeproc \
@@ -42,20 +38,22 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html dist/references.bib d
 		--default-image-extension=svg
 	mv build/index.html dist/index.html
 
-build/main.tex: $(CONTENT) templates/template.tex dist
+build/main.tex: $(CONTENT) templates/template.tex static_files
+	mkdir -p dist
 	pandoc $(CONTENT) -o build/main.tex \
 		--template=templates/template.tex \
 		--filter pandoc-xnos \
-		--bibliography=$(BILDIOGRAPHY) \
+		--bibliography=$(BILBIOGRAPHY) \
 		--biblatex \
 		--default-image-extension=pdf
 
-dist/growing_review.pdf: build/main.tex dist static
+dist/growing_review.pdf: build/main.tex static_files
+	mkdir -p dist
 	cd build && pdflatex -output-directory=. -halt-on-error ./main.tex
 	biber build/main
 	cd build && pdflatex -output-directory=. -halt-on-error ./main.tex
 	cd build && pdflatex -output-directory=. -halt-on-error ./main.tex
-	cp build/main.pdf dist/growing_review.pdf
+	cp build/main.pdf $@
 
 .PHONY: clean
 clean:
@@ -63,5 +61,6 @@ clean:
 	rm -rf dist
 
 .PHONY: dev
-dev: html dist
+dev: html
+	mkdir -p dist
 	python3 -m http.server -d dist
