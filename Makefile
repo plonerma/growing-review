@@ -33,7 +33,6 @@ dist/index.html: $(CONTENT_LINKED) templates/template.html static_files
 	pandoc $(CONTENT_LINKED) -o build/index.html \
 		--template=templates/template.html \
 		--bibliography=$(BILBIOGRAPHY)\
-		--shift-heading-level-by=1 \
 		--filter pandoc-xnos \
 		--citeproc \
 		--mathjax \

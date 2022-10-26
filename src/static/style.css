@@ -7,7 +7,31 @@ h1.title {
   margin-top: 1em;
 
   line-height: 1.25;
+
+  font-size: 2.25rem;
 }
+
+
+h1 {
+	font-size: 1.85rem;
+}
+
+h2 {
+	font-size: 1.55rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5, h6 {
+	font-size: .875rem;
+}
+
 
 .author-container {
   display: inline-block;
