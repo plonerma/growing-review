@@ -7,7 +7,31 @@ h1.title {
   margin-top: 1em;
 
   line-height: 1.25;
+
+  font-size: 2.25rem;
 }
+
+
+h1 {
+	font-size: 1.85rem;
+}
+
+h2 {
+	font-size: 1.55rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5, h6 {
+	font-size: .875rem;
+}
+
 
 .author-container {
   display: inline-block;
@@ -153,4 +177,39 @@ figcaption {
 
 .toc-toggle:checked + .toc-toggle-label + .toc-content {
   max-height: 100vh;
+}
+
+
+th.sort-asc::after, th.sort-desc::after {
+  content: ' ';
+  display: inline-block;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid currentColor;
+  vertical-align: middle;
+  margin-left: .7rem;
+  transform: translateY(-2px);
+  transition: transform .2s ease-out;
+}
+
+th.sort-desc::after {
+  transform: rotate(180deg);
+}
+
+
+
+th:not(.sort-asc):not(.sort-desc):hover::after {
+  content: ' ';
+  display: inline-block;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid lightgray;
+  vertical-align: middle;
+  margin-left: .7rem;
+  transform: translateY(-2px);
+  transition: transform .2s ease-out;
+}
+
+.paper-categories {
+  font-size: .8em;
 }

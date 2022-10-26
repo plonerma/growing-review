@@ -1,3 +1,33 @@
+@misc{aghiliDepthAdaptiveNeuralNetworks2020,
+  title = {Depth-{{Adaptive Neural Networks}} from the {{Optimal Control}} Viewpoint},
+  author = {Aghili, Joubine and Mula, Olga},
+  year = {2020},
+  month = jul,
+  number = {arXiv:2007.02428},
+  eprint = {2007.02428},
+  eprinttype = {arxiv},
+  primaryclass = {cs, math},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2007.02428},
+  urldate = {2022-10-25},
+  abstract = {In recent years, deep learning has been connected with optimal control as a way to define a notion of a continuous underlying learning problem. In this view, neural networks can be interpreted as a discretization of a parametric Ordinary Differential Equation which, in the limit, defines a continuous-depth neural network. The learning task then consists in finding the best ODE parameters for the problem under consideration, and their number increases with the accuracy of the time discretization. Although important steps have been taken to realize the advantages of such continuous formulations, most current learning techniques fix a discretization (i.e. the number of layers is fixed). In this work, we propose an iterative adaptive algorithm where we progressively refine the time discretization (i.e. we increase the number of layers). Provided that certain tolerances are met across the iterations, we prove that the strategy converges to the underlying continuous problem. One salient advantage of such a shallow-to-deep approach is that it helps to benefit in practice from the higher approximation properties of deep networks by mitigating over-parametrization issues. The performance of the approach is illustrated in several numerical examples.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Mathematics - Numerical Analysis,Mathematics - Optimization and Control}
+}
+
+@phdthesis{bersethScalableDeepReinforcement2019,
+  title = {Scalable Deep Reinforcement Learning for Physics-Based Motion Control},
+  author = {Berseth, Glen},
+  year = {2019},
+  doi = {10.14288/1.0378079},
+  url = {https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0378079},
+  urldate = {2022-10-25},
+  abstract = {This thesis studies the broad problem of learning robust control policies for difficult physics-based motion control tasks such as locomotion and navigation. A number of avenues are explored to assist in learning such control. In particular, are there underlying structures in the},
+  langid = {english},
+  school = {University of British Columbia}
+}
+
 @article{boineeAutomaticClassificationUsing2003,
   title = {Automatic {{Classification}} Using {{Self-Organising Neural Networks}} in {{Astrophysical Experiments}}},
   author = {Boinee, P. and De Angelis, A. and Milotti, E.},
@@ -61,6 +91,24 @@
   langid = {english}
 }
 
+@misc{chenElasticLotteryTicket2021,
+  title = {The {{Elastic Lottery Ticket Hypothesis}}},
+  author = {Chen, Xiaohan and Cheng, Yu and Wang, Shuohang and Gan, Zhe and Liu, Jingjing and Wang, Zhangyang},
+  year = {2021},
+  month = oct,
+  number = {arXiv:2103.16547},
+  eprint = {2103.16547},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2103.16547},
+  urldate = {2022-10-25},
+  abstract = {Lottery Ticket Hypothesis (LTH) raises keen attention to identifying sparse trainable subnetworks, or winning tickets, which can be trained in isolation to achieve similar or even better performance compared to the full models. Despite many efforts being made, the most effective method to identify such winning tickets is still Iterative Magnitude-based Pruning (IMP), which is computationally expensive and has to be run thoroughly for every different network. A natural question that comes in is: can we ``transform'' the winning ticket found in one network to another with a different architecture, yielding a winning ticket for the latter at the beginning, without re-doing the expensive IMP? Answering this question is not only practically relevant for efficient ``once-for-all'' winning ticket finding, but also theoretically appealing for uncovering inherently scalable sparse patterns in networks. We conduct extensive experiments on CIFAR-10 and ImageNet, and propose a variety of strategies to tweak the winning tickets found from different networks of the same model family (e.g., ResNets). Based on these results, we articulate the Elastic Lottery Ticket Hypothesis (E-LTH): by mindfully replicating (or dropping) and re-ordering layers for one network, its corresponding winning ticket could be stretched (or squeezed) into a subnetwork for another deeper (or shallower) network from the same family, whose performance is nearly the same competitive as the latter's winning ticket directly found by IMP. We have also extensively compared E-LTH with pruning-at-initialization and dynamic sparse training methods, as well as discussed the generalizability of E-LTH to different model families, layer types, and across datasets. Code is available at https://github.com/VITA-Group/ElasticLTH.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
 @article{chenNet2NetAcceleratingLearning2016,
   title = {{{Net2Net}}: {{Accelerating Learning}} via {{Knowledge Transfer}}},
   shorttitle = {{{Net2Net}}},
@@ -78,6 +126,56 @@
   keywords = {Computer Science - Machine Learning}
 }
 
+@misc{chenReinforcedEvolutionaryNeural2019,
+  title = {Reinforced {{Evolutionary Neural Architecture Search}}},
+  author = {Chen, Yukang and Meng, Gaofeng and Zhang, Qian and Xiang, Shiming and Huang, Chang and Mu, Lisen and Wang, Xinggang},
+  year = {2019},
+  month = apr,
+  number = {arXiv:1808.00193},
+  eprint = {1808.00193},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1808.00193},
+  urldate = {2022-10-25},
+  abstract = {Neural Architecture Search (NAS) is an important yet challenging task in network design due to its high computational consumption. To address this issue, we propose the Reinforced Evolutionary Neural Architecture Search (RENAS), which is an evolutionary method with reinforced mutation for NAS. Our method integrates reinforced mutation into an evolution algorithm for neural architecture exploration, in which a mutation controller is introduced to learn the effects of slight modifications and make mutation actions. The reinforced mutation controller guides the model population to evolve efficiently. Furthermore, as child models can inherit parameters from their parents during evolution, our method requires very limited computational resources. In experiments, we conduct the proposed search method on CIFAR-10 and obtain a powerful network architecture, RENASNet. This architecture achieves a competitive result on CIFAR-10. The explored network architecture is transferable to ImageNet and achieves a new state-of-the-art accuracy, i.e., 75.7\% top-1 accuracy with 5.36M parameters on mobile ImageNet. We further test its performance on semantic segmentation with DeepLabv3 on the PASCAL VOC. RENASNet outperforms MobileNetv1, MobileNet-v2 and NASNet. It achieves 75.83\% mIOU without being pretrained on COCO. The code for training and evaluating ImageNet models is available at https: //github.com/yukang2017/RENAS.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@misc{chuNoisyDifferentiableArchitecture2021,
+  title = {Noisy {{Differentiable Architecture Search}}},
+  author = {Chu, Xiangxiang and Zhang, Bo},
+  year = {2021},
+  month = oct,
+  number = {arXiv:2005.03566},
+  eprint = {2005.03566},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2005.03566},
+  urldate = {2022-10-25},
+  abstract = {Simplicity is the ultimate sophistication. Differentiable Architecture Search (DARTS) has now become one of the mainstream paradigms of neural architecture search. However, it largely suffers from the well-known performance collapse issue due to the aggregation of skip connections. It is thought to have overly benefited from the residual structure which accelerates the information flow. To weaken this impact, we propose to inject unbiased random noise to impede the flow. We name this novel approach NoisyDARTS. In effect, a network optimizer should perceive this difficulty at each training step and refrain from overshooting, especially on skip connections. In the long run, since we add no bias to the gradient in terms of expectation, it is still likely to converge to the right solution area. We also prove that the injected noise plays a role in smoothing the loss landscape, which makes the optimization easier. Our method features extreme simplicity and acts as a new strong baseline. We perform extensive experiments across various search spaces, datasets, and tasks, where we robustly achieve state-of-the-art results. Our code is available1.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@inproceedings{chuSCARLETNASBridgingGap2021,
+  title = {{{SCARLET-NAS}}: {{Bridging}} the {{Gap}} between {{Stability}} and {{Scalability}} in {{Weight-sharing Neural Architecture Search}}},
+  shorttitle = {{{SCARLET-NAS}}},
+  booktitle = {2021 {{IEEE}}/{{CVF International Conference}} on {{Computer Vision Workshops}} ({{ICCVW}})},
+  author = {Chu, Xiangxiang and Zhang, Bo and Li, Qingyuan and Xu, Ruijun and Li, Xudong},
+  year = {2021},
+  month = oct,
+  pages = {317--325},
+  issn = {2473-9944},
+  doi = {10.1109/ICCVW54120.2021.00040},
+  abstract = {To discover powerful yet compact models is an important goal of neural architecture search. Previous two-stage one-shot approaches are limited by search space with a fixed depth. It seems handy to include an additional skip connection in the search space to make depths variable. However, it creates a large range of perturbation during super-net training and it has difficulty giving a confident ranking for subnetworks. In this paper, we discover that skip connections bring about significant feature inconsistency compared with other operations, which potentially degrades the supernet performance. Based on this observation, we tackle the problem by imposing an equivariant learnable stabilizer to homogenize such disparities (see Fig. 1). Experiments show that our proposed stabilizer helps to improve the supernet's convergence as well as ranking performance. With an evolutionary search backend that incorporates the stabilized supernet as an evaluator, we derive a family of state-of-the-art architectures, the SCARLET1 series of several depths, especially SCARLET-A obtains 76.9\% top-1 accuracy on ImageNet.},
+  keywords = {Computer architecture,Computer vision,Conferences,Perturbation methods,Scalability,Stability analysis,Training}
+}
+
 @article{daiIncrementalLearningUsing2019,
   title = {Incremental {{Learning Using}} a {{Grow-and-Prune Paradigm}} with {{Efficient Neural Networks}}},
   author = {Dai, Xiaoliang and Yin, Hongxu and Jha, Niraj K.},
@@ -92,6 +190,24 @@
   abstract = {Deep neural networks (DNNs) have become a widely deployed model for numerous machine learning applications. However, their fixed architecture, substantial training cost, and significant model redundancy make it difficult to efficiently update them to accommodate previously unseen data. To solve these problems, we propose an incremental learning framework based on a grow-and-prune neural network synthesis paradigm. When new data arrive, the neural network first grows new connections based on the gradients to increase the network capacity to accommodate new data. Then, the framework iteratively prunes away connections based on the magnitude of weights to enhance network compactness, and hence recover efficiency. Finally, the model rests at a lightweight DNN that is both ready for inference and suitable for future grow-and-prune updates. The proposed framework improves accuracy, shrinks network size, and significantly reduces the additional training cost for incoming data compared to conventional approaches, such as training from scratch and network fine-tuning. For the LeNet-300-100 and LeNet-5 neural network architectures derived for the MNIST dataset, the framework reduces training cost by up to 64\% (63\%) and 67\% (63\%) compared to training from scratch (network fine-tuning), respectively. For the ResNet-18 architecture derived for the ImageNet dataset and DeepSpeech2 for the AN4 dataset, the corresponding training cost reductions against training from scratch (network fine-tunning) are 64\% (60\%) and 67\% (62\%), respectively. Our derived models contain fewer network parameters but achieve higher accuracy relative to conventional baselines.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@misc{daiMetabolizeNeuralNetwork2018,
+  title = {Metabolize {{Neural Network}}},
+  author = {Dai, Dan and Yu, Zhiwen and Hu, Yang and Cao, Wenming and Luo, Mingnan},
+  year = {2018},
+  month = sep,
+  number = {arXiv:1809.00837},
+  eprint = {1809.00837},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1809.00837},
+  urldate = {2022-10-25},
+  abstract = {The metabolism of cells is the most basic and important part of human function. Neural networks in deep learning stem from neuronal activity. It is self-evident that the significance of metabolize neuronal network(MetaNet) in model construction. In this study, we explore neuronal metabolism for shallow network from proliferation and autophagy two aspects. First, we propose different neuron proliferate methods that constructive the selfgrowing network in metabolism cycle. Proliferate neurons alleviate resources wasting and insufficient model learning problem when network initializes more or less parameters. Then combined with autophagy mechanism in the process of model self construction to ablate underexpressed neurons. The MetaNet can automatically determine the number of neurons during training, further, save more resource consumption. We verify the performance of the proposed methods on datasets: MNIST, Fashion-MNIST and CIFAR-10.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Neural and Evolutionary Computing}
 }
 
 @article{daiNeSTNeuralNetwork2018,
@@ -130,6 +246,60 @@
   keywords = {Computer Science - Computer Vision and Pattern Recognition}
 }
 
+@article{dongNASBENCH201EXTENDINGSCOPE2020,
+  title = {{{NAS-BENCH-201}}: {{EXTENDING THE SCOPE OF RE- PRODUCIBLE NEURAL ARCHITECTURE SEARCH}}},
+  author = {Dong, Xuanyi and Yang, Yi},
+  year = {2020},
+  pages = {16},
+  abstract = {Neural architecture search (NAS) has achieved breakthrough success in a great number of applications in the past few years. It could be time to take a step back and analyze the good and bad aspects in the field of NAS. A variety of algorithms search architectures under different search space. These searched architectures are trained using different setups, e.g., hyper-parameters, data augmentation, regularization. This raises a comparability problem when comparing the performance of various NAS algorithms. NAS-Bench-101 has shown success to alleviate this problem. In this work, we propose an extension to NAS-Bench-101: NAS-Bench201 with a different search space, results on multiple datasets, and more diagnostic information. NAS-Bench-201 has a fixed search space and provides a unified benchmark for almost any up-to-date NAS algorithms. The design of our search space is inspired from the one used in the most popular cell-based searching algorithms, where a cell is represented as a directed acyclic graph. Each edge here is associated with an operation selected from a predefined operation set. For it to be applicable for all NAS algorithms, the search space defined in NAS-Bench-201 includes all possible architectures generated by 4 nodes and 5 associated operation options, which results in 15,625 neural cell candidates in total. The training log using the same setup and the performance for each architecture candidate are provided for three datasets. This allows researchers to avoid unnecessary repetitive training for selected architecture and focus solely on the search algorithm itself. The training time saved for every architecture also largely improves the efficiency of most NAS algorithms and brings a more computational cost friendly NAS community for a broader range of researchers. We provide additional diagnostic information such as fine-grained loss and accuracy, which can give inspirations to new designs of NAS algorithms. In further support of the proposed NAS-Bench201, we have analyzed it from many aspects and benchmarked 10 recent NAS algorithms, which verify its applicability.},
+  langid = {english}
+}
+
+@misc{dongNetworkPruningTransformable2019,
+  title = {Network {{Pruning}} via {{Transformable Architecture Search}}},
+  author = {Dong, Xuanyi and Yang, Yi},
+  year = {2019},
+  month = oct,
+  number = {arXiv:1905.09717},
+  eprint = {1905.09717},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1905.09717},
+  urldate = {2022-10-25},
+  abstract = {Network pruning reduces the computation costs of an over-parameterized network without performance damage. Prevailing pruning algorithms pre-define the width and depth of the pruned networks, and then transfer parameters from the unpruned network to pruned networks. To break the structure limitation of the pruned networks, we propose to apply neural architecture search to search directly for a network with flexible channel and layer sizes. The number of the channels/layers is learned by minimizing the loss of the pruned networks. The feature map of the pruned network is an aggregation of K feature map fragments (generated by K networks of different sizes), which are sampled based on the probability distribution. The loss can be back-propagated not only to the network weights, but also to the parameterized distribution to explicitly tune the size of the channels/layers. Specifically, we apply channel-wise interpolation to keep the feature map with different channel sizes aligned in the aggregation procedure. The maximum probability for the size in each distribution serves as the width and depth of the pruned network, whose parameters are learned by knowledge transfer, e.g., knowledge distillation, from the original networks. Experiments on CIFAR-10, CIFAR-100 and ImageNet demonstrate the effectiveness of our new perspective of network pruning compared to traditional network pruning algorithms. Various searching and knowledge transfer approaches are conducted to show the effectiveness of the two components. Code is at: https://github.com/D-X-Y/NAS-Projects.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
+}
+
+@article{elskenNeuralArchitectureSearch2019,
+  title = {Neural {{Architecture Search}}: {{A Survey}}},
+  shorttitle = {Neural {{Architecture Search}}},
+  author = {Elsken, T. and Metzen, J. H. and Hutter, F.},
+  year = {2019},
+  journal = {J. Mach. Learn. Res.},
+  abstract = {An overview of existing work in this field of research is provided and neural architecture search methods are categorized according to three dimensions: search space, search strategy, and performance estimation strategy. Deep Learning has enabled remarkable progress over the last years on a variety of tasks, such as image recognition, speech recognition, and machine translation. One crucial aspect for this progress are novel neural architectures. Currently employed architectures have mostly been developed manually by human experts, which is a time-consuming and error-prone process. Because of this, there is growing interest in automated neural architecture search methods. We provide an overview of existing work in this field of research and categorize them according to three dimensions: search space, search strategy, and performance estimation strategy.}
+}
+
+@misc{elskenSimpleEfficientArchitecture2017,
+  title = {Simple {{And Efficient Architecture Search}} for {{Convolutional Neural Networks}}},
+  author = {Elsken, Thomas and Metzen, Jan-Hendrik and Hutter, Frank},
+  year = {2017},
+  month = nov,
+  number = {arXiv:1711.04528},
+  eprint = {1711.04528},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1711.04528},
+  urldate = {2022-10-25},
+  abstract = {Neural networks have recently had a lot of success for many tasks. However, neural network architectures that perform well are still typically designed manually by experts in a cumbersome trial-and-error process. We propose a new method to automatically search for well-performing CNN architectures based on a simple hill climbing procedure whose operators apply network morphisms, followed by short optimization runs by cosine annealing. Surprisingly, this simple method yields competitive results, despite only requiring resources in the same order of magnitude as training a single network. E.g., on CIFAR-10, our method designs and trains networks with an error rate below 6\% in only 12 hours on a single GPU; training for one day reduces this error further, to almost 5\%.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
 @misc{evciGradMaxGrowingNeural2022,
   title = {{{GradMax}}: {{Growing Neural Networks}} Using {{Gradient Information}}},
   shorttitle = {{{GradMax}}},
@@ -147,6 +317,56 @@
   abstract = {The architecture and the parameters of neural networks are often optimized independently, which requires costly retraining of the parameters whenever the architecture is modified. In this work we instead focus on growing the architecture without requiring costly retraining. We present a method that adds new neurons during training without impacting what is already learned, while improving the training dynamics. We achieve the latter by maximizing the gradients of the new weights and find the optimal initialization efficiently by means of the singular value decomposition (SVD). We call this technique Gradient Maximizing Growth (GradMax) and demonstrate its effectiveness in variety of vision tasks and architectures.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
+}
+
+@misc{fangFastNeuralNetwork2020,
+  title = {Fast {{Neural Network Adaptation}} via {{Parameter Remapping}} and {{Architecture Search}}},
+  author = {Fang, Jiemin and Sun, Yuzhu and Peng, Kangjian and Zhang, Qian and Li, Yuan and Liu, Wenyu and Wang, Xinggang},
+  year = {2020},
+  month = apr,
+  number = {arXiv:2001.02525},
+  eprint = {2001.02525},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2001.02525},
+  urldate = {2022-10-25},
+  abstract = {Deep neural networks achieve remarkable performance in many computer vision tasks. Most state-of-the-art (SOTA) semantic segmentation and object detection approaches reuse neural network architectures designed for image classification as the backbone, commonly pre-trained on ImageNet. However, performance gains can be achieved by designing network architectures specifically for detection and segmentation, as shown by recent neural architecture search (NAS) research for detection and segmentation. One major challenge though, is that ImageNet pre-training of the search space representation (a.k.a. super network) or the searched networks incurs huge computational cost. In this paper, we propose a Fast Neural Network Adaptation (FNA) method, which can adapt both the architecture and parameters of a seed network (e.g. a high performing manually designed backbone) to become a network with different depth, width, or kernels via a Parameter Remapping technique, making it possible to utilize NAS for detection/segmentation tasks a lot more efficiently. In our experiments, we conduct FNA on MobileNetV2 to obtain new networks for both segmentation and detection that clearly out-perform existing networks designed both manually and by NAS. The total computation cost of FNA is significantly less than SOTA segmentation/detection NAS approaches: 1737\texttimes{} less than DPC, 6.8\texttimes{} less than Auto-DeepLab and 7.4\texttimes{} less than DetNAS. The code is available at https://github.com/JaminFong/FNA.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
+}
+
+@inproceedings{fengEnergyefficientRobustCumulative2020,
+  title = {Energy-Efficient and {{Robust Cumulative Training}} with {{Net2Net Transformation}}},
+  booktitle = {2020 {{International Joint Conference}} on {{Neural Networks}} ({{IJCNN}})},
+  author = {Feng, Aosong and Panda, Priyadarshini},
+  year = {2020},
+  month = jul,
+  pages = {1--7},
+  issn = {2161-4407},
+  doi = {10.1109/IJCNN48605.2020.9207451},
+  abstract = {Deep learning has achieved state-of-the-art accuracies on several computer vision tasks. However, the computational and energy requirements associated with training such deep neural networks can be quite high. In this paper, we propose a cumulative training strategy with Net2Net transformation that achieves training computational efficiency without incurring large accuracy loss, in comparison to a model trained from scratch. We achieve this by first training a small network (with lesser parameters) on a small subset of the original dataset, and then gradually expanding the network using Net2Net transformation to train incrementally on larger subsets of the dataset. This incremental training strategy with Net2Net utilizes function-preserving transformations that transfers knowledge from each previous small network to the next larger network, thereby, reducing the overall training complexity. Our experiments demonstrate that compared with training from scratch, cumulative training yields 2x reduction in computational complexity for training TinyImageNet using VGG19 at iso-accuracy. Besides training efficiency, a key advantage of our cumulative training strategy is that we can perform pruning during Net2Net expansion to obtain a final network with optimal configuration ( 0.4x lower inference compute complexity) compared to conventional training from scratch. We also demonstrate that the final network obtained from cumulative training yields better generalization performance and noise robustness. Further, we show that mutual inference from all the networks created with cumulative Net2Net expansion enables improved adversarial input detection.},
+  keywords = {Computer vision,Deep learning,Energy efficiency,Knowledge engineering,Neural networks,Robustness,Training}
+}
+
+@misc{fernandoPathNetEvolutionChannels2017,
+  title = {{{PathNet}}: {{Evolution Channels Gradient Descent}} in {{Super Neural Networks}}},
+  shorttitle = {{{PathNet}}},
+  author = {Fernando, Chrisantha and Banarse, Dylan and Blundell, Charles and Zwols, Yori and Ha, David and Rusu, Andrei A. and Pritzel, Alexander and Wierstra, Daan},
+  year = {2017},
+  month = jan,
+  number = {arXiv:1701.08734},
+  eprint = {1701.08734},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1701.08734},
+  urldate = {2022-10-25},
+  abstract = {For artificial general intelligence (AGI) it would be efficient if multiple users trained the same giant neural network, permitting parameter reuse, without catastrophic forgetting. PathNet is a first step in this direction. It is a neural network algorithm that uses agents embedded in the neural network whose task is to discover which parts of the network to re-use for new tasks. Agents are pathways (views) through the network which determine the subset of parameters that are used and updated by the forwards and backwards passes of the backpropogation algorithm. During learning, a tournament selection genetic algorithm is used to select pathways through the neural network for replication and mutation. Pathway fitness is the performance of that pathway measured according to a cost function. We demonstrate successful transfer learning; fixing the parameters along a path learned on task A and re-evolving a new population of paths for task B, allows task B to be learned faster than it could be learned from scratch or after fine-tuning. Paths evolved on task B re-use parts of the optimal path evolved on task A. Positive transfer was demonstrated for binary MNIST, CIFAR, and SVHN supervised learning classification tasks, and a set of Atari and Labyrinth reinforcement learning tasks, suggesting PathNets have general applicability for neural network training. Finally, PathNet also significantly improves the robustness to hyperparameter choices of a parallel asynchronous reinforcement learning algorithm (A3C).},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
 }
 
 @article{fritzkeGrowingNeuralGas1994,
@@ -168,6 +388,38 @@
   url = {https://proceedings.mlr.press/v97/gong19a.html},
   abstract = {Unsupervised pre-training is popularly used in natural language processing. By designing proper unsupervised prediction tasks, a deep neural network can be trained and shown to be effective in many downstream tasks. As the data is usually adequate, the model for pre-training is generally huge and contains millions of parameters. Therefore, the training efficiency becomes a critical issue even when using high-performance hardware. In this paper, we explore an efficient training method for the state-of-the-art bidirectional Transformer (BERT) model. By visualizing the self-attention distribution of different layers at different positions in a well-trained BERT model, we find that in most layers, the self-attention distribution will concentrate locally around its position and the start-of-sentence token. Motivating from this, we propose the stacking algorithm to transfer knowledge from a shallow model to a deep model; then we apply stacking progressively to accelerate BERT training. The experimental results showed that the models trained by our training strategy achieve similar performance to models trained from scratch, but our algorithm is much faster.},
   langid = {english}
+}
+
+@inproceedings{gordonMorphNetFastSimple2018,
+  title = {{{MorphNet}}: {{Fast}} \& {{Simple Resource-Constrained Structure Learning}} of {{Deep Networks}}},
+  shorttitle = {{{MorphNet}}},
+  booktitle = {2018 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}}},
+  author = {Gordon, Ariel and Eban, Elad and Nachum, Ofir and Chen, Bo and Wu, Hao and Yang, Tien-Ju and Choi, Edward},
+  year = {2018},
+  month = jun,
+  pages = {1586--1595},
+  issn = {2575-7075},
+  doi = {10.1109/CVPR.2018.00171},
+  abstract = {We present MorphNet, an approach to automate the design of neural network structures. MorphNet iteratively shrinks and expands a network, shrinking via a resource-weighted sparsifying regularizer on activations and expanding via a uniform multiplicative factor on all layers. In contrast to previous approaches, our method is scalable to large networks, adaptable to specific resource constraints (e.g. the number of floating-point operations per inference), and capable of increasing the network's performance. When applied to standard network architectures on a wide variety of datasets, our approach discovers novel structures in each domain, obtaining higher performance while respecting the resource constraint.},
+  keywords = {Biological neural networks,Computational modeling,Computer architecture,Network architecture,Neurons,Training}
+}
+
+@misc{guoDifferentiableNetworkAdaption2021,
+  title = {Differentiable {{Network Adaption}} with {{Elastic Search Space}}},
+  author = {Guo, Shaopeng and Wang, Yujie and Yuan, Kun and Li, Quanquan},
+  year = {2021},
+  month = mar,
+  number = {arXiv:2103.16350},
+  eprint = {2103.16350},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2103.16350},
+  urldate = {2022-10-25},
+  abstract = {In this paper we propose a novel network adaption method called Differentiable Network Adaption (DNA), which can adapt an existing network to a specific computation budget by adjusting the width and depth in a differentiable manner. The gradient-based optimization allows DNA to achieve an automatic optimization of width and depth rather than previous heuristic methods that heavily rely on human priors. Moreover, we propose a new elastic search space that can flexibly condense or expand during the optimization process, allowing the network optimization of width and depth in a bi-direction manner. By DNA, we successfully achieve network architecture optimization by condensing and expanding in both width and depth dimensions. Extensive experiments on ImageNet demonstrate that DNA can adapt the existing network to meet different targeted computation requirements with better performance than previous methods. What's more, DNA can further improve the performance of high-accuracy networks obtained by state-of-the-art neural architecture search methods such as EfficientNet and MobileNet-v3.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
 }
 
 @article{guTransformerGrowthProgressive2021,
@@ -220,6 +472,37 @@
   langid = {english}
 }
 
+@misc{huangNeuralArchitectureSearch2019,
+  title = {Neural {{Architecture Search}} for {{Class-incremental Learning}}},
+  author = {Huang, Shenyang and {Fran{\c c}ois-Lavet}, Vincent and Rabusseau, Guillaume},
+  year = {2019},
+  month = sep,
+  number = {arXiv:1909.06686},
+  eprint = {1909.06686},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1909.06686},
+  urldate = {2022-10-25},
+  abstract = {In class-incremental learning, a model learns continuously from a sequential data stream in which new classes occur. Existing methods often rely on static architectures that are manually crafted. These methods can be prone to capacity saturation because a neural network's ability to generalize to new concepts is limited by its fixed capacity. To understand how to expand a continual learner, we focus on the neural architecture design problem in the context of class-incremental learning: at each time step, the learner must optimize its performance on all classes observed so far by selecting the most competitive neural architecture. To tackle this problem, we propose Continual Neural Architecture Search (CNAS): an autoML approach that takes advantage of the sequential nature of class-incremental learning to efficiently and adaptively identify strong architectures in a continual learning setting. We employ a task network to perform the classification task and a reinforcement learning agent as the meta-controller for architecture search. In addition, we apply network transformations to transfer weights from previous learning step and to reduce the size of the architecture search space, thus saving a large amount of computational resources. We evaluate CNAS on the CIFAR-100 dataset under varied incremental learning scenarios with limited computational power (1 GPU). Experimental results demonstrate that CNAS outperforms architectures that are optimized for the entire dataset. In addition, CNAS is at least an order of magnitude more efficient than naively using existing autoML methods.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@article{huangUnderstandingCapacitySaturation2021,
+  title = {Understanding {{Capacity Saturation}} in {{Incremental Learning}}},
+  author = {Huang, Shenyang and {Francois-Lavet}, Vincent and Rabusseau, Guillaume},
+  year = {2021},
+  month = jun,
+  journal = {Proceedings of the Canadian Conference on Artificial Intelligence},
+  doi = {10.21428/594757db.71b1a185},
+  url = {https://caiac.pubpub.org/pub/hddynxn4},
+  urldate = {2022-10-25},
+  abstract = {In class-incremental learning, a model continuously learns from a sequential data stream in which new classes are introduced. There are two main challenges in classincremental learning: catastrophic forgetting and capacity saturation. In this work, we focus on capacity saturation where a learner is unable to achieve good generalization due to its limited capacity. To understand how to increase model capacity, we present the continual architecture design problem where at any given step, a continual learner needs to adapt its architecture to achieve a good balance between performance, computational cost and memory limitations. To address this problem, we propose Continual Neural Architecture Search (CNAS) which takes advantage of the sequential nature of classincremental learning to efficiently identify strong architectures. CNAS consists of a task network for image classification and a reinforcement learning agent as the meta-controller for architecture adaptation. We also accelerate learning by transferring weights from the previous learning step thus saving a large amount of computational resources. We evaluate CNAS on the CIFAR-100 dataset in several incremental learning scenarios with limited computational power (1 GPU). We empirically demonstrate that CNAS can mitigate capacity saturation and achieve performances comparable with full architecture search while being at least one order of magnitude more efficient.},
+  langid = {english}
+}
+
 @article{hungCompactingPickingGrowing2019,
   title = {Compacting, {{Picking}} and {{Growing}} for {{Unforgetting Continual Learning}}},
   author = {Hung, Steven C. Y. and Tu, Cheng-Hao and Wu, Cheng-En and Chen, Chien-Hung and Chan, Yi-Ming and Chen, Chu-Song},
@@ -234,6 +517,73 @@
   abstract = {Continual lifelong learning is essential to many applications. In this paper, we propose a simple but effective approach to continual deep learning. Our approach leverages the principles of deep model compression, critical weights selection, and progressive networks expansion. By enforcing their integration in an iterative manner, we introduce an incremental learning method that is scalable to the number of sequential tasks in a continual learning process. Our approach is easy to implement and owns several favorable characteristics. First, it can avoid forgetting (i.e., learn new tasks while remembering all previous tasks). Second, it allows model expansion but can maintain the model compactness when handling sequential tasks. Besides, through our compaction and selection/expansion mechanism, we show that the knowledge accumulated through learning previous tasks is helpful to build a better model for the new tasks compared to training the models independently with tasks. Experimental results show that our approach can incrementally learn a deep model tackling multiple tasks without forgetting, while the model compactness is maintained with the performance more satisfiable than individual task training.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@misc{istrateIncrementalTrainingDeep2018,
+  title = {Incremental {{Training}} of {{Deep Convolutional Neural Networks}}},
+  author = {Istrate, Roxana and Malossi, Adelmo Cristiano Innocenza and Bekas, Costas and Nikolopoulos, Dimitrios},
+  year = {2018},
+  month = mar,
+  number = {arXiv:1803.10232},
+  eprint = {1803.10232},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://ceur-ws.org/Vol-1998},
+  urldate = {2022-10-25},
+  abstract = {We propose an incremental training method that partitions the original network into sub-networks, which are then gradually incorporated in the running network during the training process. To allow for a smooth dynamic growth of the network, we introduce a look-ahead initialization that outperforms the random initialization. We demonstrate that our incremental approach reaches the reference network baseline accuracy. Additionally, it allows to identify smaller partitions of the original state-of-the-art network, that deliver the same final accuracy, by using only a fraction of the global number of parameters. This allows for a potential speedup of the training time of several factors. We report training results on CIFAR-10 for ResNet and VGGNet.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@misc{jieDifferentiableNeuralArchitecture2021,
+  title = {Differentiable {{Neural Architecture Search}} with {{Morphism-based Transformable Backbone Architectures}}},
+  author = {Jie, Renlong and Gao, Junbin},
+  year = {2021},
+  month = jun,
+  number = {arXiv:2106.07211},
+  eprint = {2106.07211},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2106.07211},
+  urldate = {2022-10-25},
+  abstract = {This study focuses on the highest-level adaption for deep neural networks, which is at structure or architecture level. To determine the optimal neural network structures, usually we need to search for the architectures with methods like random search, evolutionary algorithm and gradient based methods. However, the existing studies mainly apply pre-defined backbones with fixed sizes, which requires certain level of manual selection and in lack of flexibility in handling incremental datasets or online data streams. This study aims at making the architecture search process more adaptive for one-shot or online training. It is extended from the existing study on differentiable neural architecture search, and we made the backbone architecture transformable rather than fixed during the training process. As is known, differentiable neural architecture search (DARTS) requires a pre-defined over-parameterized backbone architecture, while its size is to be determined manually. Also, in DARTS backbone, Hadamard product of two elements is not introduced, which exists in both LSTM and GRU cells for recurrent nets. This study introduces a growing mechanism for differentiable neural architecture search based on network morphism. It enables growing of the cell structures from small size towards large size ones with one-shot training. Two modes can be applied in integrating the growing and original pruning process. We also implement a recently proposed two-input backbone architecture for recurrent neural networks. Initial experimental results indicate that our approach and the two-input backbone structure can be quite effective compared with other baseline architectures including LSTM, in a variety of learning tasks including multi-variate time series forecasting and language modeling. On the other hand, we find that dynamic network transformation is promising in improving the efficiency of differentiable architecture search.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence}
+}
+
+@misc{jordaoStageWiseNeuralArchitecture2020,
+  title = {Stage-{{Wise Neural Architecture Search}}},
+  author = {Jordao, Artur and Akio, Fernando and Lie, Maiko and Schwartz, William Robson},
+  year = {2020},
+  month = oct,
+  number = {arXiv:2004.11178},
+  eprint = {2004.11178},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2004.11178},
+  urldate = {2022-10-25},
+  abstract = {Modern convolutional networks such as ResNet and NASNet have achieved state-of-the-art results in many computer vision applications. These architectures consist of stages, which are sets of layers that operate on representations in the same resolution. It has been demonstrated that increasing the number of layers in each stage improves the prediction ability of the network. However, the resulting architecture becomes computationally expensive in terms of floating point operations, memory requirements and inference time. Thus, significant human effort is necessary to evaluate different trade-offs between depth and performance. To handle this problem, recent works have proposed to automatically design high-performance architectures, mainly by means of neural architecture search (NAS). Current NAS strategies analyze a large set of possible candidate architectures and, hence, require vast computational resources and take many GPUs days. Motivated by this, we propose a NAS approach to efficiently design accurate and low-cost convolutional architectures and demonstrate that an efficient strategy for designing these architectures is to learn the depth stage-by-stage. For this purpose, our approach increases depth incrementally in each stage taking into account its importance, such that stages with low importance are kept shallow while stages with high importance become deeper. We conduct experiments on the CIFAR and different versions of ImageNet datasets, where we show that architectures discovered by our approach achieve better accuracy and efficiency than human-designed architectures. Additionally, we show that architectures discovered on CIFAR-10 can be successfully transferred to large datasets. Compared to previous NAS approaches, our method is substantially more efficient, as it evaluates one order of magnitude fewer models and yields architectures on par with the state-of-the-art.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
+}
+
+@inproceedings{jordaoStageWiseNeuralArchitecture2021,
+  title = {Stage-{{Wise Neural Architecture Search}}},
+  booktitle = {2020 25th {{International Conference}} on {{Pattern Recognition}} ({{ICPR}})},
+  author = {Jordao, Artur and Akio, Fernando and Lie, Maiko and Schwartz, William Robson},
+  year = {2021},
+  month = jan,
+  pages = {1985--1992},
+  issn = {1051-4651},
+  doi = {10.1109/ICPR48806.2021.9412970},
+  abstract = {Modern convolutional networks such as ResNet and NASNet have achieved state-of-the-art results in many computer vision applications. These architectures consist of stages, which are sets of layers that operate on representations in the same resolution. It has been demonstrated that increasing the number of layers in each stage improves the prediction ability of the network. However, the resulting architecture becomes computationally expensive in terms of floating point operations, memory requirements and inference time. Thus, significant human effort is necessary to evaluate different trade-offs between depth and performance. To handle this problem, recent works have proposed to automatically design high-performance architectures, mainly by means of neural architecture search (NAS). Current NAS strategies analyze a large set of possible candidate architectures and, hence, require vast computational resources and take many GPUs days. Motivated by this, we propose a NAS approach to efficiently design accurate and low-cost convolutional architectures and demonstrate that an efficient strategy for designing these architectures is to learn the depth stage-by-stage. For this purpose, our approach increases depth incrementally in each stage taking into account its importance, such that stages with low importance are kept shallow while stages with high importance become deeper. We conduct experiments on the CIFAR and different versions of ImageNet datasets, where we show that architectures discovered by our approach achieve better accuracy and efficiency than human-designed architectures. Additionally, we show that architectures discovered on CIFAR-10 can be successfully transferred to large datasets. Compared to previous NAS approaches, our method is substantially more efficient, as it evaluates one order of magnitude fewer models and yields architectures on par with the state-of-the-art.},
+  keywords = {Computer architecture,Computer vision,Design methodology,Memory management,Pattern recognition,Search problems}
 }
 
 @article{karrasProgressiveGrowingGANs2018,
@@ -263,6 +613,58 @@
   langid = {english}
 }
 
+@misc{knyazevPretrainingNeuralNetwork2022,
+  title = {Pretraining a {{Neural Network}} before {{Knowing Its Architecture}}},
+  author = {Knyazev, Boris},
+  year = {2022},
+  month = jul,
+  number = {arXiv:2207.10049},
+  eprint = {2207.10049},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2207.10049},
+  urldate = {2022-10-25},
+  abstract = {Training large neural networks is possible by training a smaller hypernetwork that predicts parameters for the large ones. A recently released Graph HyperNetwork (GHN) trained this way on one million smaller ImageNet architectures is able to predict parameters for large unseen networks such as ResNet-50. While networks with predicted parameters lose performance on the source task, the predicted parameters have been found useful for fine-tuning on other tasks. We study if fine-tuning based on the same GHN is still useful on novel strong architectures that were published after the GHN had been trained. We found that for recent architectures such as ConvNeXt, GHN initialization becomes less useful than for ResNet-50. One potential reason is the increased distribution shift of novel architectures from those used to train the GHN. We also found that the predicted parameters lack the diversity necessary to successfully fine-tune parameters with gradient descent. We alleviate this limitation by applying simple post-processing techniques to predicted parameters before fine-tuning them on a target task and improve fine-tuning of ResNet-50 and ConvNeXt.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
+}
+
+@inproceedings{kwasigrochDeepNeuralNetwork2019,
+  title = {Deep Neural Network Architecture Search Using Network Morphism},
+  booktitle = {2019 24th {{International Conference}} on {{Methods}} and {{Models}} in {{Automation}} and {{Robotics}} ({{MMAR}})},
+  author = {Kwasigroch, Arkadiusz and Grochowski, Michal and Mikolajczyk, Mateusz},
+  year = {2019},
+  month = aug,
+  pages = {30--35},
+  doi = {10.1109/MMAR.2019.8864624},
+  abstract = {The paper presents the results of the research on neural architecture search (NAS) algorithm. We utilized the hill climbing algorithm to search for well-performing structures of deep convolutional neural network. Moreover, we used the function preserving transformations which enabled the effective operation of the algorithm in a short period of time. The network obtained with the advantage of NAS was validated on skin lesion classification problem. We compared the parameters and performance of the automatically generated neural structure with the architectures selected manually, reported by the authors in previous papers. The obtained structure achieved comparable results to hand-designed networks, but with much fewer parameters then manually crafted architectures.},
+  keywords = {Cancer,Classification algorithms,Computer architecture,deep neural networks,image processing,Lesions,machine learning,neural architecture search,Neural networks,neural structure optimization,Task analysis,Training}
+}
+
+@article{leeLightweightNeuralArchitecture2022,
+  title = {Lightweight {{Neural Architecture Search}} with {{Parameter Remapping}} and {{Knowledge Distillation}}},
+  author = {Lee, Hayeon and An, Sohyun and Kim, Minseon and Hwang, Sung Ju},
+  year = {2022},
+  pages = {10},
+  abstract = {Designing diverse neural architectures taking into account resource constraints or datasets is one of the main challenges in Neural Architecture Search (NAS). However, existing samplebased or one-shot NAS approaches require excessive time or computational cost to be used in multiple practical scenarios. Recently, to alleviate such issues, zero-shot NAS methods that are efficient proxies have been proposed, yet their performance is rather poor due to the strong assumption that they predict the final performance of a given architecture with random initialization. In this work, we propose a novel NAS based on block-wise parameter remapping (PR) and knowledge distillation (KD), which shows high predictive performance while being fast and lightweight enough to be used iteratively to support multiple real-world scenarios. PR significantly shortens training steps and accordingly we can reduce the required time/data for KD to work as an accurate proxy to just few batches, which is largely practical in real-world. In the experiments, we validate the proposed method for its accuracy estimation performance on CIFAR-10 from the MobileNetV3 search space. It outperforms all relevant baselines in terms of performance estimation with only 20 batches.},
+  langid = {english}
+}
+
+@inproceedings{liAutomatedProgressiveLearning2022,
+  title = {Automated {{Progressive Learning}} for {{Efficient Training}} of {{Vision Transformers}}},
+  booktitle = {2022 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  author = {Li, Changlin and Zhuang, Bohan and Wang, Guangrun and Liang, Xiaodan and Chang, Xiaojun and Yang, Yi},
+  year = {2022},
+  month = jun,
+  pages = {12476--12486},
+  issn = {2575-7075},
+  doi = {10.1109/CVPR52688.2022.01216},
+  abstract = {Recent advances in vision Transformers (ViTs) have come with a voracious appetite for computing power, highlighting the urgent need to develop efficient training methods for ViTs. Progressive learning, a training scheme where the model capacity grows progressively during training, has started showing its ability in efficient training. In this paper, we take a practical step towards efficient training of ViTs by customizing and automating progressive learning. First, we develop a strong manual baseline for progressive learning of ViTs, by introducing momentum growth (MoGrow) to bridge the gap brought by model growth. Then, we propose automated progressive learning (AutoProg), an efficient training scheme that aims to achieve lossless acceleration by automatically increasing the training overload on-the-fly; this is achieved by adaptively deciding whether, where and how much should the model grow during progressive learning. Specifically, we first relax the optimization of the growth schedule to sub-network architecture optimization problem, then propose one-shot estimation of the sub-network performance via an elastic supernet. The searching overhead is reduced to minimal by recycling the parameters of the supernet. Extensive experiments of efficient training on ImageNet with two representative ViT models, DeiT and VOLO, demonstrate that AutoProg can accelerate ViTs training by up to 85.1\% with no performance drop.11Code:https://github.com/changlin31/AutoProg.},
+  keywords = {Adaptation models,Computational modeling,Deep learning architectures and techniques,Efficient learning and inferences,Estimation,Manuals,Representation learning,Schedules,Training,Transformers}
+}
+
 @article{liLearnGrowContinual2019,
   title = {Learn to {{Grow}}: {{A Continual Structure Learning Framework}} for {{Overcoming Catastrophic Forgetting}}},
   author = {Li, Xilai and Zhou, Yingbo and Wu, Tianfu and Socher, Richard and Xiong, Caiming},
@@ -270,6 +672,146 @@
   pages = {10},
   abstract = {Addressing catastrophic forgetting is one of the key challenges in continual learning where machine learning systems are trained with sequential or streaming tasks. Despite recent remarkable progress in state-of-the-art deep learning, deep neural networks (DNNs) are still plagued with the catastrophic forgetting problem. This paper presents a conceptually simple yet general and effective framework for handling catastrophic forgetting in continual learning with DNNs. The proposed method consists of two components: a neural structure optimization component and a parameter learning and/or fine-tuning component. By separating the explicit neural structure learning and the parameter estimation, not only is the proposed method capable of evolving neural structures in an intuitively meaningful way, but also shows strong capabilities of alleviating catastrophic forgetting in experiments. Furthermore, the proposed method outperforms all other baselines on the permuted MNIST dataset, the split CIFAR100 dataset and the Visual Domain Decathlon dataset in continual learning setting.},
   langid = {english}
+}
+
+@article{liLearningForgetting2018,
+  title = {Learning without {{Forgetting}}},
+  author = {Li, Zhizhong and Hoiem, Derek},
+  year = {2018},
+  month = dec,
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume = {40},
+  number = {12},
+  pages = {2935--2947},
+  issn = {1939-3539},
+  doi = {10.1109/TPAMI.2017.2773081},
+  abstract = {When building a unified vision system or gradually adding new apabilities to a system, the usual assumption is that training data for all tasks is always available. However, as the number of tasks grows, storing and retraining on such data becomes infeasible. A new problem arises where we add new capabilities to a Convolutional Neural Network (CNN), but the training data for its existing capabilities are unavailable. We propose our Learning without Forgetting method, which uses only new task data to train the network while preserving the original capabilities. Our method performs favorably compared to commonly used feature extraction and fine-tuning adaption techniques and performs similarly to multitask learning that uses original task data we assume unavailable. A more surprising observation is that Learning without Forgetting may be able to replace fine-tuning with similar old and new task datasets for improved new task performance.},
+  keywords = {Convolutional neural networks,deep learning,Deep learning,Feature extraction,Knowledge engineering,Learning systems,multi-task learning,Neural networks,Training data,transfer learning,Visual perception,visual recognition}
+}
+
+@misc{liuGreedyNetworkEnlarging2021,
+  title = {Greedy {{Network Enlarging}}},
+  author = {Liu, Chuanjian and Han, Kai and Xiao, An and Deng, Yiping and Zhang, Wei and Xu, Chunjing and Wang, Yunhe},
+  year = {2021},
+  month = nov,
+  number = {arXiv:2108.00177},
+  eprint = {2108.00177},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2108.00177},
+  urldate = {2022-10-25},
+  abstract = {Recent studies on deep convolutional neural networks present a simple paradigm of architecture design, i.e., models with more MACs typically achieve better accuracy, such as EfficientNet and RegNet. These works try to enlarge all the stages in the model with one unified rule by sampling and statistical methods. However, we observe that some network architectures have similar MACs and accuracies, but their allocations on computations for different stages are quite different. In this paper, we propose to enlarge the capacity of CNN models by improving their width, depth and resolution on stage level. Under the assumption that the top-performing smaller CNNs are a proper subcomponent of the top-performing larger CNNs, we propose an greedy network enlarging method based on the reallocation of computations. With step-by-step modifying the computations on different stages, the enlarged network will be equipped with optimal allocation and utilization of MACs. On EfficientNet, our method consistently outperforms the performance of the original scaling method. In particular, with application of our method on GhostNet, we achieve state-of-the-art 80.9\% and 84.3\% ImageNet top-1 accuracies under the setting of 600M and 4.4B MACs, respectively.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition}
+}
+
+@article{liuHierarchicalRepresentationsEfficient2018,
+  title = {Hierarchical {{Representations}} for {{Efficient Architecture Search}}},
+  author = {Liu, Hanxiao and Simonyan, Karen and Vinyals, Oriol and Fernando, Chrisantha and Kavukcuoglu, Koray},
+  year = {2018},
+  month = feb,
+  journal = {arXiv:1711.00436 [cs, stat]},
+  eprint = {1711.00436},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  url = {http://arxiv.org/abs/1711.00436},
+  urldate = {2021-05-06},
+  abstract = {We explore efficient neural architecture search methods and show that a simple yet powerful evolutionary algorithm can discover new architectures with excellent performance. Our approach combines a novel hierarchical genetic representation scheme that imitates the modularized design pattern commonly adopted by human experts, and an expressive search space that supports complex topologies. Our algorithm efficiently discovers architectures that outperform a large number of manually designed models for image classification, obtaining top-1 error of 3.6\% on CIFAR-10 and 20.3\% when transferred to ImageNet, which is competitive with the best existing neural architecture search approaches. We also present results using random search, achieving 0.3\% less top-1 accuracy on CIFAR-10 and 0.1\% less on ImageNet whilst reducing the search time from 36 hours down to 1 hour.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+}
+
+@article{liuMemNASMemoryEfficientNeural2020,
+  title = {{{MemNAS}}: {{Memory-Efficient Neural Architecture Search With Grow-Trim Learning}}},
+  shorttitle = {{{MemNAS}}},
+  author = {Liu, Peiye and Wu, Bo and Ma, Huadong and Seok, Mingoo},
+  year = {2020},
+  journal = {2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  doi = {10.1109/cvpr42600.2020.00218},
+  abstract = {The proposed MemNAS is a novel growing and trimming based neural architecture search framework that optimizes not only performance but also memory requirement of an inference network and considers running memory use as an optimization objective along with performance. Recent studies on automatic neural architecture search techniques have demonstrated significant performance, competitive to or even better than hand-crafted neural architectures. However, most of the existing search approaches tend to use residual structures and a concatenation connection between shallow and deep features. A resulted neural network model, therefore, is non-trivial for resource-constraint devices to execute since such a model requires large memory to store network parameters and intermediate feature maps along with excessive computing complexity. To address this challenge, we propose MemNAS, a novel growing and trimming based neural architecture search framework that optimizes not only performance but also memory requirement of an inference network. Specifically, in the search process, we consider running memory use, including network parameters and the essential intermediate feature maps memory requirement, as an optimization objective along with performance. Besides, to improve the accuracy of the search, we extract the correlation information among multiple candidate architectures to rank them and then choose the candidates with desired performance and memory efficiency. On the ImageNet classification task, our MemNAS achieves 75.4\% accuracy, 0.7\% higher than MobileNetV2 with 42.1\% less memory requirement. Additional experiments confirm that the proposed MemNAS can perform well across the different targets of the trade-off between accuracy and memory consumption.}
+}
+
+@misc{liuOvercomingCatastrophicForgetting2020,
+  title = {Overcoming {{Catastrophic Forgetting}} in {{Graph Neural Networks}}},
+  author = {Liu, Huihui and Yang, Yiding and Wang, Xinchao},
+  year = {2020},
+  month = dec,
+  number = {arXiv:2012.06002},
+  eprint = {2012.06002},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2012.06002},
+  urldate = {2022-10-25},
+  abstract = {Catastrophic forgetting refers to the tendency that a neural network ``forgets'' the previous learned knowledge upon learning new tasks. Prior methods have been focused on overcoming this problem on convolutional neural networks (CNNs), where the input samples like images lie in a grid domain, but have largely overlooked graph neural networks (GNNs) that handle non-grid data. In this paper, we propose a novel scheme dedicated to overcoming catastrophic forgetting problem and hence strengthen continual learning in GNNs. At the heart of our approach is a generic module, termed as topology-aware weight preserving (TWP), applicable to arbitrary form of GNNs in a plug-and-play fashion. Unlike the main stream of CNN-based continual learning methods that rely on solely slowing down the updates of parameters important to the downstream task, TWP explicitly explores the local structures of the input graph, and attempts to stabilize the parameters playing pivotal roles in the topological aggregation. We evaluate TWP on different GNN backbones over several datasets, and demonstrate that it yields performances superior to the state of the art. Code is publicly available at https://github.com/hhliu79/TWP.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning}
+}
+
+@article{liuSplittingSteepestDescent2019,
+  title = {Splitting {{Steepest Descent}} for {{Growing Neural Architectures}}},
+  author = {Liu, Qiang and Wu, Lemeng and Wang, Dilin},
+  year = {2019},
+  month = nov,
+  journal = {arXiv:1910.02366 [cs, stat]},
+  eprint = {1910.02366},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  url = {http://arxiv.org/abs/1910.02366},
+  urldate = {2021-10-12},
+  abstract = {We develop a progressive training approach for neural networks which adaptively grows the network structure by splitting existing neurons to multiple off-springs. By leveraging a functional steepest descent idea, we derive a simple criterion for deciding the best subset of neurons to split and a splitting gradient for optimally updating the off-springs. Theoretically, our splitting strategy is a second-order functional steepest descent for escaping saddle points in an {$\infty$}-Wasserstein metric space, on which the standard parametric gradient descent is a first-order steepest descent. Our method provides a new practical approach for optimizing neural network structures, especially for learning lightweight neural architectures in resource-constrained settings.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+}
+
+@misc{liuSurveyComputationallyEfficient2022,
+  title = {A {{Survey}} on {{Computationally Efficient Neural Architecture Search}}},
+  author = {Liu, Shiqing and Zhang, Haoyu and Jin, Yaochu},
+  year = {2022},
+  month = oct,
+  number = {arXiv:2206.01520},
+  eprint = {2206.01520},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2206.01520},
+  urldate = {2022-10-25},
+  abstract = {Neural architecture search (NAS) has become increasingly popular in the deep learning community recently, mainly because it can provide an opportunity to allow interested users without rich expertise to benefit from the success of deep neural networks (DNNs). However, NAS is still laborious and time-consuming because a large number of performance estimations are required during the search process of NAS, and training DNNs is computationally intensive. To solve this major limitation of NAS, improving the computational efficiency is essential in the design of NAS. However, a systematic overview of computationally efficient NAS (CE-NAS) methods still lacks. To fill this gap, we provide a comprehensive survey of the stateof-the-art on CE-NAS by categorizing the existing work into proxy-based and surrogate-assisted NAS methods, together with a thorough discussion of their design principles and a quantitative comparison of their performances and computational complexities. The remaining challenges and open research questions are also discussed, and promising research topics in this emerging field are suggested.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@article{lofEfficientNeuroevolutionAccumulation2019,
+  title = {Efficient Neuroevolution through Accumulation of Experience},
+  author = {L{\"o}f, Axel},
+  year = {2019},
+  pages = {40},
+  abstract = {In deep supervised learning the structure of the artificial neural network determines how well and how fast it can be trained. This thesis uses evolutionary algorithms to optimize the structure of artificial neural networks. Specifically, the focus of this thesis is to develop strategies for efficient neuroevolution. The neuroevolutionary method presented in this report builds structures through architechtural morphisms that, approximately, preserve the functionality of the networks. The intended outcome of basing the mutations on the idea of function preservation was that new architechtures would start out in a high performance parameter space region. By skipping regions of low performance, the training of previous generations can be accumulated. The proposed method was evaluated relative to version in which the preservating property of the mutations was removed. In the ablated version the parameters associated with the new structural change were randomly initialized. The two versions were benchmarked on five different regression problems. On the three most difficult problems the ablated version demonstrated better performance than the preservering version, while similar performance was observed for the two other problems. The performance difference between the two versions was inferred to a more frequent tendency for the function preserving version to get entrapped in stationary regions, compared to the ablated version. The parameter initializations associated with the ablated version allow the backpropagation to more easily escape these stationary regions.},
+  langid = {english}
+}
+
+@inproceedings{lomurnoParetooptimalProgressiveNeural2021,
+  title = {Pareto-Optimal Progressive Neural Architecture Search},
+  booktitle = {Proceedings of the {{Genetic}} and {{Evolutionary Computation Conference Companion}}},
+  author = {Lomurno, Eugenio and Samele, Stefano and Matteucci, Matteo and Ardagna, Danilo},
+  year = {2021},
+  month = jul,
+  series = {{{GECCO}} '21},
+  pages = {1726--1734},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/3449726.3463146},
+  url = {https://doi.org/10.1145/3449726.3463146},
+  urldate = {2022-10-25},
+  abstract = {Neural Architecture Search (NAS) is the process of automating architecture engineering, searching for the best deep learning configuration. One of the main NAS approaches proposed in the literature, Progressive Neural Architecture Search (PNAS), seeks for the architectures with a sequential model-based optimization strategy: it defines a common recursive structure to generate the networks, whose number of building blocks rises through iterations. However, NAS algorithms are generally designed for an ideal setting without considering the needs and the technical constraints imposed by practical applications. In this paper, we propose a new architecture search named Pareto-Optimal Progressive Neural Architecture Search (POPNAS) that combines the benefits of PNAS to a time-accuracy Pareto optimization problem. POPNAS adds a new time predictor to the existing approach to carry out a joint prediction of time and accuracy for each candidate neural network, searching through the Pareto front. This allows us to reach a trade-off between accuracy and training time, identifying neural network architectures with competitive accuracy in the face of a drastically reduced training time.},
+  isbn = {978-1-4503-8351-6},
+  keywords = {convolution,deep learning,machine learning,NAS,Pareto optimality,PNAS,POPNAS}
 }
 
 @article{luCompNetNeuralNetworks2018,
@@ -307,6 +849,24 @@
   keywords = {Computer Science - Machine Learning}
 }
 
+@misc{mirandaReducingTrainingTime2016,
+  title = {Reducing the {{Training Time}} of {{Neural Networks}} by {{Partitioning}}},
+  author = {Miranda, Conrado S. and Von Zuben, Fernando J.},
+  year = {2016},
+  month = jan,
+  number = {arXiv:1511.02954},
+  eprint = {1511.02954},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1511.02954},
+  urldate = {2022-10-25},
+  abstract = {This paper presents a new method for pre-training neural networks that can decrease the total training time for a neural network while maintaining the final performance, which motivates its use on deep neural networks. By partitioning the training task in multiple training subtasks with sub-models, which can be performed independently and in parallel, it is shown that the size of the sub-models reduces almost quadratically with the number of subtasks created, quickly scaling down the sub-models used for the pre-training. The sub-models are then merged to provide a pre-trained initial set of weights for the original model. The proposed method is independent of the other aspects of the training, such as architecture of the neural network, training method, and objective, making it compatible with a wide range of existing approaches. The speedup without loss of performance is validated experimentally on MNIST and on CIFAR10 data sets, also showing that even performing the subtasks sequentially can decrease the training time. Moreover, we show that larger models may present higher speedups and conjecture about the benefits of the method in distributed learning systems.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
 @article{mixterGrowingArtificialNeural2020,
   title = {Growing {{Artificial Neural Networks}}},
   author = {Mixter, John and Akoglu, Ali},
@@ -322,6 +882,20 @@
   archiveprefix = {arXiv},
   langid = {english},
   keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Reading List}
+}
+
+@inproceedings{morgadoNetTailorTuningArchitecture2019,
+  title = {{{NetTailor}}: {{Tuning}} the {{Architecture}}, {{Not Just}} the {{Weights}}},
+  shorttitle = {{{NetTailor}}},
+  booktitle = {2019 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  author = {Morgado, Pedro and Vasconcelos, Nuno},
+  year = {2019},
+  month = jun,
+  pages = {3039--3049},
+  issn = {2575-7075},
+  doi = {10.1109/CVPR.2019.00316},
+  abstract = {Real-world applications of object recognition often require the solution of multiple tasks in a single platform. Under the standard paradigm of network fine-tuning, an entirely new CNN is learned per task, and the final network size is independent of task complexity. This is wasteful, since simple tasks require smaller networks than more complex tasks, and limits the number of tasks that can be solved simultaneously. To address these problems, we propose a transfer learning procedure, denoted NetTailor, in which layers of a pre-trained CNN are used as universal blocks that can be combined with small task-specific layers to generate new networks. Besides minimizing classification error, the new network is trained to mimic the internal activations of a strong unconstrained CNN, and minimize its complexity by the combination of 1) a soft-attention mechanism over blocks and 2) complexity regularization constraints. In this way, NetTailor can adapt the network architecture, not just its weights, to the target task. Experiments show that networks adapted to simple tasks, such as character or traffic sign recognition, become significantly smaller than those adapted to hard tasks, such as fine-grained recognition. More importantly, due to the modular nature of the procedure, this reduction in network complexity is achieved without compromise of either parameter sharing across tasks, or classification accuracy.},
+  keywords = {Categorization,Character recognition,Complexity theory,Computer architecture,Computer vision,Deep Learning,Network architecture,Object recognition,Recognition: Detection,Representation Learning,Retrieval,Transfer learning}
 }
 
 @article{nicosiaGrowingMultiplexNetworks2013,
@@ -344,6 +918,15 @@
   keywords = {Computer Science - Social and Information Networks,Condensed Matter - Disordered Systems and Neural Networks,Physics - Physics and Society}
 }
 
+@article{palomoLearningTopologiesGrowing2016,
+  title = {Learning {{Topologies}} with the {{Growing Neural Forest}}},
+  author = {Palomo, E. J. and {L{\'o}pez-Rubio}, Ezequiel},
+  year = {2016},
+  journal = {Int. J. Neural Syst.},
+  doi = {10.1142/S0129065716500192},
+  abstract = {The proposed GNF, based on the growing neural gas, learns a set of trees so that each tree represents a connected cluster of data, and outperforms some well-known foreground detectors both in quantitative and qualitative terms. In this work, a novel self-organizing model called growing neural forest (GNF) is presented. It is based on the growing neural gas (GNG), which learns a general graph with no special provisions for datasets with separated clusters. On the contrary, the proposed GNF learns a set of trees so that each tree represents a connected cluster of data. High dimensional datasets often contain large empty regions among clusters, so this proposal is better suited to them than other self-organizing models because it represents these separated clusters as connected components made of neurons. Experimental results are reported which show the self-organization capabilities of the model. Moreover, its suitability for unsupervised clustering and foreground detection applications is demonstrated. In particular, the GNF is shown to correctly discover the connected component structure of some datasets. Moreover, it outperforms some well-known foreground detectors both in quantitative and qualitative terms.}
+}
+
 @article{panigrahyMindGrowsCircuits2012,
   title = {The {{Mind Grows Circuits}}},
   author = {Panigrahy, Rina and Zhang, Li},
@@ -358,6 +941,41 @@
   abstract = {There is a vast supply of prior art that study models for mental processes. Some studies in psychology and philosophy approach it from an inner perspective in terms of experiences and percepts. Others such as neurobiology or connectionist-machines approach it externally by viewing the mind as complex circuit of neurons where each neuron is a primitive binary circuit. In this paper, we also model the mind as a place where a circuit grows, starting as a collection of primitive components at birth and then builds up incrementally in a bottom up fashion. A new node is formed by a simple composition of prior nodes when we undergo a repeated experience that can be described by that composition. Unlike neural networks, however, these circuits take "concepts" or "percepts" as inputs and outputs. Thus the growing circuits can be likened to a growing collection of lambda expressions that are built on top of one another in an attempt to compress the sensory input as a heuristic to bound its Kolmogorov Complexity.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Formal Languages and Automata Theory}
+}
+
+@article{phamEfficientNeuralArchitecture2018,
+  title = {Efficient {{Neural Architecture Search}} via {{Parameter Sharing}}},
+  author = {Pham, Hieu and Guan, Melody Y. and Zoph, Barret and Le, Quoc V. and Dean, Jeff},
+  year = {2018},
+  month = feb,
+  journal = {arXiv:1802.03268 [cs, stat]},
+  eprint = {1802.03268},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  url = {http://arxiv.org/abs/1802.03268},
+  urldate = {2021-05-06},
+  abstract = {We propose Efficient Neural Architecture Search (ENAS), a fast and inexpensive approach for automatic model design. In ENAS, a controller discovers neural network architectures by searching for an optimal subgraph within a large computational graph. The controller is trained with policy gradient to select a subgraph that maximizes the expected reward on a validation set. Meanwhile the model corresponding to the selected subgraph is trained to minimize a canonical cross entropy loss. Sharing parameters among child models allows ENAS to deliver strong empirical performances, while using much fewer GPUhours than existing automatic model design approaches, and notably, 1000x less expensive than standard Neural Architecture Search. On the Penn Treebank dataset, ENAS discovers a novel architecture that achieves a test perplexity of 55.8, establishing a new state-of-the-art among all methods without post-training processing. On the CIFAR-10 dataset, ENAS finds a novel architecture that achieves 2.89\% test error, which is on par with the 2.65\% test error of NASNet (Zoph et al., 2018).},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computation and Language,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+}
+
+@misc{philippNonparametricNeuralNetworks2017,
+  title = {Nonparametric {{Neural Networks}}},
+  author = {Philipp, George and Carbonell, Jaime G.},
+  year = {2017},
+  month = dec,
+  number = {arXiv:1712.05440},
+  eprint = {1712.05440},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1712.05440},
+  urldate = {2022-10-25},
+  abstract = {Automatically determining the optimal size of a neural network for a given task without prior information currently requires an expensive global search and training many networks from scratch. In this paper, we address the problem of automatically finding a good network size during a single training cycle. We introduce nonparametric neural networks, a non-probabilistic framework for conducting optimization over all possible network sizes and prove its soundness when network growth is limited via an p penalty. We train networks under this framework by continuously adding new units while eliminating redundant units via an 2 penalty. We employ a novel optimization algorithm, which we term ``Adaptive Radial-Angular Gradient Descent'' or AdaRad, and obtain promising results.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Science and Game Theory,Computer Science - Machine Learning}
 }
 
 @article{piastraGrowingSelfOrganizingNetwork2009,
@@ -377,6 +995,27 @@
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing}
 }
 
+@article{pomponiEfficientContinualLearning2020,
+  title = {Efficient {{Continual Learning}} in {{Neural Networks}} with {{Embedding Regularization}}},
+  author = {Pomponi, Jary and Scardapane, Simone and Lomonaco, Vincenzo and Uncini, Aurelio},
+  year = {2020},
+  month = jul,
+  journal = {Neurocomputing},
+  volume = {397},
+  eprint = {1909.03742},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  pages = {139--148},
+  issn = {09252312},
+  doi = {10.1016/j.neucom.2020.01.093},
+  url = {http://arxiv.org/abs/1909.03742},
+  urldate = {2022-10-25},
+  abstract = {Continual learning of deep neural networks is a key requirement for scaling them up to more complex applicative scenarios and for achieving real lifelong learning of these architectures. Previous approaches to the problem have considered either the progressive increase in the size of the networks, or have tried to regularize the network behavior to equalize it with respect to previously observed tasks. In the latter case, it is essential to understand what type of information best represents this past behavior. Common techniques include regularizing the past outputs, gradients, or individual weights. In this work, we propose a new, relatively simple and efficient method to perform continual learning by regularizing instead the network internal embeddings. To make the approach scalable, we also propose a dynamic sampling strategy to reduce the memory footprint of the required external storage. We show that our method performs favorably with respect to state-of-the-art approaches in the literature, while requiring significantly less space in memory and computational time. In addition, inspired inspired by to recent works, we evaluate the impact of selecting a more flexible model for the activation functions inside the network, evaluating the impact of catastrophic forgetting on the activation functions themselves.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+}
+
 @article{raghavanNeuralNetworksGrown2019,
   title = {Neural Networks Grown and Self-Organized by Noise},
   author = {Raghavan, Guruprasad and Thomson, Matt},
@@ -391,6 +1030,24 @@
   abstract = {Living neural networks emerge through a process of growth and self-organization that begins with a single cell and results in a brain, an organized and functional computational device. Artificial neural networks, however, rely on human-designed, hand-programmed architectures for their remarkable performance. Can we develop artificial computational devices that can grow and self-organize without human intervention? In this paper, we propose a biologically inspired developmental algorithm that can 'grow' a functional, layered neural network from a single initial cell. The algorithm organizes inter-layer connections to construct a convolutional pooling layer, a key constituent of convolutional neural networks (CNN's). Our approach is inspired by the mechanisms employed by the early visual system to wire the retina to the lateral geniculate nucleus (LGN), days before animals open their eyes. The key ingredients for robust self-organization are an emergent spontaneous spatiotemporal activity wave in the first layer and a local learning rule in the second layer that 'learns' the underlying activity pattern in the first layer. The algorithm is adaptable to a wide-range of input-layer geometries, robust to malfunctioning units in the first layer, and so can be used to successfully grow and self-organize pooling architectures of different pool-sizes and shapes. The algorithm provides a primitive procedure for constructing layered neural networks through growth and self-organization. Broadly, our work shows that biologically inspired developmental algorithms can be applied to autonomously grow functional 'brains' in-silico.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Neural and Evolutionary Computing,Nonlinear Sciences - Adaptation and Self-Organizing Systems,Quantitative Biology - Neurons and Cognition}
+}
+
+@misc{raimanNeuralNetworkSurgery2020,
+  title = {Neural {{Network Surgery}} with {{Sets}}},
+  author = {Raiman, Jonathan and Zhang, Susan and Dennison, Christy},
+  year = {2020},
+  month = mar,
+  number = {arXiv:1912.06719},
+  eprint = {1912.06719},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1912.06719},
+  urldate = {2022-10-25},
+  abstract = {The cost to train machine learning models has been increasing exponentially [1], making exploration and research into the correct features and architecture a costly or intractable endeavor at scale. However, using a technique named ``surgery'' OpenAI Five was continuously trained to play the game DotA 2 over the course of 10 months through 20 major changes in features and architecture. Surgery transfers trained weights from one network to another after a selection process to determine which sections of the model are unchanged and which must be re-initialized. In the past, the selection process relied on heuristics, manual labor, or pre-existing boundaries in the structure of the model, limiting the ability to salvage experiments after modifications of the feature set or input reorderings.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computation and Language,Computer Science - Machine Learning}
 }
 
 @article{rosenfeldIncrementalLearningDeep2018,
@@ -427,6 +1084,89 @@
   keywords = {Computer Science - Machine Learning}
 }
 
+@misc{saxenaConvolutionalNeuralFabrics2017,
+  title = {Convolutional {{Neural Fabrics}}},
+  author = {Saxena, Shreyas and Verbeek, Jakob},
+  year = {2017},
+  month = jan,
+  number = {arXiv:1606.02492},
+  eprint = {1606.02492},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1606.02492},
+  urldate = {2022-10-25},
+  abstract = {Despite the success of CNNs, selecting the optimal architecture for a given task remains an open problem. Instead of aiming to select a single optimal architecture, we propose a ``fabric'' that embeds an exponentially large number of architectures. The fabric consists of a 3D trellis that connects response maps at different layers, scales, and channels with a sparse homogeneous local connectivity pattern. The only hyper-parameters of a fabric are the number of channels and layers. While individual architectures can be recovered as paths, the fabric can in addition ensemble all embedded architectures together, sharing their weights where their paths overlap. Parameters can be learned using standard methods based on backpropagation, at a cost that scales linearly in the fabric size. We present benchmark results competitive with the state of the art for image classification on MNIST and CIFAR10, and for semantic segmentation on the Part Labels dataset.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@inproceedings{scardapaneDifferentiableBranchingDeep2020,
+  title = {Differentiable {{Branching In Deep Networks}} for {{Fast Inference}}},
+  booktitle = {{{ICASSP}} 2020 - 2020 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal Processing}} ({{ICASSP}})},
+  author = {Scardapane, Simone and Comminiello, Danilo and Scarpiniti, Michele and Baccarelli, Enzo and Uncini, Aurelio},
+  year = {2020},
+  month = may,
+  pages = {4167--4171},
+  issn = {2379-190X},
+  doi = {10.1109/ICASSP40776.2020.9054209},
+  abstract = {In this paper, we consider the design of deep neural networks augmented with multiple auxiliary classifiers departing from the main (backbone) network. These classifiers can be used to perform early-exit from the network at various layers, making them convenient for energy-constrained applications such as IoT, embedded devices, or Fog computing. However, designing an optimized early-exit strategy is a difficult task, generally requiring a large amount of manual fine-tuning. In this paper, we propose a way to jointly optimize this strategy together with the branches, providing an end-to-end trainable algorithm for this emerging class of neural networks. We achieve this by replacing the original output of the branches with a `soft', differentiable approximation. In addition, we also propose a regularization approach to trade-off the computational efficiency of the early-exit strategy with respect to the overall classification accuracy. We evaluate our proposed design approach on a set of image classification benchmarks, showing significant gains in accuracy and inference time.},
+  keywords = {Benchmark testing,Computational efficiency,Deep network,energy efficiency,Image classification,inference time,multi-branch architectures,Neural networks,Signal processing algorithms,Speech processing,Task analysis}
+}
+
+@article{schiesslerNeuralNetworkSurgery2021,
+  title = {Neural Network Surgery: {{Combining}} Training with Topology Optimization},
+  shorttitle = {Neural Network Surgery},
+  author = {Schiessler, Elisabeth J. and Aydin, Roland C. and Linka, Kevin and Cyron, Christian J.},
+  year = {2021},
+  month = dec,
+  journal = {Neural Networks},
+  volume = {144},
+  pages = {384--393},
+  issn = {08936080},
+  doi = {10.1016/j.neunet.2021.08.034},
+  url = {https://linkinghub.elsevier.com/retrieve/pii/S0893608021003476},
+  urldate = {2022-10-25},
+  abstract = {With ever increasing computational capacities, neural networks become more and more proficient at solving complex tasks. However, picking a sufficiently good network topology usually relies on expert human knowledge. Neural architecture search aims to reduce the extent of expertise that is needed. Modern architecture search techniques often rely on immense computational power, or apply trained meta-controllers for decision making. We develop a framework for a genetic algorithm that is both computationally cheap and makes decisions based on mathematical criteria rather than trained parameters. It is a hybrid approach that fuses training and topology optimization together into one process. Structural modifications that are performed include adding or removing layers of neurons, with some re-training applied to make up for incurred change in input-output behaviour. Our ansatz is tested on both the SVHN and (augmented) CIFAR-10 datasets with limited computational overhead compared to training only the baseline. This algorithm can achieve a significant increase in accuracy (as compared to a fully trained baseline), rescue insufficient topologies that in their current state are only able to learn to a limited extent, and dynamically reduce network size without loss in achieved accuracy.},
+  langid = {english}
+}
+
+@article{schindlerParameterizedStructuredPruning2019,
+  title = {Parameterized {{Structured Pruning}} for {{Deep Neural Networks}}},
+  author = {Schindler, Guenther and Roth, Wolfgang and Pernkopf, Franz and Froening, Holger},
+  year = {2019},
+  month = jun,
+  journal = {arXiv:1906.05180 [cs, stat]},
+  eprint = {1906.05180},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  url = {http://arxiv.org/abs/1906.05180},
+  urldate = {2021-05-06},
+  abstract = {As a result of the growing size of Deep Neural Networks (DNNs), the gap to hardware capabilities in terms of memory and compute increases. To effectively compress DNNs, quantization and connection pruning are usually considered. However, unconstrained pruning usually leads to unstructured parallelism, which maps poorly to massively parallel processors, and substantially reduces the efficiency of general-purpose processors. Similar applies to quantization, which often requires dedicated hardware. We propose Parameterized Structured Pruning (PSP), a novel method to dynamically learn the shape of DNNs through structured sparsity. PSP parameterizes structures (e.g. channel- or layer-wise) in a weight tensor and leverages weight decay to learn a clear distinction between important and unimportant structures. As a result, PSP maintains prediction performance, creates a substantial amount of sparsity that is structured and, thus, easy and efficient to map to a variety of massively parallel processors, which are mandatory for utmost compute power and energy efficiency. PSP is experimentally validated on the popular CIFAR10/100 and ILSVRC2012 datasets using ResNet and DenseNet architectures, respectively.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@misc{shahawyReviewPlasticArtificial2022,
+  title = {A {{Review}} on {{Plastic Artificial Neural Networks}}: {{Exploring}} the {{Intersection}} between {{Neural Architecture Search}} and {{Continual Learning}}},
+  shorttitle = {A {{Review}} on {{Plastic Artificial Neural Networks}}},
+  author = {Shahawy, Mohamed and Benkhelifa, Elhadj and White, David},
+  year = {2022},
+  month = jun,
+  number = {arXiv:2206.05625},
+  eprint = {2206.05625},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2206.05625},
+  urldate = {2022-10-25},
+  abstract = {Despite the significant advances achieved in Artificial Neural Networks (ANNs), their design process remains notoriously tedious, depending primarily on intuition, experience and trial-and-error. This human-dependent process is often time-consuming and prone to errors. Furthermore, the models are generally bound to their training contexts, with no considerations of changes to their surrounding environments. Continual adaptability and automation of neural networks is of paramount importance to several domains where model accessibility is limited after deployment (e.g IoT devices, selfdriving vehicles, etc). Additionally, even accessible models require frequent maintenance post-deployment to overcome issues such as Concept/Data Drift, which can be cumbersome and restrictive. The current state of the art on adaptive ANNs is still a premature area of research; nevertheless, Neural Architecture Search (NAS), a form of AutoML, and Continual Learning (CL) have recently gained an increasing momentum in the Deep Learning research field, aiming to provide more robust and adaptive ANN development frameworks. This study is the first extensive review on the intersection between AutoML and CL, outlining research directions for the different methods that can facilitate full automation and lifelong plasticity in ANNs.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {68T07,Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Neural and Evolutionary Computing,D.1.2,I.2.2,I.2.6}
+}
+
 @article{shaikhLearnBindGrow2020,
   title = {Learn to {{Bind}} and {{Grow Neural Structures}}},
   author = {Shaikh, Azhar and Sinha, Nishant},
@@ -441,6 +1181,61 @@
   abstract = {Task-incremental learning involves the challenging problem of learning new tasks continually, without forgetting past knowledge. Many approaches address the problem by expanding the structure of a shared neural network as tasks arrive, but struggle to grow optimally, without losing past knowledge. We present a new framework, Learn to Bind and Grow, which learns a neural architecture for a new task incrementally, either by binding with layers of a similar task or by expanding layers which are more likely to conflict between tasks. Central to our approach is a novel, interpretable, parameterization of the shared, multi-task architecture space, which then enables computing globally optimal architectures using Bayesian optimization. Experiments on continual learning benchmarks show that our framework performs comparably with earlier expansion based approaches and is able to flexibly compute multiple optimal solutions with performance-size trade-offs.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
+}
+
+@misc{shenStagedTrainingTransformer2022,
+  title = {Staged {{Training}} for {{Transformer Language Models}}},
+  author = {Shen, Sheng and Walsh, Pete and Keutzer, Kurt and Dodge, Jesse and Peters, Matthew and Beltagy, Iz},
+  year = {2022},
+  month = mar,
+  number = {arXiv:2203.06211},
+  eprint = {2203.06211},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2203.06211},
+  urldate = {2022-10-25},
+  abstract = {The current standard approach to scaling transformer language models trains each model size from a different random initialization. As an alternative, we consider a staged training setup that begins with a small model and incrementally increases the amount of compute used for training by applying a ``growth operator'' to increase the model depth and width. By initializing each stage with the output of the previous one, the training process effectively re-uses the compute from prior stages and becomes more efficient. Our growth operators each take as input the entire training state (including model parameters, optimizer state, learning rate schedule, etc.) and output a new training state from which training continues. We identify two important properties of these growth operators, namely that they preserve both the loss and the ``training dynamics'' after applying the operator. While the losspreserving property has been discussed previously, to the best of our knowledge this work is the first to identify the importance of preserving the training dynamics (the rate of decrease of the loss during training). To find the optimal schedule for stages, we use the scaling laws from (Kaplan et al., 2020) to find a precise schedule that gives the most compute saving by starting a new stage when training efficiency starts decreasing. We empirically validate our growth operators and staged training for autoregressive language models, showing up to 22\% compute savings compared to a strong baseline trained from scratch. Our code is available at https://github. com/allenai/staged-training.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computation and Language}
+}
+
+@misc{smithGeneralCyclicalTraining2022,
+  title = {General {{Cyclical Training}} of {{Neural Networks}}},
+  author = {Smith, Leslie N.},
+  year = {2022},
+  month = jun,
+  number = {arXiv:2202.08835},
+  eprint = {2202.08835},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2202.08835},
+  urldate = {2022-10-25},
+  abstract = {This paper describes the principle of ``General Cyclical Training'' in machine learning, where training starts and ends with ``easy training'' and the ``hard training'' happens during the middle epochs. We propose several manifestations for training neural networks, including algorithmic examples (via hyper-parameters and loss functions), data-based examples, and model-based examples. Specifically, we introduce several novel techniques: cyclical weight decay, cyclical batch size, cyclical focal loss, cyclical softmax temperature, cyclical data augmentation, cyclical gradient clipping, and cyclical semi-supervised learning. In addition, we demonstrate that cyclical weight decay, cyclical softmax temperature, and cyclical gradient clipping (as three examples of this principle) are beneficial in the test accuracy performance of a trained model. Furthermore, we discuss model-based examples (such as pretraining and knowledge distillation) from the perspective of general cyclical training and recommend some changes to the typical training methodology. In summary, this paper defines the general cyclical training concept and discusses several specific ways in which this concept can be applied to training neural networks. In the spirit of reproducibility, the code used in our experiments is available at https://github.com/lnsmith54/CFL.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@misc{soodNeuNetSAutomatedSynthesis2019,
+  title = {{{NeuNetS}}: {{An Automated Synthesis Engine}} for {{Neural Network Design}}},
+  shorttitle = {{{NeuNetS}}},
+  author = {Sood, Atin and Elder, Benjamin and Herta, Benjamin and Xue, Chao and Bekas, Costas and Malossi, A. Cristiano I. and Saha, Debashish and Scheidegger, Florian and Venkataraman, Ganesh and Thomas, Gegi and Mariani, Giovanni and Strobelt, Hendrik and Samulowitz, Horst and Wistuba, Martin and Manica, Matteo and Choudhury, Mihir and Yan, Rong and Istrate, Roxana and Puri, Ruchir and Pedapati, Tejaswini},
+  year = {2019},
+  month = jan,
+  number = {arXiv:1901.06261},
+  eprint = {1901.06261},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1901.06261},
+  urldate = {2022-10-25},
+  abstract = {Application of neural networks to a vast variety of practical applications is transforming the way AI is applied in practice. Pre-trained neural network models available through APIs or capability to custom train pre-built neural network architectures with customer data has made the consumption of AI by developers much simpler and resulted in broad adoption of these complex AI models. While prebuilt network models exist for certain scenarios, to try and meet the constraints that are unique to each application, AI teams need to think about developing custom neural network architectures that can meet the tradeoff between accuracy and memory footprint to achieve the tight constraints of their unique use-cases. However, only a small proportion of data science teams have the skills and experience needed to create a neural network from scratch, and the demand far exceeds the supply. In this paper, we present NeuNetS : An automated Neural Network Synthesis engine for custom neural network design that is available as part of IBM's AI OpenScale's product. NeuNetS is available for both Text and Image domains and can build neural networks for specific tasks in a fraction of the time it takes today with human effort, and with accuracy similar to that of human-designed AI models.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Software Engineering,Statistics - Machine Learning}
 }
 
 @misc{szegedyGoingDeeperConvolutions2014,
@@ -461,6 +1256,42 @@
   keywords = {Computer Science - Computer Vision and Pattern Recognition}
 }
 
+@misc{tongGrowingNeuralNetwork2022,
+  title = {Growing {{Neural Network}} with {{Shared Parameter}}},
+  author = {Tong, Ruilin},
+  year = {2022},
+  month = jan,
+  number = {arXiv:2201.06500},
+  eprint = {2201.06500},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2201.06500},
+  urldate = {2022-10-25},
+  abstract = {We propose a general method for growing neural network with shared parameter by matching trained network to new input. By leveraging Hoeffding's inequality, we provide a theoretical base for improving performance by adding subnetwork to existing network. With the theoretical base of adding new subnetwork, we implement a matching method to apply trained subnetwork of existing network to new input. Our method has shown the ability to improve performance with higher parameter efficiency. It can also be applied to trans-task case and realize transfer learning by changing the combination of subnetworks without training on new task.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning}
+}
+
+@misc{wangDeeplyFusedNets2016,
+  title = {Deeply-{{Fused Nets}}},
+  author = {Wang, Jingdong and Wei, Zhen and Zhang, Ting and Zeng, Wenjun},
+  year = {2016},
+  month = may,
+  number = {arXiv:1605.07716},
+  eprint = {1605.07716},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1605.07716},
+  urldate = {2022-10-25},
+  abstract = {In this paper, we present a novel deep learning approach, deeply-fused nets. The central idea of our approach is deep fusion, i.e., combine the intermediate representations of base networks, where the fused output serves as the input of the remaining part of each base network, and perform such combinations deeply over several intermediate representations. The resulting deeply fused net enjoys several benefits. First, it is able to learn multi-scale representations as it enjoys the benefits of more base networks, which could form the same fused network, other than the initial group of base networks. Second, in our suggested fused net formed by one deep and one shallow base networks, the flows of the information from the earlier intermediate layer of the deep base network to the output and from the input to the later intermediate layer of the deep base network are both improved. Last, the deep and shallow base networks are jointly learnt and can benefit from each other. More interestingly, the essential depth of a fused net composed from a deep base network and a shallow base network is reduced because the fused net could be composed from a less deep base network, and thus training the fused net is less difficult than training the initial deep base network. Empirical results demonstrate that our approach achieves superior performance over two closely-related methods, ResNet and Highway, and competitive performance compared to the state-of-the-arts.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
+}
+
 @article{wangEnergyAwareNeuralArchitecture2020,
   title = {Energy-{{Aware Neural Architecture Optimization}} with {{Fast Splitting Steepest Descent}}},
   author = {Wang, Dilin and Li, Meng and Wu, Lemeng and Chandra, Vikas and Liu, Qiang},
@@ -477,6 +1308,41 @@
   keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
+@inproceedings{wangStackRecEfficientTraining2021,
+  title = {{{StackRec}}: {{Efficient Training}} of {{Very Deep Sequential Recommender Models}} by {{Iterative Stacking}}},
+  shorttitle = {{{StackRec}}},
+  booktitle = {Proceedings of the 44th {{International ACM SIGIR Conference}} on {{Research}} and {{Development}} in {{Information Retrieval}}},
+  author = {Wang, Jiachun and Yuan, Fajie and Chen, Jian and Wu, Qingyao and Yang, Min and Sun, Yang and Zhang, Guoxiao},
+  year = {2021},
+  month = jul,
+  series = {{{SIGIR}} '21},
+  pages = {357--366},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/3404835.3462890},
+  url = {https://doi.org/10.1145/3404835.3462890},
+  urldate = {2022-10-25},
+  abstract = {Deep learning has brought great progress for the sequential recommendation (SR) tasks. With advanced network architectures, sequential recommender models can be stacked with many hidden layers, e.g., up to 100 layers on real-world recommendation datasets. Training such a deep network is difficult because it can be computationally very expensive and takes much longer time, especially in situations where there are tens of billions of user-item interactions. To deal with such a challenge, we present StackRec, a simple, yet very effective and efficient training framework for deep SR models by iterative layer stacking. Specifically, we first offer an important insight that hidden layers/blocks in a well-trained deep SR model have very similar distributions. Enlightened by this, we propose the stacking operation on the pre-trained layers/blocks to transfer knowledge from a shallower model to a deep model, then we perform iterative stacking so as to yield a much deeper but easier-to-train SR model. We validate the performance of StackRec by instantiating it with four state-of-the-art SR models in three practical scenarios with real-world datasets. Extensive experiments show that StackRec achieves not only comparable performance, but also substantial acceleration in training time, compared to SR models that are trained from scratch. Codes are available at https://github.com/wangjiachun0426/StackRec.},
+  isbn = {978-1-4503-8037-9},
+  keywords = {knowledge transfer,recommender systems,training acceleration}
+}
+
+@article{wangTLGDBNGrowingDeep2019,
+  title = {{{TL-GDBN}}: {{Growing Deep Belief Network With Transfer Learning}}},
+  shorttitle = {{{TL-GDBN}}},
+  author = {Wang, GongMing and Qiao, JunFei and Bi, Jing and Li, WenJing and Zhou, MengChu},
+  year = {2019},
+  month = apr,
+  journal = {IEEE Transactions on Automation Science and Engineering},
+  volume = {16},
+  number = {2},
+  pages = {874--885},
+  issn = {1558-3783},
+  doi = {10.1109/TASE.2018.2865663},
+  abstract = {A deep belief network (DBN) is effective to create a powerful generative model by using training data. However, it is difficult to fast determine its optimal structure given specific applications. In this paper, a growing DBN with transfer learning (TL-GDBN) is proposed to automatically decide its structure size, which can accelerate its learning process and improve model accuracy. First, a basic DBN structure with single hidden layer is initialized and then pretrained, and the learned weight parameters are frozen. Second, TL-GDBN uses TL to transfer the knowledge from the learned weight parameters to newly added neurons and hidden layers, which can achieve a growing structure until the stopping criterion for pretraining is satisfied. Third, the weight parameters derived from pretraining of TL-GDBN are further fine-tuned by using layer-by-layer partial least square regression from top to bottom, which can avoid many problems of traditional backpropagation algorithm-based fine-tuning. Moreover, the convergence analysis of the TL-GDBN is presented. Finally, TL-GDBN is tested on two benchmark data sets and a practical wastewater treatment system. The simulation results show that it has better modeling performance, faster learning speed, and more robust structure than existing models. Note to Practitioners-Transfer learning (TL) aims to improve training effectiveness by transferring knowledge from a source domain to target domain. This paper presents a growing deep belief network (DBN) with TL to improve the training effectiveness and determine the optimal model size. Facing a complex process and real-world workflow, DBN tends to require long time for its successful training. The proposed growing DBN with TL (TL-GDBN) accelerates the learning process by instantaneously transferring the knowledge from a source domain to each new deeper or wider substructure. The experimental results show that the proposed TL-GDBN model has a great potential to deal with complex system, especially the systems with high nonlinearity. As a result, it can be readily applicable to some industrial nonlinear systems.},
+  keywords = {Computational modeling,Convergence,Convergence analysis,Data models,deep belief network (DBN),growing DBN with transfer learning (TL-GDBN),Neurons,partial least square regression (PLSR)-based fine-tuning,Supervised learning,TL,Training,Unsupervised learning}
+}
+
 @article{weiModularizedMorphingDeep2021,
   title = {Modularized {{Morphing}} of {{Deep Convolutional Neural Networks}}: {{A Graph Approach}}},
   shorttitle = {Modularized {{Morphing}} of {{Deep Convolutional Neural Networks}}},
@@ -491,6 +1357,24 @@
   doi = {10.1109/TC.2020.2988006},
   abstract = {Network morphism is an effective learning scheme to morph a well-trained neural network to a new one with the network function completely preserved. However, existing network morphism scheme addresses only basic morphing types on the layer level. In this research, we address the central problem of network morphism at a higher level, i.e., how a convolutional layer can be morphed into an arbitrary module of a neural network. To simplify the representation of a network, we abstract a module as a graph with blobs as vertices and convolutional layers as edges. Based on this graph, the morphing process can be formulated as a graph transformation problem. Two atomic morphing operations are introduced to construct the graphs, based on which modules are classified into two families, i.e., simple morphable modules and complex modules. We present practical morphing solutions for both families, and prove that any module can be morphed from a single convolutional layer. Extensive experiments have been conducted based on the state-of-the-art ResNet on benchmarks to verify the effectiveness of the proposed solution.},
   keywords = {Atomic layer deposition,Computer architecture,convolutional neural network,Convolutional neural networks,Deep learning,Kernel,Knowledge engineering,Mathematical model,modularized morphing,network morphism}
+}
+
+@misc{weiModularizedMorphingNeural2017,
+  title = {Modularized {{Morphing}} of {{Neural Networks}}},
+  author = {Wei, Tao and Wang, Changhu and Chen, Chang Wen},
+  year = {2017},
+  month = jan,
+  number = {arXiv:1701.03281},
+  eprint = {1701.03281},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1701.03281},
+  urldate = {2022-10-25},
+  abstract = {In this work we study the problem of network morphism, an effective learning scheme to morph a well-trained neural network to a new one with the network function completely preserved. Different from existing work where basic morphing types on the layer level were addressed, we target at the central problem of network morphism at a higher level, i.e., how a convolutional layer can be morphed into an arbitrary module of a neural network. To simplify the representation of a network, we abstract a module as a graph with blobs as vertices and convolutional layers as edges, based on which the morphing process is able to be formulated as a graph transformation problem. Two atomic morphing operations are introduced to compose the graphs, based on which modules are classified into two families, i.e., simple morphable modules and complex modules. We present practical morphing solutions for both of these two families, and prove that any reasonable module can be morphed from a single convolutional layer. Extensive experiments have been conducted based on the state-of-the-art ResNet on benchmark datasets, and the effectiveness of the proposed solution has been verified.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
 }
 
 @article{weiNetworkMorphism2016,
@@ -538,6 +1422,23 @@
   abstract = {Depth is a key component of Deep Neural Networks (DNNs), however, designing depth is heuristic and requires many human efforts. We propose AutoGrow to automate depth discovery in DNNs: starting from a shallow seed architecture, AutoGrow grows new layers if the growth improves the accuracy; otherwise, stops growing and thus discovers the depth. We propose robust growing and stopping policies to generalize to different network architectures and datasets. Our experiments show that by applying the same policy to different network architectures, AutoGrow can always discover near-optimal depth on various datasets of MNIST, FashionMNIST, SVHN, CIFAR10, CIFAR100 and ImageNet. For example, in terms of accuracy-computation trade-off, AutoGrow discovers a better depth combination in ResNets than human experts. Our AutoGrow is efficient. It discovers depth within similar time of training a single DNN. Our code is available at https://github.com/wenwei202/autogrow.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,I.2.6,Statistics - Machine Learning}
+}
+
+@inproceedings{wistubaDeepLearningArchitecture2019,
+  title = {Deep {{Learning Architecture Search}} by {{Neuro-Cell-Based Evolution}} with {{Function-Preserving Mutations}}},
+  booktitle = {Machine {{Learning}} and {{Knowledge Discovery}} in {{Databases}}},
+  author = {Wistuba, Martin},
+  editor = {Berlingerio, Michele and Bonchi, Francesco and G{\"a}rtner, Thomas and Hurley, Neil and Ifrim, Georgiana},
+  year = {2019},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {243--258},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-030-10928-8_15},
+  abstract = {The design of convolutional neural network architectures for a new image data set is a laborious and computational expensive task which requires expert knowledge. We propose a novel neuro-evolutionary technique to solve this problem without human interference. Our method assumes that a convolutional neural network architecture is a sequence of neuro-cells and keeps mutating them using function-preserving operations. This novel combination of approaches has several advantages. We define the network architecture by a sequence of repeating neuro-cells which reduces the search space complexity. Furthermore, these cells are possibly transferable and can be used in order to arbitrarily extend the complexity of the network. Mutations based on function-preserving operations guarantee better parameter initialization than random initialization such that less training time is required per network architecture. Our proposed method finds within 12 GPU hours neural network architectures that can achieve a classification error of about 4\% and 24\% with only 5.5 and 6.5 million parameters on CIFAR-10 and CIFAR-100, respectively. In comparison to competitor approaches, our method provides similar competitive results but requires orders of magnitudes less search time and in many cases less network parameters.},
+  isbn = {978-3-030-10928-8},
+  langid = {english},
+  keywords = {Automated machine learning,Evolutionary algorithms,Neural architecture search}
 }
 
 @article{wistubaSurveyNeuralArchitecture2019,
@@ -601,6 +1502,29 @@
   keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
+@article{yoonLIFELONGLEARNINGDYNAMICALLY2018,
+  title = {{{LIFELONG LEARNING WITH DYNAMICALLY EXPANDABLE NETWORKS}}},
+  author = {Yoon, Jaehong and Yang, Eunho and Lee, Jeongtae and Hwang, Sung Ju},
+  year = {2018},
+  pages = {11},
+  abstract = {We propose a novel deep network architecture for lifelong learning which we refer to as Dynamically Expandable Network (DEN), that can dynamically decide its network capacity as it trains on a sequence of tasks, to learn a compact overlapping knowledge sharing structure among tasks. DEN is efficiently trained in an online manner by performing selective retraining, dynamically expands network capacity upon arrival of each task with only the necessary number of units, and effectively prevents semantic drift by splitting/duplicating units and timestamping them. We validate DEN on multiple public datasets under lifelong learning scenarios, on which it not only significantly outperforms existing lifelong learning methods for deep networks, but also achieves the same level of performance as the batch counterparts with substantially fewer number of parameters. Further, the obtained network fine-tuned on all tasks obtained siginficantly better performance over the batch models, which shows that it can be used to estimate the optimal network structure even when all tasks are available in the first place.},
+  langid = {english}
+}
+
+@inproceedings{zhangRegularizeExpandCompress2020,
+  title = {Regularize, {{Expand}} and {{Compress}}: {{NonExpansive Continual Learning}}},
+  shorttitle = {Regularize, {{Expand}} and {{Compress}}},
+  booktitle = {2020 {{IEEE Winter Conference}} on {{Applications}} of {{Computer Vision}} ({{WACV}})},
+  author = {Zhang, Jie and Zhang, Junting and Ghosh, Shalini and Li, Dawei and Zhu, Jingwen and Zhang, Heming and Wang, Yalin},
+  year = {2020},
+  month = mar,
+  pages = {843--851},
+  issn = {2642-9381},
+  doi = {10.1109/WACV45572.2020.9093585},
+  abstract = {Continual learning (CL), the problem of lifelong learning where tasks arrive in sequence, has attracted increasing attention in the computer vision community lately. The goal of CL is to learn new tasks while maintaining the performance on the previously learned tasks. There are two major obstacles for CL of deep neural networks: catastrophic forgetting and limited model capacity. Inspired by the recent breakthroughs in automatically learning good neural network architectures, we develop a nonexpansive AutoML framework for CL termed Regularize, Expand and Compress (REC) to solve the above issues. REC is a unified framework with three highlights: 1) a novel regularized weight consolidation (RWC) algorithm to avoid forgetting, where accessing the data seen in the previously learned tasks is not required; 2) an automatic neural architecture search (AutoML) engine to expand the network to increase model capability; 3) smart compression of the expanded model after a new task is learned to improve the model efficiency. The experimental results on four different image recognition datasets demonstrate the superior performance of the proposed REC over other CL algorithms.},
+  keywords = {Computational modeling,Computer architecture,Correlation,Knowledge engineering,Network architecture,Neural networks,Task analysis}
+}
+
 @misc{zophLearningTransferableArchitectures2018,
   title = {Learning {{Transferable Architectures}} for {{Scalable Image Recognition}}},
   author = {Zoph, Barret and Vasudevan, Vijay and Shlens, Jonathon and Le, Quoc V.},
@@ -617,5 +1541,23 @@
   abstract = {Developing neural network image classification models often requires significant architecture engineering. In this paper, we study a method to learn the model architectures directly on the dataset of interest. As this approach is expensive when the dataset is large, we propose to search for an architectural building block on a small dataset and then transfer the block to a larger dataset. The key contribution of this work is the design of a new search space (the "NASNet search space") which enables transferability. In our experiments, we search for the best convolutional layer (or "cell") on the CIFAR-10 dataset and then apply this cell to the ImageNet dataset by stacking together more copies of this cell, each with their own parameters to design a convolutional architecture, named "NASNet architecture". We also introduce a new regularization technique called ScheduledDropPath that significantly improves generalization in the NASNet models. On CIFAR-10 itself, NASNet achieves 2.4\% error rate, which is state-of-the-art. On ImageNet, NASNet achieves, among the published works, state-of-the-art accuracy of 82.7\% top-1 and 96.2\% top-5 on ImageNet. Our model is 1.2\% better in top-1 accuracy than the best human-invented architectures while having 9 billion fewer FLOPS - a reduction of 28\% in computational demand from the previous state-of-the-art model. When evaluated at different levels of computational cost, accuracies of NASNets exceed those of the state-of-the-art human-designed models. For instance, a small version of NASNet also achieves 74\% top-1 accuracy, which is 3.1\% better than equivalently-sized, state-of-the-art models for mobile platforms. Finally, the learned features by NASNet used with the Faster-RCNN framework surpass state-of-the-art by 4.0\% achieving 43.1\% mAP on the COCO dataset.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
+}
+
+@misc{zophNeuralArchitectureSearch2017,
+  title = {Neural {{Architecture Search}} with {{Reinforcement Learning}}},
+  author = {Zoph, Barret and Le, Quoc V.},
+  year = {2017},
+  month = feb,
+  number = {arXiv:1611.01578},
+  eprint = {1611.01578},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1611.01578},
+  url = {http://arxiv.org/abs/1611.01578},
+  urldate = {2022-10-25},
+  abstract = {Neural networks are powerful and flexible models that work well for many difficult learning tasks in image, speech and natural language understanding. Despite their success, neural networks are still hard to design. In this paper, we use a recurrent network to generate the model descriptions of neural networks and train this RNN with reinforcement learning to maximize the expected accuracy of the generated architectures on a validation set. On the CIFAR-10 dataset, our method, starting from scratch, can design a novel network architecture that rivals the best human-invented architecture in terms of test set accuracy. Our CIFAR-10 model achieves a test error rate of 3.65, which is 0.09 percent better and 1.05x faster than the previous state-of-the-art model that used a similar architectural scheme. On the Penn Treebank dataset, our model can compose a novel recurrent cell that outperforms the widely-used LSTM cell, and other state-of-the-art baselines. Our cell achieves a test set perplexity of 62.4 on the Penn Treebank, which is 3.6 perplexity better than the previous state-of-the-art model. The cell can also be transferred to the character language modeling task on PTB and achieves a state-of-the-art perplexity of 1.214.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
 }
 
