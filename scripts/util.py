@@ -47,4 +47,6 @@ def get_articles(summary_dir="src/summaries", bib_path="src/articles.bib"):
             key=key,
             metadata=metadata,
             summary=summary,
+            url=entry.fields.get("url"),
+            year=entry.fields.get("year"),
         )
