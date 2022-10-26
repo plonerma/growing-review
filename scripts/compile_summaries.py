@@ -1,20 +1,9 @@
 #!/usr/bin/env python3
 
-
+import argparse
 from pathlib import Path
 
-import subprocess
-
-from pybtex.database.input import bibtex
-
-import argparse
-
-
-def latex_to_markdown(s):
-    p = subprocess.run("pandoc -f latex -t markdown --wrap none".split(),
-                       input=s, text=True, capture_output=True)
-    assert p.returncode == 0
-    return p.stdout.strip()
+from util import get_articles
 
 
 def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
@@ -22,31 +11,16 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
             heading_level=2):
 
     print("Building article.")
-    parser = bibtex.Parser()
-    bib_data = parser.parse_file(bib_path)
 
     articles = list()
 
-    for article_path in Path(summary_dir).glob("*.md"):
-        key = article_path.stem
-
-        if key not in bib_data.entries.keys():
-            raise KeyError(
-                f"Bib-Key '{key}' not found in references file ({bib_path}).")
-
-        entry = bib_data.entries[key]
-
-        title = latex_to_markdown(entry.fields["title"])
-
-        with open(article_path) as f:
-            summary = f.read()
-
+    for a in get_articles(summary_dir=summary_dir, bib_path=bib_path):
         articles.append((
-            entry.fields["year"],
-            title,
-            key,
-            summary,
-            entry.fields.get("url", None)
+            a["entry"].fields["year"],
+            a["markdown_title"],
+            a["key"],
+            a["summary"],
+            a["entry"].fields.get("url", None)
         ))
 
     articles = sorted(articles)
@@ -75,5 +49,5 @@ if __name__ == "__main__":
     try:
         compile(**args)
     except KeyError as e:
-        print(e)
+        print("Encountered Error:", repr(e))
         quit(1)
