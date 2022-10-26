@@ -1,5 +1,5 @@
-CONTENT = src/intro.md src/summaries_intro.md build/summaries.md src/outro.md
-CONTENT_LINKED = src/intro.md src/summaries_intro.md build/summaries_linked.md src/outro.md
+CONTENT = src/intro.md build/table.md src/summaries_intro.md build/summaries.md src/outro.md
+CONTENT_LINKED = src/intro.md build/table.md src/summaries_intro.md build/summaries_linked.md src/outro.md
 BILBIOGRAPHY = src/articles.bib
 SUMMARIES = src/summaries/*
 
@@ -24,6 +24,9 @@ build/summaries.md: $(SUMMARIES) $(BILBIOGRAPHY)
 
 build/summaries_linked.md: $(SUMMARIES) $(BILBIOGRAPHY)
 	python3 scripts/compile_summaries.py $@ --link_titles
+
+build/table.md: $(SUMMARIES) $(BILBIOGRAPHY)
+	python3 scripts/compile_table.py $@
 
 dist/index.html: $(CONTENT_LINKED) templates/template.html static_files
 	mkdir -p dist

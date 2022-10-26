@@ -1,3 +1,10 @@
+---
+
+shorttitle: Network Morphism
+
+---
+
+
 @weiNetworkMorphism2016 follow a very similar path to @chenNet2NetAcceleratingLearning2016:
 *function-preserving transformations* are used to grow a parent
 (or "teacher") network to a child (or "student") network while maintaining

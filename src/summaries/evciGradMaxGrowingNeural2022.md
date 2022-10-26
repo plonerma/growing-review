@@ -1,4 +1,10 @@
-GradMax focuses on the question **how** new neurons are initialized.
+---
+shorttitle: GradMax
+
+---
+
+
+@evciGradMaxGrowingNeural2022 focus on the question **how** new neurons are initialized.
 They propose initializing new neurons such that the gradient norm of new weights
 are maximized while maintaining the models function.
 By enforcing large gradient norms of the new weights, the objective function

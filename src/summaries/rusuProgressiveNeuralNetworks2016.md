@@ -1,3 +1,9 @@
+---
+shorttitle: Progressive Nets
+
+---
+
+
 @rusuProgressiveNeuralNetworks2016 develop *Progressive Networks* for tackling
 catastrophic forgetting. The idea is to grow networks when learning new tasks.
 The older parts of the networks are frozen and their function incoporated

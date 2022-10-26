@@ -1,3 +1,11 @@
+---
+shorttitle: NAS using Network Transformations
+why: NAS
+when: Fixed schedule
+where: Decided by RL agent
+how: "Function-preserving transformations"
+---
+
 @caiEfficientArchitectureSearch2017 propose using a reinforcement learning (RL)
 agent as a meta-controller in order to decide when and where the network is grown
 (using function-preserving transformations).

@@ -1,3 +1,7 @@
+---
+shorttitle: Path-Level Transformations
+where: RL agent
+---
 This publication offers an incremental extension to enable branched architectures
 using function-preserving transformations [@chenNet2NetAcceleratingLearning2016]
 and growing the model using a RL agent based meta-controller as in @caiEfficientArchitectureSearch2017.

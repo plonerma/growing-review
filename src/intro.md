@@ -20,7 +20,7 @@ keywords:
   - natural language processing
   - dynamically growing networks
 papersize: a4
-fontsize: 12pt
+fontsize: 11pt
 classoption:
   - pagesize
   - pdftex
@@ -62,3 +62,6 @@ The following four questions will guide the summary of each paper:
 
 Each paper tries to make progress in answering at least one of the questions.
 Hence, they can be used to categorize these papers.
+
+
+# Categorization {#sec:categorization}
