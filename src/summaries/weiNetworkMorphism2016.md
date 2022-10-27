@@ -1,7 +1,9 @@
 ---
-
 shorttitle: Network Morphism
-
+why: Knowledge transfer
+when: Single growth event
+where: "Not dynamic: Width is uniformly grown, new layers are added towards the end"
+how: Function-preserving transform, less sparse init.
 ---
 
 

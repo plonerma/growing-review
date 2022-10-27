@@ -1,6 +1,9 @@
 ---
 shorttitle: Progressive Nets
-
+why: Continual Learning
+when: On new tasks
+where: New columns
+how: Random init
 ---
 
 

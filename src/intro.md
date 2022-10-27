@@ -69,8 +69,9 @@ Hence, they can be used to categorize these papers.
 This articles reviews publications on Artificial Neural Networks (ANN or simply NN)
 which are grown in some way or another.
 It is focuses on networks trained using backpropagation with gradient descent
-and excludes research areas such as self-organizing maps [@boineeAutomaticClassificationUsing2003]
-and growing neural gas [GNG, @fritzkeGrowingNeuralGas1994].
+and excludes research areas such as self-organizing maps [@boineeAutomaticClassificationUsing2003],
+growing neural gas [GNG, @fritzkeGrowingNeuralGas1994], self-organizing networks
+[@piastraGrowingSelfOrganizingNetwork2009], and growing neural forests [@palomoLearningTopologiesGrowing2016].
 
 
 # Categorization {#sec:categorization}

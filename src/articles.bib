@@ -228,24 +228,6 @@
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Neural and Evolutionary Computing,Reading List}
 }
 
-@misc{devriesImprovedRegularizationConvolutional2017,
-  title = {Improved {{Regularization}} of {{Convolutional Neural Networks}} with {{Cutout}}},
-  author = {DeVries, Terrance and Taylor, Graham W.},
-  year = {2017},
-  month = nov,
-  number = {arXiv:1708.04552},
-  eprint = {1708.04552},
-  eprinttype = {arxiv},
-  primaryclass = {cs},
-  publisher = {{arXiv}},
-  doi = {10.48550/arXiv.1708.04552},
-  url = {http://arxiv.org/abs/1708.04552},
-  urldate = {2022-10-24},
-  abstract = {Convolutional neural networks are capable of learning powerful representational spaces, which are necessary for tackling complex learning tasks. However, due to the model capacity required to capture such representations, they are often susceptible to overfitting and therefore require proper regularization in order to generalize well. In this paper, we show that the simple regularization technique of randomly masking out square regions of input during training, which we call cutout, can be used to improve the robustness and overall performance of convolutional neural networks. Not only is this method extremely easy to implement, but we also demonstrate that it can be used in conjunction with existing forms of data augmentation and other regularizers to further improve model performance. We evaluate this method by applying it to current state-of-the-art architectures on the CIFAR-10, CIFAR-100, and SVHN datasets, yielding new state-of-the-art results of 2.56\%, 15.20\%, and 1.30\% test error respectively. Code is available at https://github.com/uoguelph-mlrg/Cutout},
-  archiveprefix = {arXiv},
-  keywords = {Computer Science - Computer Vision and Pattern Recognition}
-}
-
 @article{dongNASBENCH201EXTENDINGSCOPE2020,
   title = {{{NAS-BENCH-201}}: {{EXTENDING THE SCOPE OF RE- PRODUCIBLE NEURAL ARCHITECTURE SEARCH}}},
   author = {Dong, Xuanyi and Yang, Yi},
@@ -348,25 +330,6 @@
   doi = {10.1109/IJCNN48605.2020.9207451},
   abstract = {Deep learning has achieved state-of-the-art accuracies on several computer vision tasks. However, the computational and energy requirements associated with training such deep neural networks can be quite high. In this paper, we propose a cumulative training strategy with Net2Net transformation that achieves training computational efficiency without incurring large accuracy loss, in comparison to a model trained from scratch. We achieve this by first training a small network (with lesser parameters) on a small subset of the original dataset, and then gradually expanding the network using Net2Net transformation to train incrementally on larger subsets of the dataset. This incremental training strategy with Net2Net utilizes function-preserving transformations that transfers knowledge from each previous small network to the next larger network, thereby, reducing the overall training complexity. Our experiments demonstrate that compared with training from scratch, cumulative training yields 2x reduction in computational complexity for training TinyImageNet using VGG19 at iso-accuracy. Besides training efficiency, a key advantage of our cumulative training strategy is that we can perform pruning during Net2Net expansion to obtain a final network with optimal configuration ( 0.4x lower inference compute complexity) compared to conventional training from scratch. We also demonstrate that the final network obtained from cumulative training yields better generalization performance and noise robustness. Further, we show that mutual inference from all the networks created with cumulative Net2Net expansion enables improved adversarial input detection.},
   keywords = {Computer vision,Deep learning,Energy efficiency,Knowledge engineering,Neural networks,Robustness,Training}
-}
-
-@misc{fernandoPathNetEvolutionChannels2017,
-  title = {{{PathNet}}: {{Evolution Channels Gradient Descent}} in {{Super Neural Networks}}},
-  shorttitle = {{{PathNet}}},
-  author = {Fernando, Chrisantha and Banarse, Dylan and Blundell, Charles and Zwols, Yori and Ha, David and Rusu, Andrei A. and Pritzel, Alexander and Wierstra, Daan},
-  year = {2017},
-  month = jan,
-  number = {arXiv:1701.08734},
-  eprint = {1701.08734},
-  eprinttype = {arxiv},
-  primaryclass = {cs},
-  publisher = {{arXiv}},
-  url = {http://arxiv.org/abs/1701.08734},
-  urldate = {2022-10-25},
-  abstract = {For artificial general intelligence (AGI) it would be efficient if multiple users trained the same giant neural network, permitting parameter reuse, without catastrophic forgetting. PathNet is a first step in this direction. It is a neural network algorithm that uses agents embedded in the neural network whose task is to discover which parts of the network to re-use for new tasks. Agents are pathways (views) through the network which determine the subset of parameters that are used and updated by the forwards and backwards passes of the backpropogation algorithm. During learning, a tournament selection genetic algorithm is used to select pathways through the neural network for replication and mutation. Pathway fitness is the performance of that pathway measured according to a cost function. We demonstrate successful transfer learning; fixing the parameters along a path learned on task A and re-evolving a new population of paths for task B, allows task B to be learned faster than it could be learned from scratch or after fine-tuning. Paths evolved on task B re-use parts of the optimal path evolved on task A. Positive transfer was demonstrated for binary MNIST, CIFAR, and SVHN supervised learning classification tasks, and a set of Atari and Labyrinth reinforcement learning tasks, suggesting PathNets have general applicability for neural network training. Finally, PathNet also significantly improves the robustness to hyperparameter choices of a parallel asynchronous reinforcement learning algorithm (A3C).},
-  archiveprefix = {arXiv},
-  langid = {english},
-  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing}
 }
 
 @article{fritzkeGrowingNeuralGas1994,
@@ -880,26 +843,6 @@
   keywords = {Categorization,Character recognition,Complexity theory,Computer architecture,Computer vision,Deep Learning,Network architecture,Object recognition,Recognition: Detection,Representation Learning,Retrieval,Transfer learning}
 }
 
-@article{nicosiaGrowingMultiplexNetworks2013,
-  title = {Growing Multiplex Networks},
-  author = {Nicosia, Vincenzo and Bianconi, Ginestra and Latora, Vito and Barthelemy, Marc},
-  year = {2013},
-  month = jul,
-  journal = {Physical Review Letters},
-  volume = {111},
-  number = {5},
-  eprint = {1302.7126},
-  eprinttype = {arxiv},
-  pages = {058701},
-  issn = {0031-9007, 1079-7114},
-  doi = {10.1103/PhysRevLett.111.058701},
-  url = {http://arxiv.org/abs/1302.7126},
-  urldate = {2021-05-06},
-  abstract = {We propose a modeling framework for growing multiplexes where a node can belong to different networks. We define new measures for multiplexes and we identify a number of relevant ingredients for modeling their evolution such as the coupling between the different layers and the arrival time distribution of nodes. The topology of the multiplex changes significantly in the different cases under consideration, with effects of the arrival time of nodes on the degree distribution, average shortest paths and interdependence.},
-  archiveprefix = {arXiv},
-  keywords = {Computer Science - Social and Information Networks,Condensed Matter - Disordered Systems and Neural Networks,Physics - Physics and Society}
-}
-
 @article{palomoLearningTopologiesGrowing2016,
   title = {Learning {{Topologies}} with the {{Growing Neural Forest}}},
   author = {Palomo, E. J. and {L{\'o}pez-Rubio}, Ezequiel},
@@ -907,22 +850,6 @@
   journal = {Int. J. Neural Syst.},
   doi = {10.1142/S0129065716500192},
   abstract = {The proposed GNF, based on the growing neural gas, learns a set of trees so that each tree represents a connected cluster of data, and outperforms some well-known foreground detectors both in quantitative and qualitative terms. In this work, a novel self-organizing model called growing neural forest (GNF) is presented. It is based on the growing neural gas (GNG), which learns a general graph with no special provisions for datasets with separated clusters. On the contrary, the proposed GNF learns a set of trees so that each tree represents a connected cluster of data. High dimensional datasets often contain large empty regions among clusters, so this proposal is better suited to them than other self-organizing models because it represents these separated clusters as connected components made of neurons. Experimental results are reported which show the self-organization capabilities of the model. Moreover, its suitability for unsupervised clustering and foreground detection applications is demonstrated. In particular, the GNF is shown to correctly discover the connected component structure of some datasets. Moreover, it outperforms some well-known foreground detectors both in quantitative and qualitative terms.}
-}
-
-@article{panigrahyMindGrowsCircuits2012,
-  title = {The {{Mind Grows Circuits}}},
-  author = {Panigrahy, Rina and Zhang, Li},
-  year = {2012},
-  month = mar,
-  journal = {arXiv:1203.0088 [cs]},
-  eprint = {1203.0088},
-  eprinttype = {arxiv},
-  primaryclass = {cs},
-  url = {http://arxiv.org/abs/1203.0088},
-  urldate = {2021-05-06},
-  abstract = {There is a vast supply of prior art that study models for mental processes. Some studies in psychology and philosophy approach it from an inner perspective in terms of experiences and percepts. Others such as neurobiology or connectionist-machines approach it externally by viewing the mind as complex circuit of neurons where each neuron is a primitive binary circuit. In this paper, we also model the mind as a place where a circuit grows, starting as a collection of primitive components at birth and then builds up incrementally in a bottom up fashion. A new node is formed by a simple composition of prior nodes when we undergo a repeated experience that can be described by that composition. Unlike neural networks, however, these circuits take "concepts" or "percepts" as inputs and outputs. Thus the growing circuits can be likened to a growing collection of lambda expressions that are built on top of one another in an attempt to compress the sensory input as a heuristic to bound its Kolmogorov Complexity.},
-  archiveprefix = {arXiv},
-  keywords = {Computer Science - Artificial Intelligence,Computer Science - Formal Languages and Automata Theory}
 }
 
 @article{phamEfficientNeuralArchitecture2018,
@@ -1466,6 +1393,24 @@
   keywords = {Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
+@article{xieWeightSharingNeuralArchitecture2021,
+  title = {Weight-{{Sharing Neural Architecture Search}}: {{A Battle}} to {{Shrink}} the {{Optimization Gap}}},
+  shorttitle = {Weight-{{Sharing Neural Architecture Search}}},
+  author = {Xie, Lingxi and Chen, Xin and Bi, Kaifeng and Wei, Longhui and Xu, Yuhui and Wang, Lanfei and Chen, Zhengsu and Xiao, An and Chang, Jianlong and Zhang, Xiaopeng and Tian, Qi},
+  year = {2021},
+  month = oct,
+  journal = {ACM Computing Surveys},
+  volume = {54},
+  number = {9},
+  pages = {183:1--183:37},
+  issn = {0360-0300},
+  doi = {10.1145/3473330},
+  url = {https://doi.org/10.1145/3473330},
+  urldate = {2022-10-27},
+  abstract = {Neural architecture search (NAS) has attracted increasing attention. In recent years, individual search methods have been replaced by weight-sharing search methods for higher search efficiency, but the latter methods often suffer lower instability. This article provides a literature review on these methods and owes this issue to the optimization gap. From this perspective, we summarize existing approaches into several categories according to their efforts in bridging the gap, and we analyze both advantages and disadvantages of these methodologies. Finally, we share our opinions on the future directions of NAS and AutoML. Due to the expertise of the authors, this article mainly focuses on the application of NAS to computer vision problems.},
+  keywords = {AutoML,computer vision,neural architecture search,optimization gap,super-network,weight-sharing}
+}
+
 @article{yoonLIFELONGLEARNINGDYNAMICALLY2018,
   title = {{{LIFELONG LEARNING WITH DYNAMICALLY EXPANDABLE NETWORKS}}},
   author = {Yoon, Jaehong and Yang, Eunho and Lee, Jeongtae and Hwang, Sung Ju},
@@ -1473,6 +1418,24 @@
   pages = {11},
   abstract = {We propose a novel deep network architecture for lifelong learning which we refer to as Dynamically Expandable Network (DEN), that can dynamically decide its network capacity as it trains on a sequence of tasks, to learn a compact overlapping knowledge sharing structure among tasks. DEN is efficiently trained in an online manner by performing selective retraining, dynamically expands network capacity upon arrival of each task with only the necessary number of units, and effectively prevents semantic drift by splitting/duplicating units and timestamping them. We validate DEN on multiple public datasets under lifelong learning scenarios, on which it not only significantly outperforms existing lifelong learning methods for deep networks, but also achieves the same level of performance as the batch counterparts with substantially fewer number of parameters. Further, the obtained network fine-tuned on all tasks obtained siginficantly better performance over the batch models, which shows that it can be used to estimate the optimal network structure even when all tasks are available in the first place.},
   langid = {english}
+}
+
+@misc{zhangDeeperInsightsWeight2020,
+  title = {Deeper {{Insights}} into {{Weight Sharing}} in {{Neural Architecture Search}}},
+  author = {Zhang, Yuge and Lin, Zejun and Jiang, Junyang and Zhang, Quanlu and Wang, Yujing and Xue, Hui and Zhang, Chen and Yang, Yaming},
+  year = {2020},
+  month = jan,
+  number = {arXiv:2001.01431},
+  eprint = {2001.01431},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2001.01431},
+  urldate = {2022-10-27},
+  abstract = {With the success of deep neural networks, Neural Architecture Search (NAS) as a way of automatic model design has attracted wide attention. As training every child model from scratch is very time-consuming, recent works leverage weight-sharing to speed up the model evaluation procedure. These approaches greatly reduce computation by maintaining a single copy of weights on the super-net and share the weights among every child model. However, weight-sharing has no theoretical guarantee and its impact has not been well studied before. In this paper, we conduct comprehensive experiments to reveal the impact of weight-sharing: (1) The best-performing models from different runs or even from consecutive epochs within the same run have significant variance; (2) Even with high variance, we can extract valuable information from training the super-net with shared weights; (3) The interference between child models is a main factor that induces high variance; (4) Properly reducing the degree of weight sharing could effectively reduce variance and improve performance.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
 @inproceedings{zhangRegularizeExpandCompress2020,

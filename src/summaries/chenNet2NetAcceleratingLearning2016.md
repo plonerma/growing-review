@@ -1,3 +1,12 @@
+---
+why: Knowledge transfer for NAS(?), already mentions lifelong learning (no experiments)
+when: Single growth event
+where: "Not dynamic: Width is uniformly grown, new layers are added towards the end"
+how: Function-preserving transforms (identity matrix)
+---
+
+
+
 @chenNet2NetAcceleratingLearning2016 introduce the idea of training a larger
 student network from an existing smaller teacher network by using
 *function-preserving transformations*.

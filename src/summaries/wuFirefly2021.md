@@ -1,6 +1,9 @@
 ---
 shorttitle: Firefly
+why:
 when: Fixed Schedule
+where:
+how:
 ---
 
 

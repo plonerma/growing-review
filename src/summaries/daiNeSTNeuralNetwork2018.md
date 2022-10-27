@@ -1,3 +1,11 @@
+---
+why:
+when:
+where:
+how:
+---
+
+
 @daiNeSTNeuralNetwork2018 utilize growth with network architecture search (NAS)
 in mind. They note that trial-and-error approaches are inefficient as a process
 and can (as a product) lead to inefficient architectures which might far more

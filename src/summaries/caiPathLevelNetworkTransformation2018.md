@@ -1,6 +1,9 @@
 ---
 shorttitle: Path-Level Transformations
-where: RL agent
+why: NAS
+when: Fixed schedule
+where: Decided by RL agent
+how: "Function-preserving transforms"
 ---
 This publication offers an incremental extension to enable branched architectures
 using function-preserving transformations [@chenNet2NetAcceleratingLearning2016]

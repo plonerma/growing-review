@@ -1,6 +1,9 @@
 ---
 shorttitle: "Compacting & Picking"
-
+why:
+when:
+where:
+how:
 ---
 
 

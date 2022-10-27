@@ -1,6 +1,9 @@
 ---
 shorttitle: GradMax
-
+why:
+when:
+where:
+how:
 ---
 
 
