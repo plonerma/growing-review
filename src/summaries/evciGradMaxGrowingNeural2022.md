@@ -1,9 +1,9 @@
 ---
 shorttitle: GradMax
-why:
-when:
-where:
-how:
+why: NAS
+when: Fixed Schedule
+where: Fixed (GradMax could be adapted for this decision)
+how: By maximizing the gradient of new parts using SVD
 ---
 
 

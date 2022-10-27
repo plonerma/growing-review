@@ -73,5 +73,9 @@ and excludes research areas such as self-organizing maps [@boineeAutomaticClassi
 growing neural gas [GNG, @fritzkeGrowingNeuralGas1994], self-organizing networks
 [@piastraGrowingSelfOrganizingNetwork2009], and growing neural forests [@palomoLearningTopologiesGrowing2016].
 
+Additionally, we do not consider an ANN to be grown if simply another
+classification head is introduced when a new task is encountered in an continuous
+learning (CL) setting. Instead, in continuous learning settings, we require the
+shared parts of the network to be grown.
 
 # Categorization {#sec:categorization}

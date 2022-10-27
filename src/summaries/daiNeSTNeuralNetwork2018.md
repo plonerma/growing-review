@@ -1,7 +1,7 @@
 ---
-why:
+why: NAS
 when:
-where:
+where: Neurons which will exhibit large gradients
 how:
 ---
 
