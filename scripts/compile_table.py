@@ -3,8 +3,6 @@
 import argparse
 from pathlib import Path
 
-from pybtex.database.input import bibtex
-
 from util import get_articles
 
 
@@ -13,26 +11,33 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
 
     print("Building table.")
 
+    # Retrieve summaries and articles
     articles = sorted(
         list(get_articles(summary_dir=summary_dir, bib_path=bib_path)),
         key=lambda a: (a["year"], a["markdown_title"], a["key"]))
 
+    # Compile table for all articles
     target_path = Path(target_path)
     target_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(target_path, "w") as f:
-        f.write('::: {.sortable .paper-categories}\n\\scriptsize\n')
+    with open(target_path, "w") as output_file:
+        # Write fencing div: html uses class for styling
+        output_file.write('::: {.sortable .paper-categories}\n')
 
+        # Decrease font size in latex (in html this is ingored)
+        output_file.write('\\scriptsize\n')
 
+        # Write table heading
         heads = [
             "Short Title", "Year", "Why?", "When?", "Where?", "How?", "Paper"
         ]
 
-        f.write(" | ".join(heads))
-        f.write("\n")
-        f.write("|".join(["---"]*len(heads)))
-        f.write("\n")
+        output_file.write(" | ".join(heads))
+        output_file.write("\n")
 
+        # Write line spereating head and body of the table
+        output_file.write("|".join(["---"]*len(heads)))
+        output_file.write("\n")
 
         for article in articles:
             fields = [
@@ -45,14 +50,19 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
                 f"@{article['key']}"
             ]
 
-            f.write(" | ".join(fields))
-            f.write("\n")
+            output_file.write(" | ".join(fields))
+            output_file.write("\n")
 
-        caption = "Papers according to the three questions (see *@sec:introduction). {#tbl:papers_cat}"
+        # Caption of the table
+        caption = (
+            "Papers according to the three questions (see *@sec:introduction)."
+            " {#tbl:papers_cat}"
+        )
 
-        f.write(f"\n: {caption}\n\n")
+        output_file.write(f"\n: {caption}\n\n")
 
-        f.write("\\normalsize\n:::\n")
+        # Return to normal font size in latex (in html this is ingored)
+        output_file.write("\\normalsize\n:::\n")
 
 
 if __name__ == "__main__":
