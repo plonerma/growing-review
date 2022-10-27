@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 from pathlib import Path
 
@@ -35,11 +37,11 @@ def compile(bib_path="src/articles.bib", summary_dir="src/summaries",
         for article in articles:
             fields = [
                 f"[{article['markdown_shorttitle']}](#sec:{article['key']})",
-                article["year"],
-                article["metadata"].get("why", ""),
-                article["metadata"].get("when", ""),
-                article["metadata"].get("where", ""),
-                article["metadata"].get("how", ""),
+                article["year"] or "",
+                article["metadata"].get("why") or "",
+                article["metadata"].get("when") or "",
+                article["metadata"].get("where") or "",
+                article["metadata"].get("how") or "",
                 f"@{article['key']}"
             ]
 
