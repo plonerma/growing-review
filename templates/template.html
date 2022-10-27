@@ -103,6 +103,10 @@ $toc$
 </nav>
 $endif$
 
+
+<button id="scroll-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+
 $if(abstract)$
 
 <p class="small"><strong>Abstract: </strong><em>$abstract$</em></p>
@@ -111,5 +115,25 @@ $endif$
 
 
 $body$
+
+<script>
+function scroll_to_top() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+var scroll_top_button = document.querySelector('#scroll-to-top')
+
+scroll_top_button.addEventListener('click', scroll_to_top)
+
+window.onscroll = () => {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+    scroll_top_button.style.opacity = 0.9;
+  } else {
+    scroll_top_button.style.opacity = 0;
+  }
+};
+</script>
+
 </body>
 </html>

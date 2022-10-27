@@ -213,3 +213,17 @@ th:not(.sort-asc):not(.sort-desc):hover::after {
 .paper-categories {
   font-size: .8em;
 }
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  opacity: 0;
+  transition: opacity .3s linear;
+  border-radius: 20px;
+  padding: 10px 12px;
+}
+
+#scroll-to-top:not(:hover) {
+  background-color: #ccc;
+}
