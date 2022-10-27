@@ -1,9 +1,9 @@
 ---
-shorttitle: NAS using Network Transformations
+shorttitle: NAS using Net Transforms
 why: NAS
 when: Fixed schedule
 where: Decided by RL agent
-how: "Function-preserving transformations"
+how: "Function-preserving transforms"
 ---
 
 @caiEfficientArchitectureSearch2017 propose using a reinforcement learning (RL)

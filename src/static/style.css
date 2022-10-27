@@ -207,7 +207,7 @@ th:not(.sort-asc):not(.sort-desc):hover::after {
   vertical-align: middle;
   margin-left: .7rem;
   transform: translateY(-2px);
-  transition: transform .2s ease-out;
+  transition: transform .3s ease-out;
 }
 
 .paper-categories {

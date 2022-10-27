@@ -64,4 +64,13 @@ Each paper tries to make progress in answering at least one of the questions.
 Hence, they can be used to categorize these papers.
 
 
+## Topics of Interest
+
+This articles reviews publications on Artificial Neural Networks (ANN or simply NN)
+which are grown in some way or another.
+It is focuses on networks trained using backpropagation with gradient descent
+and excludes research areas such as self-organizing maps [@boineeAutomaticClassificationUsing2003]
+and growing neural gas [GNG, @fritzkeGrowingNeuralGas1994].
+
+
 # Categorization {#sec:categorization}
