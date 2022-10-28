@@ -59,7 +59,11 @@ of Intelligence</a></p>
     <div class="toc-content-inner">
 <ul>
 <li><a href="#sec:introduction"
-id="toc-sec:introduction">Introduction</a></li>
+id="toc-sec:introduction">Introduction</a>
+<ul>
+<li><a href="#topics-of-interest" id="toc-topics-of-interest">Topics of
+Interest</a></li>
+</ul></li>
 <li><a href="#sec:categorization"
 id="toc-sec:categorization">Categorization</a></li>
 <li><a href="#sec:summaries" id="toc-sec:summaries">Summaries of the
@@ -118,6 +122,10 @@ id="toc-sec:references">References</a></li>
 </nav>
 
 
+<button id="scroll-to-top" title="Scroll to the top of the page"><i class="fas fa-arrow-up"></i></button>
+
+
+
 
 <h1 id="sec:introduction">Introduction</h1>
 <p>This article aims to summarize the existing literature concerned with
@@ -133,6 +141,29 @@ the approach is evaluated on?</li>
 </ol>
 <p>Each paper tries to make progress in answering at least one of the
 questions. Hence, they can be used to categorize these papers.</p>
+<h2 id="topics-of-interest">Topics of Interest</h2>
+<p>This articles reviews publications on Artificial Neural Networks (ANN
+or simply NN) which are grown in some way or another. It is focuses on
+networks trained using backpropagation with gradient descent and
+excludes research areas such as self-organizing maps <span
+class="citation" data-cites="boineeAutomaticClassificationUsing2003">(<a
+href="#ref-boineeAutomaticClassificationUsing2003"
+role="doc-biblioref">Boinee, De Angelis, and Milotti 2003</a>)</span>,
+growing neural gas <span class="citation"
+data-cites="fritzkeGrowingNeuralGas1994">(GNG, <a
+href="#ref-fritzkeGrowingNeuralGas1994" role="doc-biblioref">Fritzke
+1994</a>)</span>, self-organizing networks <span class="citation"
+data-cites="piastraGrowingSelfOrganizingNetwork2009">(<a
+href="#ref-piastraGrowingSelfOrganizingNetwork2009"
+role="doc-biblioref">Piastra 2009</a>)</span>, and growing neural
+forests <span class="citation"
+data-cites="palomoLearningTopologiesGrowing2016">(<a
+href="#ref-palomoLearningTopologiesGrowing2016"
+role="doc-biblioref">Palomo and López-Rubio 2016</a>)</span>.</p>
+<p>Additionally, we do not consider an ANN to be grown if simply another
+classification head is introduced when a new task is encountered in an
+continuous learning (CL) setting. Instead, in continuous learning
+settings, we require the shared parts of the network to be grown.</p>
 <h1 id="sec:categorization">Categorization</h1>
 <div class="sortable paper-categories">
 <div id="tbl:papers_cat" class="tablenos">
@@ -163,10 +194,12 @@ questions. Hence, they can be used to categorize these papers.</p>
 <tr class="odd">
 <td><a href="#sec:chenNet2NetAcceleratingLearning2016">Net2Net</a></td>
 <td>2016</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Knowledge transfer for NAS(?), already mentions lifelong learning
+(no experiments)</td>
+<td>Single growth event</td>
+<td>Not dynamic: Width is uniformly grown, new layers are added towards
+the end</td>
+<td>Function-preserving transforms (identity matrix)</td>
 <td><span class="citation"
 data-cites="chenNet2NetAcceleratingLearning2016">Chen, Goodfellow, and
 Shlens (<a href="#ref-chenNet2NetAcceleratingLearning2016"
@@ -175,10 +208,11 @@ role="doc-biblioref">2016</a>)</span></td>
 <tr class="even">
 <td><a href="#sec:weiNetworkMorphism2016">Network Morphism</a></td>
 <td>2016</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Knowledge transfer</td>
+<td>Single growth event</td>
+<td>Not dynamic: Width is uniformly grown, new layers are added towards
+the end</td>
+<td>Function-preserving transform, less sparse init.</td>
 <td><span class="citation" data-cites="weiNetworkMorphism2016">Wei et
 al. (<a href="#ref-weiNetworkMorphism2016"
 role="doc-biblioref">2016</a>)</span></td>
@@ -187,23 +221,23 @@ role="doc-biblioref">2016</a>)</span></td>
 <td><a href="#sec:rusuProgressiveNeuralNetworks2016">Progressive
 Nets</a></td>
 <td>2016</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Continual Learning</td>
+<td>On new tasks</td>
+<td>New columns</td>
+<td>Random init</td>
 <td><span class="citation"
 data-cites="rusuProgressiveNeuralNetworks2016">Rusu et al. (<a
 href="#ref-rusuProgressiveNeuralNetworks2016"
 role="doc-biblioref">2016</a>)</span></td>
 </tr>
 <tr class="even">
-<td><a href="#sec:caiEfficientArchitectureSearch2017">NAS using Network
-Transformations</a></td>
+<td><a href="#sec:caiEfficientArchitectureSearch2017">NAS using Net
+Transforms</a></td>
 <td>2017</td>
 <td>NAS</td>
 <td>Fixed schedule</td>
 <td>Decided by RL agent</td>
-<td>Function-preserving transformations</td>
+<td>Function-preserving transforms</td>
 <td><span class="citation"
 data-cites="caiEfficientArchitectureSearch2017">Cai et al. (<a
 href="#ref-caiEfficientArchitectureSearch2017"
@@ -212,9 +246,9 @@ role="doc-biblioref">2017</a>)</span></td>
 <tr class="odd">
 <td><a href="#sec:daiNeSTNeuralNetwork2018">NeST</a></td>
 <td>2018</td>
+<td>NAS</td>
 <td></td>
-<td></td>
-<td></td>
+<td>Neurons which will exhibit large gradients</td>
 <td></td>
 <td><span class="citation" data-cites="daiNeSTNeuralNetwork2018">Dai,
 Yin, and Jha (<a href="#ref-daiNeSTNeuralNetwork2018"
@@ -224,10 +258,10 @@ role="doc-biblioref">2018</a>)</span></td>
 <td><a href="#sec:caiPathLevelNetworkTransformation2018">Path-Level
 Transformations</a></td>
 <td>2018</td>
-<td></td>
-<td></td>
-<td>RL agent</td>
-<td></td>
+<td>NAS</td>
+<td>Fixed schedule</td>
+<td>Decided by RL agent</td>
+<td>Function-preserving transforms</td>
 <td><span class="citation"
 data-cites="caiPathLevelNetworkTransformation2018">Cai et al. (<a
 href="#ref-caiPathLevelNetworkTransformation2018"
@@ -249,20 +283,20 @@ role="doc-biblioref">2019</a>)</span></td>
 <tr class="even">
 <td><a href="#sec:wuFirefly2021">Firefly</a></td>
 <td>2020</td>
-<td></td>
+<td>NAS and CL</td>
 <td>Fixed Schedule</td>
-<td></td>
-<td></td>
+<td>Decided based on gradient information</td>
+<td>Function-preserving transforms</td>
 <td><span class="citation" data-cites="wuFirefly2021">Wu et al. (<a
 href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td><a href="#sec:evciGradMaxGrowingNeural2022">GradMax</a></td>
 <td>2022</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>NAS</td>
+<td>Fixed Schedule</td>
+<td>Fixed (GradMax could be adapted for this decision)</td>
+<td>By maximizing the gradient of new parts using SVD</td>
 <td><span class="citation"
 data-cites="evciGradMaxGrowingNeural2022">Evci et al. (<a
 href="#ref-evciGradMaxGrowingNeural2022"
@@ -584,6 +618,7 @@ for Unforgetting Continual Learning</a> <span class="citation"
 data-cites="hungCompactingPickingGrowing2019">(<a
 href="#ref-hungCompactingPickingGrowing2019" role="doc-biblioref">Hung
 et al. 2019</a>)</span></h2>
+<p><em>comming soon</em></p>
 <div id="fig:compacting_picking_growing" class="fignos">
 <figure>
 <img src="img/compacting_picking_growing.svg" style="width:100.0%"
@@ -597,7 +632,27 @@ Neural Architecture Descent: A General Approach for Growing Neural
 Networks</a> <span class="citation" data-cites="wuFirefly2021">(<a
 href="#ref-wuFirefly2021" role="doc-biblioref">Wu et al.
 2020</a>)</span></h2>
-<p><em>coming soon</em></p>
+<p><span class="citation" data-cites="wuFirefly2021">Wu et al. (<a
+href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span> propose
+alternating between training and growth steps. In each growth step, the
+network is grown to be wider and deeper. During each growth step,
+multiple candidate elements (neurons or layers) are temporarily added to
+the network. The contribution of each candidate part is multiplied with
+some step size <span class="math inline">\(\epsilon\)</span> to maintain
+the original function. By using the training data (or some portion of
+it), one can then calculate how beneficial these new parts might be
+during future training. <span class="citation"
+data-cites="wuFirefly2021">Wu et al. (<a href="#ref-wuFirefly2021"
+role="doc-biblioref">2020</a>)</span> show that by using Taylor
+approximation, this reduces to looking a the gradients of these new
+parts.</p>
+<p>Additionally, <span class="citation" data-cites="wuFirefly2021">Wu et
+al. (<a href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span>
+test their approach in a CL task-incremental setting. For each task, a
+neuron mask is created (which can be retrieved using the available task
+identifier). This allows the model to share structure while maintaining
+its function on old tasks and hence to maintain a good average accuracy
+even after multiple tasks have been learned.</p>
 <div id="fig:firefly_new_neurons" class="fignos">
 <figure>
 <img src="img/firefly_new_neurons.svg" style="width:100.0%"
@@ -651,6 +706,14 @@ neurons (but use a different initialization strategy).</p>
 <h1 class="unnumbered" id="sec:references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="doc-bibliography">
+<div id="ref-boineeAutomaticClassificationUsing2003" class="csl-entry"
+role="doc-biblioentry">
+Boinee, P., A. De Angelis, and E. Milotti. 2003. <span>“Automatic
+<span>Classification</span> Using <span>Self-Organising Neural
+Networks</span> in <span>Astrophysical Experiments</span>.”</span>
+<em>arXiv:cs/0307031</em>, July. <a
+href="http://arxiv.org/abs/cs/0307031">http://arxiv.org/abs/cs/0307031</a>.
+</div>
 <div id="ref-caiEfficientArchitectureSearch2017" class="csl-entry"
 role="doc-biblioentry">
 Cai, Han, Tianyao Chen, Weinan Zhang, Yong Yu, and Jun Wang. 2017.
@@ -692,6 +755,11 @@ Neural Networks</span> Using <span>Gradient Information</span>.”</span>
 <span>arXiv</span>. <a
 href="https://doi.org/10.48550/arXiv.2201.05125">https://doi.org/10.48550/arXiv.2201.05125</a>.
 </div>
+<div id="ref-fritzkeGrowingNeuralGas1994" class="csl-entry"
+role="doc-biblioentry">
+Fritzke, Bernd. 1994. <span>“A <span>Growing Neural Gas Network Learns
+Topologies</span>.”</span> <em>NIPS</em>.
+</div>
 <div id="ref-heDelvingDeepRectifiers2015" class="csl-entry"
 role="doc-biblioentry">
 He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2015.
@@ -711,6 +779,21 @@ and <span>Growing</span> for <span>Unforgetting Continual
 Learning</span>.”</span> <em>arXiv:1910.06562 [Cs, Stat]</em>, October.
 <a
 href="http://arxiv.org/abs/1910.06562">http://arxiv.org/abs/1910.06562</a>.
+</div>
+<div id="ref-palomoLearningTopologiesGrowing2016" class="csl-entry"
+role="doc-biblioentry">
+Palomo, E. J., and Ezequiel López-Rubio. 2016. <span>“Learning
+<span>Topologies</span> with the <span>Growing Neural
+Forest</span>.”</span> <em>Int. J. Neural Syst.</em> <a
+href="https://doi.org/10.1142/S0129065716500192">https://doi.org/10.1142/S0129065716500192</a>.
+</div>
+<div id="ref-piastraGrowingSelfOrganizingNetwork2009" class="csl-entry"
+role="doc-biblioentry">
+Piastra, Marco. 2009. <span>“A <span>Growing Self-Organizing
+Network</span> for <span>Reconstructing Curves</span> and
+<span>Surfaces</span>.”</span> <em>2009 International Joint Conference
+on Neural Networks</em>, June, 2533–40. <a
+href="https://doi.org/10.1109/IJCNN.2009.5178709">https://doi.org/10.1109/IJCNN.2009.5178709</a>.
 </div>
 <div id="ref-rusuProgressiveNeuralNetworks2016" class="csl-entry"
 role="doc-biblioentry">
@@ -759,5 +842,25 @@ Search</span> with <span>Reinforcement Learning</span>.”</span>
 href="https://doi.org/10.48550/arXiv.1611.01578">https://doi.org/10.48550/arXiv.1611.01578</a>.
 </div>
 </div>
+
+<script>
+function scroll_to_top() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+var scroll_top_button = document.querySelector('#scroll-to-top')
+
+scroll_top_button.addEventListener('click', scroll_to_top)
+
+window.onscroll = () => {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+    scroll_top_button.style.opacity = 0.9;
+  } else {
+    scroll_top_button.style.opacity = 0;
+  }
+};
+</script>
+
 </body>
 </html>
