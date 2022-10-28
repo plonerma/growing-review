@@ -88,6 +88,12 @@ id="toc-sec:caiEfficientArchitectureSearch2017">Efficient Architecture
 Search by Network Transformation <span class="citation"
 data-cites="caiEfficientArchitectureSearch2017">(Cai et al.
 2017)</span></a></li>
+<li><a href="#sec:elskenSimpleEfficientArchitecture2017"
+id="toc-sec:elskenSimpleEfficientArchitecture2017">Simple And Efficient
+Architecture Search for Convolutional Neural Networks <span
+class="citation"
+data-cites="elskenSimpleEfficientArchitecture2017">(Elsken, Metzen, and
+Hutter 2017)</span></a></li>
 <li><a href="#sec:daiNeSTNeuralNetwork2018"
 id="toc-sec:daiNeSTNeuralNetwork2018">NeST: A Neural Network Synthesis
 Tool Based on a Grow-and-Prune Paradigm <span class="citation"
@@ -102,6 +108,11 @@ data-cites="caiPathLevelNetworkTransformation2018">(Cai et al.
 id="toc-sec:hungCompactingPickingGrowing2019">Compacting, Picking and
 Growing for Unforgetting Continual Learning <span class="citation"
 data-cites="hungCompactingPickingGrowing2019">(Hung et al.
+2019)</span></a></li>
+<li><a href="#sec:gongEfficientTrainingBERT2019"
+id="toc-sec:gongEfficientTrainingBERT2019">Efficient Training of BERT by
+Progressively Stacking <span class="citation"
+data-cites="gongEfficientTrainingBERT2019">(Gong et al.
 2019)</span></a></li>
 <li><a href="#sec:wuFirefly2021" id="toc-sec:wuFirefly2021">Firefly
 Neural Architecture Descent: A General Approach for Growing Neural
@@ -244,6 +255,18 @@ href="#ref-caiEfficientArchitectureSearch2017"
 role="doc-biblioref">2017</a>)</span></td>
 </tr>
 <tr class="odd">
+<td><a href="#sec:elskenSimpleEfficientArchitecture2017">NASH</a></td>
+<td>2017</td>
+<td>NAS</td>
+<td>Iterativly grow and train a set of networks, then pick the best</td>
+<td>Randomly selected (multiple alternatives)</td>
+<td>Function-preserving transforms</td>
+<td><span class="citation"
+data-cites="elskenSimpleEfficientArchitecture2017">Elsken, Metzen, and
+Hutter (<a href="#ref-elskenSimpleEfficientArchitecture2017"
+role="doc-biblioref">2017</a>)</span></td>
+</tr>
+<tr class="even">
 <td><a href="#sec:daiNeSTNeuralNetwork2018">NeST</a></td>
 <td>2018</td>
 <td>NAS</td>
@@ -254,7 +277,7 @@ role="doc-biblioref">2017</a>)</span></td>
 Yin, and Jha (<a href="#ref-daiNeSTNeuralNetwork2018"
 role="doc-biblioref">2018</a>)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="#sec:caiPathLevelNetworkTransformation2018">Path-Level
 Transformations</a></td>
 <td>2018</td>
@@ -267,7 +290,7 @@ data-cites="caiPathLevelNetworkTransformation2018">Cai et al. (<a
 href="#ref-caiPathLevelNetworkTransformation2018"
 role="doc-biblioref">2018</a>)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="#sec:hungCompactingPickingGrowing2019">Compacting &amp;
 Picking</a></td>
 <td>2019</td>
@@ -278,6 +301,19 @@ Picking</a></td>
 <td><span class="citation"
 data-cites="hungCompactingPickingGrowing2019">Hung et al. (<a
 href="#ref-hungCompactingPickingGrowing2019"
+role="doc-biblioref">2019</a>)</span></td>
+</tr>
+<tr class="odd">
+<td><a href="#sec:gongEfficientTrainingBERT2019">Progressive
+Stacking</a></td>
+<td>2019</td>
+<td>Accelerate pre-training</td>
+<td>Fixed schedule</td>
+<td>Duplicated layers added on top</td>
+<td>Duplication of existing layers</td>
+<td><span class="citation"
+data-cites="gongEfficientTrainingBERT2019">Gong et al. (<a
+href="#ref-gongEfficientTrainingBERT2019"
 role="doc-biblioref">2019</a>)</span></td>
 </tr>
 <tr class="even">
@@ -505,6 +541,43 @@ starting at 60%):</p>
 <p><span class="math display">\[
 \tan(acc_v \times \frac{\pi}{2})
 \]</span></p>
+<h2 id="sec:elskenSimpleEfficientArchitecture2017"><a
+href="http://arxiv.org/abs/1711.04528">Simple And Efficient Architecture
+Search for Convolutional Neural Networks</a> <span class="citation"
+data-cites="elskenSimpleEfficientArchitecture2017">(<a
+href="#ref-elskenSimpleEfficientArchitecture2017"
+role="doc-biblioref">Elsken, Metzen, and Hutter 2017</a>)</span></h2>
+<p><span class="citation"
+data-cites="elskenSimpleEfficientArchitecture2017">Elsken, Metzen, and
+Hutter (<a href="#ref-elskenSimpleEfficientArchitecture2017"
+role="doc-biblioref">2017</a>)</span> propose an iterative NAS algorithm
+(Neural Architecture Search by Hillclimbing; short: NASH) which – in
+each growth step – produces a set of grown child networks (using
+function-preserving transformations). Each child is trained for a small
+number of epochs before the most promising candidate is chosen. This
+best performing child is then used for repeating the procedure (see
+fig. <a href="#fig:nash">5</a>).</p>
+<div id="fig:nash" class="fignos">
+<figure>
+<img src="img/nash.svg" style="width:100.0%"
+alt="Figure 5: Illustration of the NASH algorithm. A set of children is grown and trained. Then the best candidate is chosen. Figure from Elsken, Metzen, and Hutter (2017)." />
+<figcaption aria-hidden="true"><span>Figure 5:</span> Illustration of
+the NASH algorithm. A set of children is grown and trained. Then the
+best candidate is chosen. Figure from <span class="citation"
+data-cites="elskenSimpleEfficientArchitecture2017">Elsken, Metzen, and
+Hutter (<a href="#ref-elskenSimpleEfficientArchitecture2017"
+role="doc-biblioref">2017</a>)</span>.</figcaption>
+</figure>
+</div>
+<p>Additionally, they use a different set of network morphisms (or
+<em>function-preserving transformations</em>) such as an interpolating
+layer <span class="citation"
+data-cites="weiNetworkMorphism2016">(similar to the parametric
+activation functions in <a href="#ref-weiNetworkMorphism2016"
+role="doc-biblioref">Wei et al. 2016</a>)</span>: Here an existing layer
+is replaced by an affine combination of the existing layer and some new
+ones (starting with all weights of the new layers being 0, and the
+weight of the existing layer to be 1).</p>
 <h2 id="sec:daiNeSTNeuralNetwork2018"><a
 href="http://arxiv.org/abs/1711.02017">NeST: A Neural Network Synthesis
 Tool Based on a Grow-and-Prune Paradigm</a> <span class="citation"
@@ -522,8 +595,8 @@ as the architecture.</p>
 <div id="fig:nest" class="fignos">
 <figure>
 <img src="img/nest.svg" style="width:100.0%"
-alt="Figure 5: Illustration of the steps for synthesizing an architecture using NeST (figure from Dai, Yin, and Jha 2018)." />
-<figcaption aria-hidden="true"><span>Figure 5:</span> Illustration of
+alt="Figure 6: Illustration of the steps for synthesizing an architecture using NeST (figure from Dai, Yin, and Jha 2018)." />
+<figcaption aria-hidden="true"><span>Figure 6:</span> Illustration of
 the steps for synthesizing an architecture using NeST <span
 class="citation" data-cites="daiNeSTNeuralNetwork2018">(figure from <a
 href="#ref-daiNeSTNeuralNetwork2018" role="doc-biblioref">Dai, Yin, and
@@ -585,8 +658,8 @@ architecture as trees.</p>
 <div id="fig:path_level" class="fignos">
 <figure>
 <img src="img/path_level.svg" style="width:100.0%"
-alt="Figure 6: Illustration of a series of network transformations. The last part shows the tree-structure of the transformation. Figure from Cai et al. (2018). " />
-<figcaption aria-hidden="true"><span>Figure 6:</span> Illustration of a
+alt="Figure 7: Illustration of a series of network transformations. The last part shows the tree-structure of the transformation. Figure from Cai et al. (2018). " />
+<figcaption aria-hidden="true"><span>Figure 7:</span> Illustration of a
 series of network transformations. The last part shows the
 tree-structure of the transformation. Figure from <span class="citation"
 data-cites="caiPathLevelNetworkTransformation2018">Cai et al. (<a
@@ -599,9 +672,9 @@ role="doc-biblioref">2018</a>)</span>. </figcaption>
 <em>add</em> scheme, a layer is replaced by two copies and each of their
 outputs is multiplied by 0.5. This is similar to splitting a neuron,
 except on a layer level. Transformation (a) in Figure <a
-href="#fig:path_level">6</a> shows such a transformation.</p>
+href="#fig:path_level">7</a> shows such a transformation.</p>
 <p>In the <em>concatenation</em> scheme (step (b) in Figure <a
-href="#fig:path_level">6</a>), the outputs dimensions (in a fully
+href="#fig:path_level">7</a>), the outputs dimensions (in a fully
 connected layer: neuron outputs, in a convolutional layer: output
 channels, etc.) are split among the different branches and the output of
 each branch is later concatenated. This introduces branches while
@@ -622,8 +695,42 @@ et al. 2019</a>)</span></h2>
 <div id="fig:compacting_picking_growing" class="fignos">
 <figure>
 <img src="img/compacting_picking_growing.svg" style="width:100.0%"
-alt="Figure 7: " />
-<figcaption aria-hidden="true"><span>Figure 7:</span> </figcaption>
+alt="Figure 8: " />
+<figcaption aria-hidden="true"><span>Figure 8:</span> </figcaption>
+</figure>
+</div>
+<h2 id="sec:gongEfficientTrainingBERT2019"><a
+href="https://proceedings.mlr.press/v97/gong19a.html">Efficient Training
+of BERT by Progressively Stacking</a> <span class="citation"
+data-cites="gongEfficientTrainingBERT2019">(<a
+href="#ref-gongEfficientTrainingBERT2019" role="doc-biblioref">Gong et
+al. 2019</a>)</span></h2>
+<p><span class="citation"
+data-cites="gongEfficientTrainingBERT2019">Gong et al. (<a
+href="#ref-gongEfficientTrainingBERT2019"
+role="doc-biblioref">2019</a>)</span> observe, that self-attention
+distributions across different layers of well-trained BERT model
+typically exhibit a large degree of similarity. Hence, they propose
+starting the pre-training of BERT models with a smaller number (3) of
+hidden layers. Over the course of the training, these pre-trained layers
+are duplicated twice (and added on top, see Figure <a
+href="#fig:progressive_stacking">9</a>) and trained between each
+stacking operations in order to differentiate the layers.</p>
+<p>By training with few layers for a large portion of the pre-training,
+<span class="citation" data-cites="gongEfficientTrainingBERT2019">Gong
+et al. (<a href="#ref-gongEfficientTrainingBERT2019"
+role="doc-biblioref">2019</a>)</span> can reduce the pre-training time
+by <span class="math inline">\(\sim 35\%\)</span> with only a small loss
+of performance.</p>
+<div id="fig:progressive_stacking" class="fignos">
+<figure>
+<img src="img/progressive_stacking.svg" style="height:5cm"
+alt="Figure 9: In each stacking step, the number of layers is doubled (Gong et al. 2019)." />
+<figcaption aria-hidden="true"><span>Figure 9:</span> In each stacking
+step, the number of layers is doubled <span class="citation"
+data-cites="gongEfficientTrainingBERT2019">(<a
+href="#ref-gongEfficientTrainingBERT2019" role="doc-biblioref">Gong et
+al. 2019</a>)</span>.</figcaption>
 </figure>
 </div>
 <h2 id="sec:wuFirefly2021"><a
@@ -656,8 +763,8 @@ even after multiple tasks have been learned.</p>
 <div id="fig:firefly_new_neurons" class="fignos">
 <figure>
 <img src="img/firefly_new_neurons.svg" style="width:100.0%"
-alt="Figure 8: Figure from Wu et al. (2020) illustrating how new neurons can be added." />
-<figcaption aria-hidden="true"><span>Figure 8:</span> Figure from <span
+alt="Figure 10: Figure from Wu et al. (2020) illustrating how new neurons can be added." />
+<figcaption aria-hidden="true"><span>Figure 10:</span> Figure from <span
 class="citation" data-cites="wuFirefly2021">Wu et al. (<a
 href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span>
 illustrating how new neurons can be added.</figcaption>
@@ -747,6 +854,14 @@ Based</span> on a <span class="nocase">Grow-and-Prune
 Paradigm</span>,”</span> no. arXiv:1711.02017 (June). <a
 href="https://doi.org/10.48550/arXiv.1711.02017">https://doi.org/10.48550/arXiv.1711.02017</a>.
 </div>
+<div id="ref-elskenSimpleEfficientArchitecture2017" class="csl-entry"
+role="doc-biblioentry">
+Elsken, Thomas, Jan-Hendrik Metzen, and Frank Hutter. 2017.
+<span>“Simple <span>And Efficient Architecture Search</span> for
+<span>Convolutional Neural Networks</span>.”</span> <span>arXiv</span>.
+<a
+href="http://arxiv.org/abs/1711.04528">http://arxiv.org/abs/1711.04528</a>.
+</div>
 <div id="ref-evciGradMaxGrowingNeural2022" class="csl-entry"
 role="doc-biblioentry">
 Evci, Utku, Bart van Merriënboer, Thomas Unterthiner, Max Vladymyrov,
@@ -759,6 +874,15 @@ href="https://doi.org/10.48550/arXiv.2201.05125">https://doi.org/10.48550/arXiv.
 role="doc-biblioentry">
 Fritzke, Bernd. 1994. <span>“A <span>Growing Neural Gas Network Learns
 Topologies</span>.”</span> <em>NIPS</em>.
+</div>
+<div id="ref-gongEfficientTrainingBERT2019" class="csl-entry"
+role="doc-biblioentry">
+Gong, Linyuan, Di He, Zhuohan Li, Tao Qin, Liwei Wang, and Tieyan Liu.
+2019. <span>“Efficient <span>Training</span> of <span>BERT</span> by
+<span>Progressively Stacking</span>.”</span> In <em>Proceedings of the
+36th <span>International Conference</span> on <span>Machine
+Learning</span></em>, 2337–46. <span>PMLR</span>. <a
+href="https://proceedings.mlr.press/v97/gong19a.html">https://proceedings.mlr.press/v97/gong19a.html</a>.
 </div>
 <div id="ref-heDelvingDeepRectifiers2015" class="csl-entry"
 role="doc-biblioentry">
