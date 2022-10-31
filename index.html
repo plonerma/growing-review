@@ -118,6 +118,11 @@ data-cites="gongEfficientTrainingBERT2019">(Gong et al.
 Neural Architecture Descent: A General Approach for Growing Neural
 Networks <span class="citation" data-cites="wuFirefly2021">(Wu et al.
 2020)</span></a></li>
+<li><a href="#sec:hassantabarSCANNSynthesisCompact2021"
+id="toc-sec:hassantabarSCANNSynthesisCompact2021">SCANN: Synthesis of
+Compact and Accurate Neural Networks <span class="citation"
+data-cites="hassantabarSCANNSynthesisCompact2021">(Hassantabar, Wang,
+and Jha 2021)</span></a></li>
 <li><a href="#sec:evciGradMaxGrowingNeural2022"
 id="toc-sec:evciGradMaxGrowingNeural2022">GradMax: Growing Neural
 Networks Using Gradient Information <span class="citation"
@@ -270,9 +275,10 @@ role="doc-biblioref">2017</a>)</span></td>
 <td><a href="#sec:daiNeSTNeuralNetwork2018">NeST</a></td>
 <td>2018</td>
 <td>NAS</td>
-<td></td>
-<td>Neurons which will exhibit large gradients</td>
-<td></td>
+<td>Growth phase, then prune phase with iterative retraining in each
+phase</td>
+<td>Gradient-based selection</td>
+<td>Initialization based on gradient</td>
 <td><span class="citation" data-cites="daiNeSTNeuralNetwork2018">Dai,
 Yin, and Jha (<a href="#ref-daiNeSTNeuralNetwork2018"
 role="doc-biblioref">2018</a>)</span></td>
@@ -327,6 +333,18 @@ role="doc-biblioref">2019</a>)</span></td>
 href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
+<td><a href="#sec:hassantabarSCANNSynthesisCompact2021">SCANN</a></td>
+<td>2021</td>
+<td>NAS</td>
+<td>Fixed schedule</td>
+<td>Connections based on gradient, Neurons based on activation</td>
+<td>Connections based on gradient, Neurons are split</td>
+<td><span class="citation"
+data-cites="hassantabarSCANNSynthesisCompact2021">Hassantabar, Wang, and
+Jha (<a href="#ref-hassantabarSCANNSynthesisCompact2021"
+role="doc-biblioref">2021</a>)</span></td>
+</tr>
+<tr class="even">
 <td><a href="#sec:evciGradMaxGrowingNeural2022">GradMax</a></td>
 <td>2022</td>
 <td>NAS</td>
@@ -430,7 +448,7 @@ insufficient.</p>
 into two layers, retaining a large number of non-zero entries.</p>
 <p><span class="citation" data-cites="weiStableNetworkMorphism2019">Wei,
 Wang, and Chen (<a href="#ref-weiStableNetworkMorphism2019"
-role="doc-biblioref">2019</a>)</span> furhter improve the decomposition
+role="doc-biblioref">2019</a>)</span> further improve the decomposition
 method in order to minimize the performance drop after transforming
 (growing) the network.</p>
 <p>Instead of relying on idempotent activation functions, <span
@@ -469,7 +487,7 @@ href="#ref-rusuProgressiveNeuralNetworks2016"
 role="doc-biblioref">2016</a>)</span> develop <em>Progressive
 Networks</em> for tackling catastrophic forgetting. The idea is to grow
 networks when learning new tasks. The older parts of the networks are
-frozen and their function incoporated using adapters to allow for
+frozen and their function incorporated using adapters to allow for
 knowledge transfer from earlier tasks. Each time a new tasks is learned,
 the network is further extended (a new column is added).</p>
 <div id="fig:progressive_nn_columns" class="fignos">
@@ -617,14 +635,17 @@ directly, exhibited a large gradient magnitude:</p>
 G_{m,n} = \frac{\partial L}{\partial u_m^{l+1}} x_n^{l-1} \ge threshold
 \]</span></p>
 <p>Here, <span class="math inline">\(u_m^{l+1}\)</span> is the sum of
-incoming activiations of neuron <span class="math inline">\(m\)</span>
-in layer <span class="math inline">\(l+1\)</span> and <span
+incoming activations of neuron <span class="math inline">\(m\)</span> in
+layer <span class="math inline">\(l+1\)</span> and <span
 class="math inline">\(x_n^{l-1}\)</span> is the activation of neuron
 <span class="math inline">\(n\)</span> in layer <span
 class="math inline">\(l+1\)</span>. The threshold is calculated using a
 growth proportion.</p>
-<p>In a second phase, weights are iteratively prruned. Between each
+<p>In a second phase, weights are iteratively pruned. Between each
 pruning step, the network is retrained to recover its performance.</p>
+<p>It should be noted however, that NeST does not grow additional layers
+(nor does it remove layers) and hence is limited to a fixed number of
+layers.</p>
 <h2 id="sec:caiPathLevelNetworkTransformation2018"><a
 href="https://proceedings.mlr.press/v80/cai18a.html">Path-Level Network
 Transformation for Efficient Architecture Search</a> <span
@@ -691,7 +712,7 @@ for Unforgetting Continual Learning</a> <span class="citation"
 data-cites="hungCompactingPickingGrowing2019">(<a
 href="#ref-hungCompactingPickingGrowing2019" role="doc-biblioref">Hung
 et al. 2019</a>)</span></h2>
-<p><em>comming soon</em></p>
+<p><em>coming soon</em></p>
 <div id="fig:compacting_picking_growing" class="fignos">
 <figure>
 <img src="img/compacting_picking_growing.svg" style="width:100.0%"
@@ -770,6 +791,48 @@ href="#ref-wuFirefly2021" role="doc-biblioref">2020</a>)</span>
 illustrating how new neurons can be added.</figcaption>
 </figure>
 </div>
+<h2 id="sec:hassantabarSCANNSynthesisCompact2021">SCANN: Synthesis of
+Compact and Accurate Neural Networks <span class="citation"
+data-cites="hassantabarSCANNSynthesisCompact2021">(<a
+href="#ref-hassantabarSCANNSynthesisCompact2021"
+role="doc-biblioref">Hassantabar, Wang, and Jha 2021</a>)</span></h2>
+<p><span class="citation"
+data-cites="hassantabarSCANNSynthesisCompact2021">Hassantabar, Wang, and
+Jha (<a href="#ref-hassantabarSCANNSynthesisCompact2021"
+role="doc-biblioref">2021</a>)</span> develop SCANN to produce compact
+and accurate feed-forward networks (FFNNs). In this paper, they aim to
+improve on prior work (namely: <a
+href="#sec:daiNeSTNeuralNetwork2018">NeST</a>) and allow the method to
+grow in depth as well.</p>
+<p>SCANN includes three operations to modify the network
+architecture:</p>
+<ol type="1">
+<li>Growing new connections,</li>
+<li>growing new neurons, and</li>
+<li>pruning existing connections.</li>
+</ol>
+<p>New connections are grown based on the gradient magnitude they would
+exhibit (if they were present). This follows the proposal of <span
+class="citation" data-cites="daiNeSTNeuralNetwork2018">Dai, Yin, and Jha
+(<a href="#ref-daiNeSTNeuralNetwork2018"
+role="doc-biblioref">2018</a>)</span> for <a
+href="#sec:daiNeSTNeuralNetwork2018">NeST</a>.</p>
+<p>New neurons are grown based on the activations existing neurons
+exhibit when training data is passed through the network: Neurons with
+large activation magnitude are selected for splitting.</p>
+<p>Finally, connections which have small weight magnitudes are pruned.
+This is similar to <a href="#sec:daiNeSTNeuralNetwork2018">NeST</a> as
+well.</p>
+<p><span class="citation"
+data-cites="hassantabarSCANNSynthesisCompact2021">Hassantabar, Wang, and
+Jha (<a href="#ref-hassantabarSCANNSynthesisCompact2021"
+role="doc-biblioref">2021</a>)</span> describe three training schemes
+with different configurations of network modification operations:
+Different orders of executing the operations as well as different
+degrees of growth and pruning and different sizes of initial
+networks.</p>
+<p>They show that all of these three training schemes can yield well
+performing models with different numbers of parameters.</p>
 <h2 id="sec:evciGradMaxGrowingNeural2022"><a
 href="http://arxiv.org/abs/2201.05125">GradMax: Growing Neural Networks
 Using Gradient Information</a> <span class="citation"
@@ -787,7 +850,7 @@ to decrease in the next step of gradient descent.</p>
 <p>When using a step size of <span
 class="math inline">\(\frac{1}{\beta}\)</span> on a function with a
 <span class="math inline">\(\beta\)</span>-Lipschitz gradient, the loss
-is upperbounded by:</p>
+is upper-bounded by:</p>
 <p><span class="math display">\[
 L(W_{new}) \le L(W) - \frac{\beta}{2} \| \nabla L (W) \|^2
 \]</span></p>
@@ -883,6 +946,15 @@ Gong, Linyuan, Di He, Zhuohan Li, Tao Qin, Liwei Wang, and Tieyan Liu.
 36th <span>International Conference</span> on <span>Machine
 Learning</span></em>, 2337–46. <span>PMLR</span>. <a
 href="https://proceedings.mlr.press/v97/gong19a.html">https://proceedings.mlr.press/v97/gong19a.html</a>.
+</div>
+<div id="ref-hassantabarSCANNSynthesisCompact2021" class="csl-entry"
+role="doc-biblioentry">
+Hassantabar, Shayan, Zeyu Wang, and Niraj K. Jha. 2021.
+<span>“<span>SCANN</span>: <span>Synthesis</span> of
+<span>Compact</span> and <span>Accurate Neural Networks</span>.”</span>
+<em>IEEE Transactions on Computer-Aided Design of Integrated Circuits
+and Systems</em> 41 (9): 3012–25. <a
+href="https://doi.org/10.1109/TCAD.2021.3116470">https://doi.org/10.1109/TCAD.2021.3116470</a>.
 </div>
 <div id="ref-heDelvingDeepRectifiers2015" class="csl-entry"
 role="doc-biblioentry">
