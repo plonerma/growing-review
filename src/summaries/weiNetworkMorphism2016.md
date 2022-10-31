@@ -20,7 +20,7 @@ functions, which they deem insufficient.
 Through an iterative procedure, a convolutional layer is decomposed into
 two layers, retaining a large number of non-zero entries.
 
-@weiStableNetworkMorphism2019 furhter improve the decomposition method in order
+@weiStableNetworkMorphism2019 further improve the decomposition method in order
 to minimize the performance drop after transforming (growing) the network.
 
 

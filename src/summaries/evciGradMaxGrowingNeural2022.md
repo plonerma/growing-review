@@ -14,7 +14,7 @@ By enforcing large gradient norms of the new weights, the objective function
 is guaranteed to decrease in the next step of gradient descent.
 
 When using a step size of $\frac{1}{\beta}$ on a function with a
-$\beta$-Lipschitz gradient, the loss is upperbounded by:
+$\beta$-Lipschitz gradient, the loss is upper-bounded by:
 
 $$
 L(W_{new}) \le L(W) - \frac{\beta}{2} \| \nabla L (W) \|^2
