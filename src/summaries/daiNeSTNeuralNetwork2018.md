@@ -1,8 +1,8 @@
 ---
 why: NAS
-when:
-where: Neurons which will exhibit large gradients
-how:
+when: "Growth phase, then prune phase with iterative retraining in each phase"
+where: Gradient-based selection
+how: Initialization based on gradient
 ---
 
 
@@ -25,9 +25,12 @@ $$
 G_{m,n} = \frac{\partial L}{\partial u_m^{l+1}} x_n^{l-1} \ge threshold
 $$
 
-Here, $u_m^{l+1}$ is the sum of incoming activiations of neuron $m$ in layer $l+1$
+Here, $u_m^{l+1}$ is the sum of incoming activations of neuron $m$ in layer $l+1$
 and $x_n^{l-1}$ is the activation of neuron $n$ in layer $l+1$.
 The threshold is calculated using a growth proportion.
 
-In a second phase, weights are iteratively prruned. Between each pruning step,
+In a second phase, weights are iteratively pruned. Between each pruning step,
 the network is retrained to recover its performance.
+
+It should be noted however, that NeST does not grow additional layers (nor does
+it remove layers) and hence is limited to a fixed number of layers.
